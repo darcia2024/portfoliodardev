@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/container";
 import { FeaturedProjectRow } from "@/components/featured-project-row";
-import { ProjectCard } from "@/components/project-card";
+import { CompactProjectCard } from "@/components/compact-project-card";
 import { SquiggleText } from "@/components/squiggle-text";
 import { CapabilityIcon } from "@/components/capability-icon";
 import { PreviewPlaceholder } from "@/components/preview-placeholder";
@@ -42,9 +42,7 @@ export default async function Home({
   const featured = getFeaturedProjects(locale).sort(
     (a, b) => FEATURED_ORDER.indexOf(a.slug) - FEATURED_ORDER.indexOf(b.slug)
   );
-  const more = getAllProjects(locale)
-    .filter((p) => !p.featured)
-    .slice(0, 6);
+  const rest = getAllProjects(locale).filter((p) => !p.featured);
   const stats = getPortfolioStats();
 
   return (
@@ -208,24 +206,35 @@ export default async function Home({
         </Container>
       </section>
 
-      {/* More Projects */}
+      {/* All Work — dense grid so every project is visible without a click */}
       <section className="border-t border-border py-20 md:py-28">
         <Container>
           <div className="flex items-end justify-between">
             <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
-              {t("moreProjects")}
+              {t("allWorkTitle", { count: stats.totalProjects })}
             </h2>
+            <Link
+              href="/archive"
+              className="hidden text-sm text-muted hover:text-foreground sm:inline"
+            >
+              {t("fullArchive")}
+            </Link>
+          </div>
+          <p className="mt-3 max-w-lg text-muted">{t("allWorkSubtitle")}</p>
+
+          <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:gap-x-6 lg:grid-cols-4 xl:grid-cols-5">
+            {rest.map((project) => (
+              <CompactProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+
+          <div className="mt-10 text-center sm:hidden">
             <Link
               href="/archive"
               className="text-sm text-muted hover:text-foreground"
             >
               {t("fullArchive")}
             </Link>
-          </div>
-          <div className="mt-8">
-            {more.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
           </div>
         </Container>
       </section>

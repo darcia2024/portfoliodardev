@@ -41,6 +41,8 @@
     "capabilitiesSubtitle": "Four pillars that show up together on almost every project, not separately.",
     "howIBuild": "How I Build",
     "moreProjects": "More Projects",
+    "allWorkTitle": "All {count} Projects",
+    "allWorkSubtitle": "Every product, brand, and system shipped so far — click any of them for the full case study.",
     "fullArchive": "Full archive →",
     "aboutTitle": "About",
     "aboutHeadline": "I like turning messy problems into usable systems.",
