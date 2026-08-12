@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/container";
 import { FeaturedProjectRow } from "@/components/featured-project-row";
 import { ProjectCard } from "@/components/project-card";
+import { SquiggleText } from "@/components/squiggle-text";
 import { getAllProjects, getFeaturedProjects } from "@/data/projects";
 
 const FEATURED_ORDER = [
@@ -96,13 +97,16 @@ export default async function Home({
       <section className="border-t border-border py-20 md:py-28">
         <Container>
           <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
-            {t("capabilitiesTitle")}
+            <SquiggleText>{t("capabilitiesTitle")}</SquiggleText>
           </h2>
           <p className="mt-3 max-w-lg text-muted">{t("capabilitiesSubtitle")}</p>
 
-          <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {CAPABILITY_KEYS.map((key) => (
-              <div key={key} className="bg-background p-7">
+              <div
+                key={key}
+                className="rounded-[28px] border border-border bg-surface p-7"
+              >
                 <h3 className="font-display text-xl tracking-tight text-foreground">
                   {tCapabilities(`${key}.title`)}
                 </h3>

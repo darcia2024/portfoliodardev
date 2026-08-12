@@ -22,7 +22,7 @@ export function PreviewPlaceholder({
   return (
     <div
       className={cn(
-        "relative flex w-full items-center justify-center overflow-hidden rounded-2xl border border-border bg-surface-2",
+        "relative flex w-full items-center justify-center overflow-hidden rounded-[32px] border border-border bg-surface-2",
         compact ? "aspect-[4/3]" : "aspect-[16/10]",
         className
       )}

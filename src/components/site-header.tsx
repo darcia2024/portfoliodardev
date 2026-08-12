@@ -5,6 +5,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { Container } from "./container";
 import { MobileNav } from "./mobile-nav";
 import { LanguageSwitcher } from "./language-switcher";
+import { SquiggleText } from "./squiggle-text";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -25,7 +26,7 @@ export function SiteHeader() {
           href="/"
           className="font-display text-lg tracking-tight text-foreground"
         >
-          Daru
+          <SquiggleText>Daru</SquiggleText>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

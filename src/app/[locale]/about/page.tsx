@@ -83,9 +83,12 @@ export default async function AboutPage({
           <p className="font-mono text-xs uppercase tracking-widest text-muted-2">
             {t("capabilitiesLabel")}
           </p>
-          <div className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {CAPABILITY_KEYS.map((key) => (
-              <div key={key} className="bg-background p-7">
+              <div
+                key={key}
+                className="rounded-[28px] border border-border bg-surface p-7"
+              >
                 <h3 className="font-display text-xl tracking-tight text-foreground">
                   {tCapabilities(`${key}.title`)}
                 </h3>
