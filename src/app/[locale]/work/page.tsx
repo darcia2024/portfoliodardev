@@ -8,7 +8,7 @@ import { getAllProjects, getFeaturedProjects } from "@/data/projects";
 const FEATURED_ORDER = [
   "aina",
   "umrahme",
-  "el-massa-travel-management-system",
+  "talqeeh",
   "nemsyi",
   "markaz-fiqih",
   "kelas-aigypt",

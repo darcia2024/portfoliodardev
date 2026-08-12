@@ -198,7 +198,7 @@ export const projects: Project[] = [
     type: "AI × Islamic Study / Education Web App",
     status: "production",
     confidence: "verified",
-    featured: false,
+    featured: true,
     role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://talqeeh.vercel.app",
@@ -487,7 +487,7 @@ export const projects: Project[] = [
     type: "Custom Internal Travel Management System",
     status: "client-delivery",
     confidence: "incomplete",
-    featured: true,
+    featured: false,
     role: ["Product Strategy", "Full-Stack Development"],
     year: "2025",
     problem:
