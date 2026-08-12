@@ -23,6 +23,7 @@
     "getInTouch": "Get in touch →",
     "siteLabel": "Site",
     "connectLabel": "Connect",
+    "whatsapp": "WhatsApp",
     "email": "Email",
     "github": "GitHub",
     "copyright": "© {year} Daru. Digital Product Builder.",
@@ -150,7 +151,8 @@
   "contactPage": {
     "eyebrow": "Contact",
     "title": "Let’s build something.",
-    "subtitle": "Open to product, engineering, AI, and brand work. The fastest way to reach me is email.",
+    "subtitle": "Open to product, engineering, AI, and brand work. The fastest way to reach me is WhatsApp.",
+    "whatsappLabel": "WhatsApp",
     "emailLabel": "Email",
     "githubLabel": "GitHub"
   },

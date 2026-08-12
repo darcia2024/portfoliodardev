@@ -51,6 +51,16 @@ export function SiteFooter() {
             <ul className="space-y-2 text-background/70">
               <li>
                 <a
+                  href="https://wa.me/62813111506025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-background"
+                >
+                  {t("whatsapp")}
+                </a>
+              </li>
+              <li>
+                <a
                   href="mailto:darciamuliathiifa@gmail.com"
                   className="hover:text-background"
                 >

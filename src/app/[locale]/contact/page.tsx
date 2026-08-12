@@ -26,6 +26,11 @@ export default async function ContactPage({
 
   const CHANNELS = [
     {
+      label: t("whatsappLabel"),
+      value: "+62 813-111-506-025",
+      href: "https://wa.me/62813111506025",
+    },
+    {
       label: t("emailLabel"),
       value: "darciamuliathiifa@gmail.com",
       href: "mailto:darciamuliathiifa@gmail.com",

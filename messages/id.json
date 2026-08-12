@@ -23,6 +23,7 @@
     "getInTouch": "Hubungi saya →",
     "siteLabel": "Situs",
     "connectLabel": "Terhubung",
+    "whatsapp": "WhatsApp",
     "email": "Email",
     "github": "GitHub",
     "copyright": "© {year} Daru. Digital Product Builder.",
@@ -150,7 +151,8 @@
   "contactPage": {
     "eyebrow": "Kontak",
     "title": "Yuk, bangun sesuatu.",
-    "subtitle": "Terbuka untuk kerja sama product, engineering, AI, dan brand. Cara tercepat menghubungi saya adalah lewat email.",
+    "subtitle": "Terbuka untuk kerja sama product, engineering, AI, dan brand. Cara tercepat menghubungi saya adalah lewat WhatsApp.",
+    "whatsappLabel": "WhatsApp",
     "emailLabel": "Email",
     "githubLabel": "GitHub"
   },
