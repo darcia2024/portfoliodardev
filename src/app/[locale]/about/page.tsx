@@ -54,8 +54,8 @@ export default async function AboutPage({
             <p>{t("positioningP2")}</p>
             <ul className="space-y-2">
               {focusAreas.map((area) => (
-                <li key={area} className="text-foreground/90">
-                  — {area}
+                <li key={area} className="text-foreground/90 before:mr-2 before:text-muted-2 before:content-['•']">
+                  {area}
                 </li>
               ))}
             </ul>
@@ -97,7 +97,7 @@ export default async function AboutPage({
                     (item) => (
                       <li
                         key={item}
-                        className="text-sm text-muted-2 before:mr-2 before:content-['—']"
+                        className="text-sm text-muted-2 before:mr-2 before:content-['•']"
                       >
                         {item}
                       </li>

@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/container";
 import { FeaturedProjectRow } from "@/components/featured-project-row";
+import { RichProjectCard } from "@/components/rich-project-card";
 import { CompactProjectCard } from "@/components/compact-project-card";
 import { SquiggleText } from "@/components/squiggle-text";
 import { CapabilityIcon } from "@/components/capability-icon";
@@ -48,7 +49,7 @@ export default async function Home({
   return (
     <>
       {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-32 md:pb-24">
+      <section className="pt-20 pb-16 md:pt-24 md:pb-24">
         <Container>
           <p className="font-mono text-xs uppercase tracking-widest text-muted-2">
             {t("eyebrow")}
@@ -104,8 +105,14 @@ export default async function Home({
           </div>
 
           <div>
-            {featured.map((project, i) => (
+            {featured.slice(0, 2).map((project, i) => (
               <FeaturedProjectRow key={project.slug} project={project} index={i} />
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 border-t border-border py-16 sm:grid-cols-2 md:py-24 lg:grid-cols-3">
+            {featured.slice(2).map((project, i) => (
+              <RichProjectCard key={project.slug} project={project} index={i} />
             ))}
           </div>
         </Container>
@@ -137,7 +144,7 @@ export default async function Home({
                     (item) => (
                       <li
                         key={item}
-                        className="text-sm text-muted-2 before:mr-2 before:content-['—']"
+                        className="text-sm text-muted-2 before:mr-2 before:content-['•']"
                       >
                         {item}
                       </li>

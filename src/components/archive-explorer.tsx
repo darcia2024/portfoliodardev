@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import type { Project, ProjectCategory } from "@/data/types";
 import { ALL_CATEGORIES } from "@/data/projects";
-import { ProjectCard } from "./project-card";
+import { CompactProjectCard } from "./compact-project-card";
 import { cn } from "@/lib/utils";
 
 type ArchiveCategory = (typeof ALL_CATEGORIES)[number];
@@ -63,11 +63,13 @@ export function ArchiveExplorer({ projects }: { projects: Project[] }) {
         {t("projectCount", { count: filtered.length })}
       </p>
 
-      <div className="mt-2">
+      <div className="mt-8">
         {filtered.length > 0 ? (
-          filtered.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))
+          <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:gap-x-6 lg:grid-cols-4 xl:grid-cols-5">
+            {filtered.map((project) => (
+              <CompactProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
         ) : (
           <p className="py-12 text-sm text-muted">{t("noMatches")}</p>
         )}

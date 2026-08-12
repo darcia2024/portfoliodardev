@@ -39,7 +39,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: {
       default: t("title"),
-      template: "%s — Daru",
+      template: "%s · Daru",
     },
     description: t("description"),
     openGraph: {
