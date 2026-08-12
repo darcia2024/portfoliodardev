@@ -1,8 +1,12 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import type { Project } from "@/data/types";
 import { StatusBadge } from "./status-badge";
 
 export function ProjectCard({ project }: { project: Project }) {
+  const t = useTranslations("projectCard");
+  const tCategory = useTranslations("categories");
+
   return (
     <Link
       href={`/work/${project.slug}`}
@@ -24,13 +28,13 @@ export function ProjectCard({ project }: { project: Project }) {
           <StatusBadge status={project.status} />
           <span className="text-xs text-muted-2">·</span>
           <span className="text-xs text-muted-2">
-            {project.category.join(" / ")}
+            {project.category.map((c) => tCategory(c)).join(" / ")}
           </span>
         </div>
       </div>
 
       <span className="hidden shrink-0 text-sm text-muted-2 transition-transform group-hover:translate-x-1 group-hover:text-foreground md:inline-block">
-        View case study →
+        {t("viewCaseStudy")}
       </span>
     </Link>
   );

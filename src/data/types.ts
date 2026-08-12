@@ -50,3 +50,23 @@ export interface Project {
 
   notes?: string;
 }
+
+/** Fields that get translated per-locale via a translation overlay (see projects.id.json). */
+export type TranslatableProjectFields = Partial<
+  Pick<
+    Project,
+    | "shortDescription"
+    | "summary"
+    | "type"
+    | "problem"
+    | "productThinking"
+    | "solution"
+    | "designDirection"
+    | "technicalBuild"
+    | "challenges"
+    | "lessons"
+    | "notes"
+  >
+>;
+
+export type ProjectTranslations = Record<string, TranslatableProjectFields>;

@@ -1,20 +1,22 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Container } from "./container";
 import { MobileNav } from "./mobile-nav";
+import { LanguageSwitcher } from "./language-switcher";
 import { cn } from "@/lib/utils";
-
-const NAV = [
-  { href: "/work", label: "Work" },
-  { href: "/about", label: "About" },
-  { href: "/archive", label: "Archive" },
-  { href: "/contact", label: "Contact" },
-];
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const t = useTranslations("nav");
+
+  const NAV = [
+    { href: "/work", label: t("work") },
+    { href: "/about", label: t("about") },
+    { href: "/archive", label: t("archive") },
+    { href: "/contact", label: t("contact") },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-md">
@@ -47,11 +49,15 @@ export function SiteHeader() {
             href="/contact"
             className="rounded-full border border-foreground/15 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-foreground/40"
           >
-            Let&rsquo;s talk
+            {t("letsTalk")}
           </Link>
+          <LanguageSwitcher />
         </nav>
 
-        <MobileNav key={pathname} nav={NAV} />
+        <div className="flex items-center gap-3 md:hidden">
+          <LanguageSwitcher />
+          <MobileNav key={pathname} nav={NAV} />
+        </div>
       </Container>
     </header>
   );

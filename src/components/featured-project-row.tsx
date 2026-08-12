@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import type { Project } from "@/data/types";
 import { StatusBadge } from "./status-badge";
@@ -15,6 +16,7 @@ export function FeaturedProjectRow({
   index: number;
 }) {
   const reversed = index % 2 === 1;
+  const t = useTranslations("featuredRow");
 
   return (
     <motion.div
@@ -54,7 +56,7 @@ export function FeaturedProjectRow({
             href={`/work/${project.slug}`}
             className="text-sm text-foreground underline underline-offset-4"
           >
-            Read case study →
+            {t("readCaseStudy")}
           </Link>
           {project.liveUrl && (
             <a
@@ -63,7 +65,7 @@ export function FeaturedProjectRow({
               rel="noopener noreferrer"
               className="text-sm text-muted hover:text-foreground"
             >
-              Visit live site ↗
+              {t("visitLiveSite")}
             </a>
           )}
         </div>

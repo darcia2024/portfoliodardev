@@ -1,4 +1,7 @@
-import type { Project } from "./types";
+import type { Project, ProjectTranslations } from "./types";
+import translationsId from "./translations.id.json";
+
+const idTranslations = translationsId as ProjectTranslations;
 
 export const projects: Project[] = [
   // ───────────────────────────── AI & AI EDUCATION ─────────────────────────────
@@ -863,16 +866,24 @@ export const projects: Project[] = [
   },
 ];
 
-export function getAllProjects() {
-  return projects;
+/** Merges in the Indonesian translation overlay when locale is "id"; falls back to English for any untranslated field. */
+function localize(project: Project, locale: string): Project {
+  if (locale !== "id") return project;
+  const overlay = idTranslations[project.slug];
+  return overlay ? { ...project, ...overlay } : project;
 }
 
-export function getFeaturedProjects() {
-  return projects.filter((p) => p.featured);
+export function getAllProjects(locale: string = "en") {
+  return projects.map((p) => localize(p, locale));
 }
 
-export function getProjectBySlug(slug: string) {
-  return projects.find((p) => p.slug === slug);
+export function getFeaturedProjects(locale: string = "en") {
+  return getAllProjects(locale).filter((p) => p.featured);
+}
+
+export function getProjectBySlug(slug: string, locale: string = "en") {
+  const project = projects.find((p) => p.slug === slug);
+  return project ? localize(project, locale) : undefined;
 }
 
 export function getAllSlugs() {

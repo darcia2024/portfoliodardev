@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -10,12 +11,13 @@ export function MobileNav({
   nav: { href: string; label: string }[];
 }) {
   const [open, setOpen] = useState(false);
+  const t = useTranslations("nav");
 
   return (
     <>
       <button
         type="button"
-        aria-label="Toggle menu"
+        aria-label={t("toggleMenu")}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"

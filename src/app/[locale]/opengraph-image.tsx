@@ -1,9 +1,18 @@
 import { ImageResponse } from "next/og";
+import { getTranslations } from "next-intl/server";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home" });
+  const tMeta = await getTranslations({ locale, namespace: "meta" });
+
   return new ImageResponse(
     (
       <div
@@ -28,11 +37,11 @@ export default function OpengraphImage() {
             gap: 24,
           }}
         >
-          <div style={{ display: "flex", fontSize: 64, lineHeight: 1.15, maxWidth: 900 }}>
-            I build digital products from idea to launch.
+          <div style={{ display: "flex", fontSize: 60, lineHeight: 1.15, maxWidth: 900 }}>
+            {t("heroTitle")}
           </div>
           <div style={{ display: "flex", fontSize: 26, color: "#6b6a63" }}>
-            Digital Product Builder · Indonesia / Cairo
+            {tMeta("title")}
           </div>
         </div>
       </div>

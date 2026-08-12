@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "title": "Daru — Digital Product Builder",
+    "description": "Strategi produk, AI, pengembangan full-stack, dan sistem brand — disatukan untuk menyelesaikan masalah operasional dan komunitas yang nyata. Portofolio Daru, seorang digital product builder yang berbasis di Indonesia dan Kairo."
+  },
+  "nav": {
+    "work": "Karya",
+    "about": "Tentang",
+    "archive": "Arsip",
+    "contact": "Kontak",
+    "letsTalk": "Ngobrol yuk",
+    "toggleMenu": "Buka menu"
+  },
+  "footer": {
+    "heading": "Yuk, bangun sesuatu.",
+    "subheading": "Terbuka untuk kerja sama product, engineering, AI, dan brand — Indonesia / Kairo.",
+    "getInTouch": "Hubungi saya →",
+    "siteLabel": "Situs",
+    "connectLabel": "Terhubung",
+    "email": "Email",
+    "github": "GitHub",
+    "copyright": "© {year} Daru. Digital Product Builder.",
+    "tagline": "Dirancang & dibangun end-to-end."
+  },
+  "home": {
+    "eyebrow": "Digital Product Builder · Indonesia / Kairo",
+    "heroTitle": "Saya membangun produk digital dari ide hingga rilis.",
+    "heroSubtitle": "Strategi produk, AI, pengembangan full-stack, dan sistem brand — disatukan untuk menyelesaikan masalah operasional dan komunitas yang nyata.",
+    "exploreWork": "Lihat Karya",
+    "aboutMe": "Tentang Saya",
+    "selectedWork": "Karya Pilihan",
+    "viewAll": "Lihat semua →",
+    "capabilitiesTitle": "Kemampuan",
+    "capabilitiesSubtitle": "Empat pilar yang hampir selalu muncul bersamaan di setiap proyek, bukan berdiri sendiri-sendiri.",
+    "howIBuild": "Cara Saya Membangun",
+    "moreProjects": "Proyek Lainnya",
+    "fullArchive": "Arsip lengkap →",
+    "aboutTitle": "Tentang",
+    "aboutHeadline": "Saya suka mengubah masalah yang berantakan menjadi sistem yang bisa dipakai.",
+    "aboutBody": "Sebagian besar proyek saya bermula dari friksi nyata — sesuatu yang benar-benar dialami seorang mahasiswa, komunitas, atau klien — seputar kehidupan Masisir, travel, edukasi, atau operasional. Saya tidak terlalu memisahkan product, design, dan engineering. Saya memakai disiplin apa pun yang diperlukan untuk mengubah masalah menjadi sesuatu yang bisa dipakai.",
+    "readMoreAboutMe": "Baca lebih lanjut tentang saya →",
+    "contactCtaTitle": "Punya masalah yang layak diubah menjadi produk?",
+    "getInTouch": "Hubungi Saya"
+  },
+  "process": {
+    "understandTitle": "Memahami",
+    "understandBody": "Menyelami masalah yang sesungguhnya — komunitas, operasional, atau alur kerja klien — sebelum memutuskan apa yang akan dibangun.",
+    "designTitle": "Merancang",
+    "designBody": "Membentuk produk dan sistem visualnya bersamaan: user flow, arsitektur, brand, dan interface sebagai satu keputusan.",
+    "buildTitle": "Membangun",
+    "buildBody": "Pengembangan full-stack, AI di tempat yang memang layak, di-deploy dan bisa dipakai — bukan sekadar prototipe yang berhenti di Figma.",
+    "shipTitle": "Meluncurkan & Menyempurnakan",
+    "shipBody": "Menghadirkannya kepada orang-orang yang membutuhkannya, lalu terus menyempurnakannya sesuai apa yang benar-benar terjadi setelah live."
+  },
+  "capabilities": {
+    "product": {
+      "title": "Product",
+      "description": "Mengubah masalah menjadi produk yang jelas dan siap dibangun sebelum menulis satu baris kode.",
+      "items": ["Product Strategy", "PRD", "User Flow", "MVP Definition", "Product Architecture"]
+    },
+    "engineering": {
+      "title": "Engineering",
+      "description": "Merilis produknya sendiri secara end to end, bukan hanya bagian frontend.",
+      "items": ["Full-Stack Development", "Database", "Authentication", "API / Backend", "Deployment"]
+    },
+    "ai": {
+      "title": "AI",
+      "description": "Menggunakan AI sebagai kapabilitas produk sekaligus cara membangun lebih cepat.",
+      "items": ["AI Products", "AI Workflows", "Prompt Systems", "AI-assisted Development"]
+    },
+    "design": {
+      "title": "Design",
+      "description": "Memberikan identitas yang koheren pada produk dan brand di sekitarnya.",
+      "items": ["UI/UX", "Branding", "Visual Identity", "Landing Pages", "Merchandise Design"]
+    }
+  },
+  "workPage": {
+    "eyebrow": "Karya",
+    "title": "Studi kasus pilihan, dan semua yang ada di arsip.",
+    "archiveTitle": "Arsip Lengkap",
+    "archiveSubtitle": "Semua proyek yang tercatat — filter berdasarkan kategori atau cari berdasarkan nama."
+  },
+  "archivePage": {
+    "eyebrow": "Arsip",
+    "title": "Semua proyek, dalam satu tempat.",
+    "subtitle": "Catatan yang terus hidup — situs, aplikasi, produk AI, sistem klien, dan karya branding, yang terus ditambahkan."
+  },
+  "explorer": {
+    "searchPlaceholder": "Cari proyek…",
+    "projectCount": "{count, plural, one {# proyek} other {# proyek}}",
+    "noMatches": "Belum ada proyek yang cocok dengan filter ini."
+  },
+  "projectCard": {
+    "viewCaseStudy": "Lihat studi kasus →"
+  },
+  "featuredRow": {
+    "readCaseStudy": "Baca studi kasus →",
+    "visitLiveSite": "Kunjungi situs live ↗"
+  },
+  "preview": {
+    "comingSoon": "Preview segera hadir"
+  },
+  "caseStudy": {
+    "allWork": "← Semua karya",
+    "role": "Peran — ",
+    "visitLiveSite": "Kunjungi situs live ↗",
+    "viewRepository": "Lihat repositori ↗",
+    "problem": "Masalah",
+    "productThinking": "Pemikiran Produk",
+    "solution": "Solusi",
+    "designDirection": "Arahan Visual / Brand",
+    "technicalBuild": "Susunan Teknis",
+    "challenges": "Tantangan",
+    "currentState": "Status Saat Ini",
+    "reflection": "Refleksi",
+    "relatedWork": "Karya Terkait",
+    "currentStateIntro": "Proyek ini saat ini berada di tahap",
+    "statusProduction": "produksi, live dan digunakan.",
+    "statusDevelopment": "pengembangan aktif.",
+    "statusPreLaunch": "pra-peluncuran — sudah dibangun, belum live untuk publik.",
+    "statusConcept": "tahap konsep — sudah direncanakan, belum dibangun.",
+    "statusClientDelivery": "pengiriman klien — dibangun dan diserahkan ke klien."
+  },
+  "aboutPage": {
+    "eyebrow": "Tentang",
+    "headline": "Saya suka mengubah masalah yang berantakan menjadi sistem yang bisa dipakai.",
+    "positioningLabel": "Positioning",
+    "positioningP1": "Saya Daru — seorang digital product builder, bukan sekadar web developer. Kerja saya berada di persimpangan product strategy, full-stack development, AI, UI/UX, dan brand design. Kebanyakan proyek yang saya kerjakan membutuhkan lebih dari satu disiplin itu agar benar-benar berhasil, jadi saya tidak memisahkannya terlalu ketat. Saya memakai disiplin apa pun yang diperlukan untuk mengubah masalah menjadi sesuatu yang bisa dipakai.",
+    "positioningP2": "Banyak dari yang saya bangun berasal dari friksi yang saya alami sendiri, atau friksi yang terus dialami orang-orang di sekitar saya:",
+    "focusAreas": [
+      "Masisir & kehidupan mahasiswa di Mesir",
+      "Teknologi travel & Umrah",
+      "Platform edukasi Islami",
+      "Operasional klien & sistem internal"
+    ],
+    "positioningP3": "Itulah sebabnya karya dalam portofolio ini mencakup mulai dari asisten AI untuk mahasiswa Indonesia di Mesir, platform kursus fiqh yang terintegrasi pembayaran, sistem operasional internal untuk sebuah agen travel, hingga identitas brand untuk bakery dan layanan laundry. Domain yang berbeda-beda, pendekatan yang sama: menemukan masalah yang sesungguhnya, menentukan disiplin apa yang benar-benar dibutuhkan, lalu membangunnya secara end to end.",
+    "howIWorkLabel": "Cara saya bekerja",
+    "howIWorkP1": "Sebagian besar proyek di sini dikerjakan secara end to end — dari masalah awal dan pemikiran produk, melewati identitas visual, hingga produk yang dirilis dan di-deploy. Ini mencakup kerja klien, di mana brief datang dari operasional orang lain, dan proyek personal/komunitas, di mana brief-nya bermula dari sesuatu yang saya alami sendiri.",
+    "howIWorkP2": "Saya secara eksplisit menjelaskan di portofolio ini tahap sebenarnya dari tiap proyek — produksi, dalam pengembangan, pra-peluncuran, konsep, atau sudah diserahkan ke klien — karena saya percaya portofolio seharusnya jujur soal apa yang nyata dan apa yang masih berjalan.",
+    "capabilitiesLabel": "Kemampuan",
+    "ctaText": "Terbuka untuk kerja sama product, engineering, AI, dan brand.",
+    "ctaButton": "Hubungi Saya"
+  },
+  "contactPage": {
+    "eyebrow": "Kontak",
+    "title": "Yuk, bangun sesuatu.",
+    "subtitle": "Terbuka untuk kerja sama product, engineering, AI, dan brand. Cara tercepat menghubungi saya adalah lewat email.",
+    "emailLabel": "Email",
+    "githubLabel": "GitHub"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Halaman ini belum ada.",
+    "backHome": "← Kembali ke beranda"
+  },
+  "categories": {
+    "All": "Semua",
+    "AI": "AI",
+    "Travel": "Travel",
+    "Education": "Edukasi",
+    "Product": "Produk",
+    "Web Apps": "Aplikasi Web",
+    "Internal Tools": "Tool Internal",
+    "Branding": "Branding",
+    "Client Work": "Kerja Klien",
+    "Experiments": "Eksperimen"
+  },
+  "status": {
+    "production": "Produksi",
+    "development": "Dalam Pengembangan",
+    "pre-launch": "Pra-peluncuran",
+    "concept": "Konsep",
+    "client-delivery": "Pengiriman Klien"
+  },
+  "roles": {
+    "Product Strategy": "Product Strategy",
+    "Full-Stack Development": "Full-Stack Development",
+    "AI": "AI",
+    "UI/UX": "UI/UX",
+    "Brand Design": "Brand Design",
+    "Product Architecture": "Product Architecture"
+  }
+}

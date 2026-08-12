@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 import { Container } from "@/components/container";
 import { StatusBadge } from "@/components/status-badge";
 import { PreviewPlaceholder } from "@/components/preview-placeholder";
@@ -11,18 +13,21 @@ import {
   getAllSlugs,
   getProjectBySlug,
 } from "@/data/projects";
+import type { ProjectStatus } from "@/data/types";
 
 export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  return routing.locales.flatMap((locale) =>
+    getAllSlugs().map((slug) => ({ locale, slug }))
+  );
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const { locale, slug } = await params;
+  const project = getProjectBySlug(slug, locale);
   if (!project) return {};
 
   return {
@@ -39,16 +44,28 @@ export async function generateMetadata({
   };
 }
 
+const STATUS_TEXT_KEY: Record<ProjectStatus, string> = {
+  production: "statusProduction",
+  development: "statusDevelopment",
+  "pre-launch": "statusPreLaunch",
+  concept: "statusConcept",
+  "client-delivery": "statusClientDelivery",
+};
+
 export default async function CaseStudyPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const project = getProjectBySlug(slug, locale);
   if (!project) notFound();
 
-  const related = getAllProjects()
+  const t = await getTranslations("caseStudy");
+  const tCategory = await getTranslations("categories");
+
+  const related = getAllProjects(locale)
     .filter((p) => p.slug !== project.slug)
     .map((p) => ({
       project: p,
@@ -67,14 +84,14 @@ export default async function CaseStudyPage({
             href="/work"
             className="text-sm text-muted hover:text-foreground"
           >
-            ← All work
+            {t("allWork")}
           </Link>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2">
             <StatusBadge status={project.status} />
             <span className="text-xs text-muted-2">·</span>
             <span className="text-xs text-muted-2">
-              {project.category.join(" / ")}
+              {project.category.map((c) => tCategory(c)).join(" / ")}
             </span>
             {project.year && (
               <>
@@ -97,7 +114,7 @@ export default async function CaseStudyPage({
           <div className="mt-8 flex flex-wrap items-center gap-6">
             {project.role && (
               <div className="text-sm text-muted-2">
-                <span className="text-muted">Role — </span>
+                <span className="text-muted">{t("role")}</span>
                 {project.role.join(", ")}
               </div>
             )}
@@ -108,7 +125,7 @@ export default async function CaseStudyPage({
                 rel="noopener noreferrer"
                 className="text-sm text-foreground underline underline-offset-4"
               >
-                Visit live site ↗
+                {t("visitLiveSite")}
               </a>
             )}
             {project.githubUrl && (
@@ -118,7 +135,7 @@ export default async function CaseStudyPage({
                 rel="noopener noreferrer"
                 className="text-sm text-foreground underline underline-offset-4"
               >
-                View repository ↗
+                {t("viewRepository")}
               </a>
             )}
           </div>
@@ -143,31 +160,31 @@ export default async function CaseStudyPage({
       )}
 
       {project.problem && (
-        <CaseStudySection eyebrow="Problem">
+        <CaseStudySection eyebrow={t("problem")}>
           <p>{project.problem}</p>
         </CaseStudySection>
       )}
 
       {project.productThinking && (
-        <CaseStudySection eyebrow="Product Thinking">
+        <CaseStudySection eyebrow={t("productThinking")}>
           <p>{project.productThinking}</p>
         </CaseStudySection>
       )}
 
       {project.solution && (
-        <CaseStudySection eyebrow="Solution">
+        <CaseStudySection eyebrow={t("solution")}>
           <p>{project.solution}</p>
         </CaseStudySection>
       )}
 
       {project.designDirection && (
-        <CaseStudySection eyebrow="Visual / Brand Direction">
+        <CaseStudySection eyebrow={t("designDirection")}>
           <p>{project.designDirection}</p>
         </CaseStudySection>
       )}
 
       {project.technicalBuild && (
-        <CaseStudySection eyebrow="Technical Build">
+        <CaseStudySection eyebrow={t("technicalBuild")}>
           <p className="font-mono text-sm leading-relaxed text-muted md:text-base">
             {project.technicalBuild}
           </p>
@@ -175,27 +192,22 @@ export default async function CaseStudyPage({
       )}
 
       {project.challenges && (
-        <CaseStudySection eyebrow="Challenges">
+        <CaseStudySection eyebrow={t("challenges")}>
           <p>{project.challenges}</p>
         </CaseStudySection>
       )}
 
-      <CaseStudySection eyebrow="Current State">
+      <CaseStudySection eyebrow={t("currentState")}>
         <p>
-          This project is currently at{" "}
+          {t("currentStateIntro")}{" "}
           <span className="text-foreground">
-            {project.status === "production" && "production, live and in use."}
-            {project.status === "development" && "active development."}
-            {project.status === "pre-launch" && "pre-launch — built, not yet publicly live."}
-            {project.status === "concept" && "concept stage — planned, not yet built."}
-            {project.status === "client-delivery" &&
-              "client delivery — built and delivered to the client."}
+            {t(STATUS_TEXT_KEY[project.status])}
           </span>
         </p>
       </CaseStudySection>
 
       {project.lessons && (
-        <CaseStudySection eyebrow="Reflection">
+        <CaseStudySection eyebrow={t("reflection")}>
           <p>{project.lessons}</p>
         </CaseStudySection>
       )}
@@ -204,7 +216,7 @@ export default async function CaseStudyPage({
         <section className="border-t border-border py-16 md:py-24">
           <Container>
             <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
-              Related Work
+              {t("relatedWork")}
             </h2>
             <div className="mt-8">
               {related.map((p) => (

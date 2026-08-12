@@ -1,13 +1,6 @@
+import { useTranslations } from "next-intl";
 import type { ProjectStatus } from "@/data/types";
 import { cn } from "@/lib/utils";
-
-const STATUS_LABEL: Record<ProjectStatus, string> = {
-  production: "Production",
-  development: "In Development",
-  "pre-launch": "Pre-launch",
-  concept: "Concept",
-  "client-delivery": "Client Delivery",
-};
 
 const STATUS_DOT: Record<ProjectStatus, string> = {
   production: "bg-emerald-600",
@@ -24,6 +17,8 @@ export function StatusBadge({
   status: ProjectStatus;
   className?: string;
 }) {
+  const t = useTranslations("status");
+
   return (
     <span
       className={cn(
@@ -32,7 +27,7 @@ export function StatusBadge({
       )}
     >
       <span className={cn("h-1.5 w-1.5 rounded-full", STATUS_DOT[status])} />
-      {STATUS_LABEL[status]}
+      {t(status)}
     </span>
   );
 }

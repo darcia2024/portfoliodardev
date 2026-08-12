@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "title": "Daru — Digital Product Builder",
+    "description": "Product strategy, AI, full-stack development, and brand systems — brought together to solve real operational and community problems. Portfolio of Daru, a digital product builder based between Indonesia and Cairo."
+  },
+  "nav": {
+    "work": "Work",
+    "about": "About",
+    "archive": "Archive",
+    "contact": "Contact",
+    "letsTalk": "Let’s talk",
+    "toggleMenu": "Toggle menu"
+  },
+  "footer": {
+    "heading": "Let’s build something.",
+    "subheading": "Open to product, engineering, AI, and brand work — Indonesia / Cairo.",
+    "getInTouch": "Get in touch →",
+    "siteLabel": "Site",
+    "connectLabel": "Connect",
+    "email": "Email",
+    "github": "GitHub",
+    "copyright": "© {year} Daru. Digital Product Builder.",
+    "tagline": "Designed & built end-to-end."
+  },
+  "home": {
+    "eyebrow": "Digital Product Builder · Indonesia / Cairo",
+    "heroTitle": "I build digital products from idea to launch.",
+    "heroSubtitle": "Product strategy, AI, full-stack development, and brand systems — brought together to solve real operational and community problems.",
+    "exploreWork": "Explore Work",
+    "aboutMe": "About Me",
+    "selectedWork": "Selected Work",
+    "viewAll": "View all →",
+    "capabilitiesTitle": "Capabilities",
+    "capabilitiesSubtitle": "Four pillars that show up together on almost every project, not separately.",
+    "howIBuild": "How I Build",
+    "moreProjects": "More Projects",
+    "fullArchive": "Full archive →",
+    "aboutTitle": "About",
+    "aboutHeadline": "I like turning messy problems into usable systems.",
+    "aboutBody": "Most of my projects start from a real friction point — something a student, a community, or a client actually ran into — around Masisir life, travel, education, or operations. I don’t separate product, design, and engineering too strictly. I use whichever discipline is necessary to turn a problem into something usable.",
+    "readMoreAboutMe": "Read more about me →",
+    "contactCtaTitle": "Have a problem worth turning into a product?",
+    "getInTouch": "Get in touch"
+  },
+  "process": {
+    "understandTitle": "Understand",
+    "understandBody": "Sit inside the actual problem — a community, an operation, a client's workflow — before deciding what to build.",
+    "designTitle": "Design",
+    "designBody": "Shape the product and its visual system together: user flow, architecture, brand, and interface as one decision.",
+    "buildTitle": "Build",
+    "buildBody": "Full-stack development, AI where it earns its place, deployed and usable — not a prototype that stops at Figma.",
+    "shipTitle": "Ship & Iterate",
+    "shipBody": "Put it in front of the people it's for, and keep shaping it against what actually happens once it's live."
+  },
+  "capabilities": {
+    "product": {
+      "title": "Product",
+      "description": "Turning a problem into a defined, buildable product before writing code.",
+      "items": ["Product Strategy", "PRD", "User Flow", "MVP Definition", "Product Architecture"]
+    },
+    "engineering": {
+      "title": "Engineering",
+      "description": "Shipping the product itself — end to end, not just the frontend.",
+      "items": ["Full-Stack Development", "Database", "Authentication", "API / Backend", "Deployment"]
+    },
+    "ai": {
+      "title": "AI",
+      "description": "Using AI as a product capability and as a way of building faster.",
+      "items": ["AI Products", "AI Workflows", "Prompt Systems", "AI-assisted Development"]
+    },
+    "design": {
+      "title": "Design",
+      "description": "Giving the product and the brand around it a coherent identity.",
+      "items": ["UI/UX", "Branding", "Visual Identity", "Landing Pages", "Merchandise Design"]
+    }
+  },
+  "workPage": {
+    "eyebrow": "Work",
+    "title": "Featured case studies, and everything else in the archive.",
+    "archiveTitle": "Complete Archive",
+    "archiveSubtitle": "Every known project — filter by category or search by name."
+  },
+  "archivePage": {
+    "eyebrow": "Archive",
+    "title": "Every project, in one place.",
+    "subtitle": "A living record — websites, applications, AI products, client systems, and branding work, added to continuously."
+  },
+  "explorer": {
+    "searchPlaceholder": "Search projects…",
+    "projectCount": "{count, plural, one {# project} other {# projects}}",
+    "noMatches": "No projects match that filter yet."
+  },
+  "projectCard": {
+    "viewCaseStudy": "View case study →"
+  },
+  "featuredRow": {
+    "readCaseStudy": "Read case study →",
+    "visitLiveSite": "Visit live site ↗"
+  },
+  "preview": {
+    "comingSoon": "Preview coming soon"
+  },
+  "caseStudy": {
+    "allWork": "← All work",
+    "role": "Role — ",
+    "visitLiveSite": "Visit live site ↗",
+    "viewRepository": "View repository ↗",
+    "problem": "Problem",
+    "productThinking": "Product Thinking",
+    "solution": "Solution",
+    "designDirection": "Visual / Brand Direction",
+    "technicalBuild": "Technical Build",
+    "challenges": "Challenges",
+    "currentState": "Current State",
+    "reflection": "Reflection",
+    "relatedWork": "Related Work",
+    "currentStateIntro": "This project is currently at",
+    "statusProduction": "production, live and in use.",
+    "statusDevelopment": "active development.",
+    "statusPreLaunch": "pre-launch — built, not yet publicly live.",
+    "statusConcept": "concept stage — planned, not yet built.",
+    "statusClientDelivery": "client delivery — built and delivered to the client."
+  },
+  "aboutPage": {
+    "eyebrow": "About",
+    "headline": "I like turning messy problems into usable systems.",
+    "positioningLabel": "Positioning",
+    "positioningP1": "I’m Daru — a digital product builder, not just a web developer. My work sits at the intersection of product strategy, full-stack development, AI, UI/UX, and brand design. Most projects I take on need more than one of those disciplines to actually work, so I don’t separate them too strictly. I use whichever one is necessary to turn a problem into something usable.",
+    "positioningP2": "A lot of what I’ve built comes from friction I ran into firsthand, or friction people around me kept running into:",
+    "focusAreas": [
+      "Masisir & student life in Egypt",
+      "Travel & Umrah technology",
+      "Islamic education platforms",
+      "Client operations & internal systems"
+    ],
+    "positioningP3": "That’s why the work in this portfolio ranges from an AI assistant for Indonesian students in Egypt, to a payment-integrated fiqh course platform, to an internal operations system for a travel agency, to brand identities for bakeries and laundry services. Different domains, same approach: find the real problem, decide what discipline it actually needs, and build it end to end.",
+    "howIWorkLabel": "How I work",
+    "howIWorkP1": "Most projects here were handled end to end — from the original problem and product thinking, through visual identity, to the shipped, deployed product. That includes client work, where the brief comes from someone else’s operation, and personal/community projects, where the brief starts with something I ran into myself.",
+    "howIWorkP2": "I’m explicit on this portfolio about what stage each project is actually at — production, in development, pre-launch, concept, or delivered to a client — because I think a portfolio should be honest about what’s real and what’s still in progress.",
+    "capabilitiesLabel": "Capabilities",
+    "ctaText": "Open to product, engineering, AI, and brand work.",
+    "ctaButton": "Get in touch"
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Let’s build something.",
+    "subtitle": "Open to product, engineering, AI, and brand work. The fastest way to reach me is email.",
+    "emailLabel": "Email",
+    "githubLabel": "GitHub"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "This page doesn’t exist yet.",
+    "backHome": "← Back home"
+  },
+  "categories": {
+    "All": "All",
+    "AI": "AI",
+    "Travel": "Travel",
+    "Education": "Education",
+    "Product": "Product",
+    "Web Apps": "Web Apps",
+    "Internal Tools": "Internal Tools",
+    "Branding": "Branding",
+    "Client Work": "Client Work",
+    "Experiments": "Experiments"
+  },
+  "status": {
+    "production": "Production",
+    "development": "In Development",
+    "pre-launch": "Pre-launch",
+    "concept": "Concept",
+    "client-delivery": "Client Delivery"
+  },
+  "roles": {
+    "Product Strategy": "Product Strategy",
+    "Full-Stack Development": "Full-Stack Development",
+    "AI": "AI",
+    "UI/UX": "UI/UX",
+    "Brand Design": "Brand Design",
+    "Product Architecture": "Product Architecture"
+  }
+}

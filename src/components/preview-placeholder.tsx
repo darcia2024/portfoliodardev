@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 /**
@@ -16,6 +17,8 @@ export function PreviewPlaceholder({
   className?: string;
   compact?: boolean;
 }) {
+  const t = useTranslations("preview");
+
   return (
     <div
       className={cn(
@@ -39,7 +42,7 @@ export function PreviewPlaceholder({
           {label}
         </span>
         <span className="text-xs uppercase tracking-widest text-muted-2">
-          Preview coming soon
+          {t("comingSoon")}
         </span>
       </div>
     </div>

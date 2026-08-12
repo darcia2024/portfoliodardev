@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/container";
 import { FeaturedProjectRow } from "@/components/featured-project-row";
 import { ArchiveExplorer } from "@/components/archive-explorer";
 import { getAllProjects, getFeaturedProjects } from "@/data/projects";
-
-export const metadata: Metadata = {
-  title: "Work",
-  description:
-    "Featured case studies and the full archive of digital products, brand systems, and client work built by Daru.",
-};
 
 const FEATURED_ORDER = [
   "aina",
@@ -21,21 +16,42 @@ const FEATURED_ORDER = [
   "el-massa-brand-merchandise",
 ];
 
-export default function WorkPage() {
-  const featured = getFeaturedProjects().sort(
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "workPage" });
+  return {
+    title: t("eyebrow"),
+    description: t("archiveSubtitle"),
+  };
+}
+
+export default async function WorkPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("workPage");
+
+  const featured = getFeaturedProjects(locale).sort(
     (a, b) => FEATURED_ORDER.indexOf(a.slug) - FEATURED_ORDER.indexOf(b.slug)
   );
-  const all = getAllProjects();
+  const all = getAllProjects(locale);
 
   return (
     <>
       <section className="pt-20 pb-10 md:pt-28">
         <Container>
           <p className="font-mono text-xs uppercase tracking-widest text-muted-2">
-            Work
+            {t("eyebrow")}
           </p>
           <h1 className="mt-4 max-w-2xl text-balance font-display text-4xl tracking-tight text-foreground md:text-5xl">
-            Featured case studies, and everything else in the archive.
+            {t("title")}
           </h1>
         </Container>
       </section>
@@ -51,11 +67,9 @@ export default function WorkPage() {
       <section id="archive" className="border-t border-border py-20 md:py-28">
         <Container>
           <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
-            Complete Archive
+            {t("archiveTitle")}
           </h2>
-          <p className="mt-3 max-w-lg text-muted">
-            Every known project — filter by category or search by name.
-          </p>
+          <p className="mt-3 max-w-lg text-muted">{t("archiveSubtitle")}</p>
           <div className="mt-10">
             <ArchiveExplorer projects={all} />
           </div>

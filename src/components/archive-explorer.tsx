@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import type { Project, ProjectCategory } from "@/data/types";
 import { ALL_CATEGORIES } from "@/data/projects";
 import { ProjectCard } from "./project-card";
@@ -11,6 +12,8 @@ type ArchiveCategory = (typeof ALL_CATEGORIES)[number];
 export function ArchiveExplorer({ projects }: { projects: Project[] }) {
   const [category, setCategory] = useState<ArchiveCategory>("All");
   const [query, setQuery] = useState("");
+  const t = useTranslations("explorer");
+  const tCategory = useTranslations("categories");
 
   const filtered = useMemo(() => {
     return projects.filter((p) => {
@@ -42,7 +45,7 @@ export function ArchiveExplorer({ projects }: { projects: Project[] }) {
                   : "border-border text-muted hover:border-foreground/40 hover:text-foreground"
               )}
             >
-              {cat}
+              {tCategory(cat)}
             </button>
           ))}
         </div>
@@ -51,13 +54,13 @@ export function ArchiveExplorer({ projects }: { projects: Project[] }) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search projects…"
+          placeholder={t("searchPlaceholder")}
           className="w-full rounded-full border border-border bg-surface px-4 py-2 text-sm text-foreground placeholder:text-muted-2 focus:border-foreground/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground sm:w-64"
         />
       </div>
 
       <p className="mt-6 text-xs text-muted-2">
-        {filtered.length} project{filtered.length === 1 ? "" : "s"}
+        {t("projectCount", { count: filtered.length })}
       </p>
 
       <div className="mt-2">
@@ -66,9 +69,7 @@ export function ArchiveExplorer({ projects }: { projects: Project[] }) {
             <ProjectCard key={project.slug} project={project} />
           ))
         ) : (
-          <p className="py-12 text-sm text-muted">
-            No projects match that filter yet.
-          </p>
+          <p className="py-12 text-sm text-muted">{t("noMatches")}</p>
         )}
       </div>
     </div>
