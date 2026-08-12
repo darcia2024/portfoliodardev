@@ -36,7 +36,7 @@ export function ArchiveExplorer({ projects }: { projects: Project[] }) {
               type="button"
               onClick={() => setCategory(cat)}
               className={cn(
-                "rounded-full border px-3.5 py-1.5 text-xs transition-colors",
+                "rounded-full border px-3.5 py-1.5 text-xs transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground",
                 category === cat
                   ? "border-foreground bg-foreground text-background"
                   : "border-border text-muted hover:border-foreground/40 hover:text-foreground"
@@ -52,7 +52,7 @@ export function ArchiveExplorer({ projects }: { projects: Project[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search projects…"
-          className="w-full rounded-full border border-border bg-surface px-4 py-2 text-sm text-foreground outline-none placeholder:text-muted-2 focus:border-foreground/40 sm:w-64"
+          className="w-full rounded-full border border-border bg-surface px-4 py-2 text-sm text-foreground placeholder:text-muted-2 focus:border-foreground/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground sm:w-64"
         />
       </div>
 
