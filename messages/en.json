@@ -3,6 +3,12 @@
     "title": "Daru — Digital Product Builder",
     "description": "Product strategy, AI, full-stack development, and brand systems — brought together to solve real operational and community problems. Portfolio of Daru, a digital product builder based between Indonesia and Cairo."
   },
+  "stats": {
+    "title": "By the numbers",
+    "totalProjectsLabel": "Projects shipped",
+    "clientDeliveriesLabel": "Client deliveries",
+    "categoriesLabel": "Disciplines covered"
+  },
   "nav": {
     "work": "Work",
     "about": "About",

@@ -4,7 +4,13 @@ import { Container } from "@/components/container";
 import { FeaturedProjectRow } from "@/components/featured-project-row";
 import { ProjectCard } from "@/components/project-card";
 import { SquiggleText } from "@/components/squiggle-text";
-import { getAllProjects, getFeaturedProjects } from "@/data/projects";
+import { CapabilityIcon } from "@/components/capability-icon";
+import { PreviewPlaceholder } from "@/components/preview-placeholder";
+import {
+  getAllProjects,
+  getFeaturedProjects,
+  getPortfolioStats,
+} from "@/data/projects";
 
 const FEATURED_ORDER = [
   "aina",
@@ -31,6 +37,7 @@ export default async function Home({
   const t = await getTranslations("home");
   const tProcess = await getTranslations("process");
   const tCapabilities = await getTranslations("capabilities");
+  const tStats = await getTranslations("stats");
 
   const featured = getFeaturedProjects(locale).sort(
     (a, b) => FEATURED_ORDER.indexOf(a.slug) - FEATURED_ORDER.indexOf(b.slug)
@@ -38,6 +45,7 @@ export default async function Home({
   const more = getAllProjects(locale)
     .filter((p) => !p.featured)
     .slice(0, 6);
+  const stats = getPortfolioStats();
 
   return (
     <>
@@ -66,6 +74,18 @@ export default async function Home({
             >
               {t("aboutMe")}
             </Link>
+          </div>
+
+          <div className="mt-16 grid grid-cols-3 gap-4 sm:mt-20 sm:gap-6 md:mt-24">
+            {featured.slice(0, 3).map((project, i) => (
+              <div key={project.slug} className={i === 1 ? "sm:-mt-8" : ""}>
+                <PreviewPlaceholder
+                  label={project.title}
+                  brandColor={project.brandColor}
+                  compact
+                />
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -107,7 +127,8 @@ export default async function Home({
                 key={key}
                 className="rounded-[28px] border border-border bg-surface p-7"
               >
-                <h3 className="font-display text-xl tracking-tight text-foreground">
+                <CapabilityIcon name={key} />
+                <h3 className="mt-5 font-display text-xl tracking-tight text-foreground">
                   {tCapabilities(`${key}.title`)}
                 </h3>
                 <p className="mt-2 text-sm text-muted">
@@ -155,6 +176,38 @@ export default async function Home({
         </Container>
       </section>
 
+      {/* Stats */}
+      <section className="border-t border-border py-16 md:py-20">
+        <Container>
+          <div className="grid grid-cols-1 gap-10 rounded-[28px] border border-border bg-surface p-10 sm:grid-cols-3 md:p-14">
+            <div className="text-center">
+              <p className="font-display text-4xl tracking-tight text-foreground md:text-5xl">
+                {stats.totalProjects}
+              </p>
+              <p className="mt-2 text-sm text-muted">
+                {tStats("totalProjectsLabel")}
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="font-display text-4xl tracking-tight text-foreground md:text-5xl">
+                {stats.clientDeliveries}
+              </p>
+              <p className="mt-2 text-sm text-muted">
+                {tStats("clientDeliveriesLabel")}
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="font-display text-4xl tracking-tight text-foreground md:text-5xl">
+                {stats.categories}
+              </p>
+              <p className="mt-2 text-sm text-muted">
+                {tStats("categoriesLabel")}
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* More Projects */}
       <section className="border-t border-border py-20 md:py-28">
         <Container>
@@ -177,20 +230,30 @@ export default async function Home({
         </Container>
       </section>
 
-      {/* About Preview */}
+      {/* About Preview — pull-quote card */}
       <section className="border-t border-border py-20 md:py-28">
-        <Container className="grid grid-cols-1 gap-8 md:grid-cols-12">
-          <h2 className="font-display text-2xl tracking-tight text-foreground md:col-span-4 md:text-3xl">
+        <Container>
+          <p className="font-mono text-xs uppercase tracking-widest text-muted-2">
             {t("aboutTitle")}
-          </h2>
-          <div className="md:col-span-8">
-            <p className="text-balance font-display text-2xl tracking-tight text-foreground md:text-3xl">
+          </p>
+          <div className="mt-6 rounded-[32px] bg-surface-2 p-10 md:p-16">
+            <svg
+              viewBox="0 0 32 24"
+              aria-hidden
+              className="h-8 w-10 text-foreground/20"
+              fill="currentColor"
+            >
+              <path d="M0 24V14.4C0 6.4 4.8 1.2 12.8 0l1.6 3.2C9.6 4.8 7.2 7.6 7.2 11.2c0 .8.2 1.4.4 1.8.6-.4 1.4-.6 2.4-.6 3.2 0 5.6 2.4 5.6 5.6 0 3.2-2.6 6-6 6-2.4 0-4.4-1.2-5.6-3.2Zm17.6 0V14.4c0-8 4.8-13.2 12.8-14.4l1.6 3.2c-4.8 1.6-7.2 4.4-7.2 8 0 .8.2 1.4.4 1.8.6-.4 1.4-.6 2.4-.6 3.2 0 5.6 2.4 5.6 5.6 0 3.2-2.6 6-6 6-2.4 0-4.4-1.2-5.6-3.2Z" />
+            </svg>
+            <p className="mt-4 max-w-3xl text-balance font-display text-2xl tracking-tight text-foreground md:text-4xl">
               {t("aboutHeadline")}
             </p>
-            <p className="mt-5 max-w-2xl text-muted">{t("aboutBody")}</p>
+            <p className="mt-6 max-w-2xl text-pretty text-muted md:text-lg">
+              {t("aboutBody")}
+            </p>
             <Link
               href="/about"
-              className="mt-6 inline-block text-sm text-foreground underline underline-offset-4"
+              className="mt-8 inline-block text-sm text-foreground underline underline-offset-4"
             >
               {t("readMoreAboutMe")}
             </Link>
@@ -198,15 +261,17 @@ export default async function Home({
         </Container>
       </section>
 
-      {/* Contact CTA */}
-      <section className="border-t border-border py-20 md:py-28">
+      {/* Contact CTA — dark closing band, bleeds into the dark footer */}
+      <section className="border-t border-border bg-foreground py-20 text-background md:py-28">
         <Container>
-          <h2 className="max-w-2xl text-balance font-display text-3xl tracking-tight text-foreground md:text-4xl">
-            {t("contactCtaTitle")}
+          <h2 className="max-w-2xl text-balance font-display text-3xl tracking-tight md:text-4xl">
+            <SquiggleText squiggleClassName="text-background/40">
+              {t("contactCtaTitle")}
+            </SquiggleText>
           </h2>
           <Link
             href="/contact"
-            className="mt-8 inline-block rounded-full bg-foreground px-6 py-3 text-sm text-background transition-opacity hover:opacity-85"
+            className="mt-8 inline-block rounded-full bg-background px-6 py-3 text-sm text-foreground transition-opacity hover:opacity-85"
           >
             {t("getInTouch")}
           </Link>

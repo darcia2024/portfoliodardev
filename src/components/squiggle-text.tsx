@@ -8,9 +8,11 @@ import { cn } from "@/lib/utils";
 export function SquiggleText({
   children,
   className,
+  squiggleClassName,
 }: {
   children: React.ReactNode;
   className?: string;
+  squiggleClassName?: string;
 }) {
   return (
     <span className={cn("relative inline-block", className)}>
@@ -19,7 +21,10 @@ export function SquiggleText({
         viewBox="0 0 100 12"
         preserveAspectRatio="none"
         aria-hidden
-        className="absolute -bottom-1.5 left-0 h-2.5 w-full text-foreground/35"
+        className={cn(
+          "absolute -bottom-1.5 left-0 h-2.5 w-full",
+          squiggleClassName ?? "text-foreground/35"
+        )}
       >
         <path
           d="M0,7 Q4.17,2 8.33,7 T16.67,7 T25,7 T33.33,7 T41.67,7 T50,7 T58.33,7 T66.67,7 T75,7 T83.33,7 T91.67,7 T100,7"

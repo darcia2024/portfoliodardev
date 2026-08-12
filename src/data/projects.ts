@@ -890,6 +890,16 @@ export function getAllSlugs() {
   return projects.map((p) => p.slug);
 }
 
+/** Real, derived-from-data counts only — never hand-written metrics. */
+export function getPortfolioStats() {
+  return {
+    totalProjects: projects.length,
+    clientDeliveries: projects.filter((p) => p.status === "client-delivery")
+      .length,
+    categories: new Set(projects.flatMap((p) => p.category)).size,
+  };
+}
+
 export const ALL_CATEGORIES = [
   "All",
   "AI",

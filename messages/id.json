@@ -3,6 +3,12 @@
     "title": "Daru — Digital Product Builder",
     "description": "Strategi produk, AI, pengembangan full-stack, dan sistem brand — disatukan untuk menyelesaikan masalah operasional dan komunitas yang nyata. Portofolio Daru, seorang digital product builder yang berbasis di Indonesia dan Kairo."
   },
+  "stats": {
+    "title": "Dalam angka",
+    "totalProjectsLabel": "Proyek yang sudah dibangun",
+    "clientDeliveriesLabel": "Proyek untuk klien",
+    "categoriesLabel": "Bidang yang dikerjakan"
+  },
   "nav": {
     "work": "Karya",
     "about": "Tentang",
