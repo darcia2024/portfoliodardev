@@ -304,33 +304,42 @@ export const projects: Project[] = [
     title: "Umrahme",
     slug: "umrahme",
     shortDescription:
-      "A travel-tech platform aimed at more transparent, better-designed digital experiences for Umrah pilgrims.",
+      "A white-label digital companion app that Umrah travel agencies brand as their own for their pilgrims.",
     summary:
-      "An Umrah travel technology product built around transparency between travel operators and pilgrims.",
+      "A B2B white-label SaaS product: a digital companion app for Umrah/Hajj pilgrims that travel agencies license and brand as their own.",
     category: ["Travel", "Product"],
     type: "Umrah / Travel Technology Web App",
     status: "production",
-    confidence: "partial",
+    confidence: "verified",
     featured: true,
     role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://umrahme.sbs",
     githubUrl: "https://github.com/darufahma-rgb/Umrahme",
+    brandColor: "#131313",
     problem:
-      "Pilgrims booking Umrah travel often have limited visibility into what a travel operator is actually offering and how packages compare, which the product positions itself against.",
+      "During an actual Umrah trip, pilgrims get separated during Tawaf or Sa'i, muthowwif (guides) field the same \"where are we going today\" question over and over, Miqat/ihram instructions get missed, and key logistics get buried in WhatsApp group chat.",
+    productThinking:
+      "Rather than selling directly to pilgrims, Umrahme sells to the travel agencies that already have the pilgrim relationship — the agency licenses the app, puts its own branding on it, and hands it to its pilgrims for the trip. That business model shapes the whole product: it has to be fully white-labelable with no Umrahme branding visible to the end pilgrim.",
     solution:
-      "A travel-tech web app oriented around giving pilgrims a clearer, more transparent digital experience when working with Umrah travel operators.",
-    notes:
-      "Marked partial confidence — full feature detail wasn't independently re-verified in this pass; description reflects the project's own stated positioning.",
+      "A companion app covering all 54 prayers (Arabic, transliteration, translation), an automatic Tawaf and Sa'i counter, a four-module interactive manasik (ritual training) course with progress tracking, a step-by-step ibadah guide, a map of 33 historical and pilgrimage sites, real-time prayer times by location, an Umrah fiqh FAQ and glossary, agency-pushed announcements and a daily agenda, a digital pilgrim ID card, a personal travel journal, and a digital Umrah certificate — plus an agency-side admin portal for managing batches, pilgrims, agenda, and announcements. Priced at 10 SAR per pilgrim, free for official travel-crew partners, no setup or monthly fee.",
+    designDirection:
+      "Warm cream background with near-black, fully pill-shaped call-to-action buttons in white text, set in Plus Jakarta Sans throughout — a clean, minimal SaaS look rather than an ornate religious-iconography style.",
+    technicalBuild:
+      "pnpm monorepo, React 19 + Vite frontend, Express 5 API, Supabase (auth/data/storage) with Drizzle ORM, TypeScript, deployed on Vercel.",
+    challenges:
+      "Building a genuinely white-label product — every surface a pilgrim sees has to carry the agency's brand, not Umrahme's — is a different engineering problem than a normal consumer app.",
+    lessons:
+      "Selling to the operator instead of the end user changes what the product actually needs to be: multi-tenant branding and an admin/batch-management layer become as core as the pilgrim-facing features themselves.",
   },
   {
     title: "Temantiket Center",
     slug: "temantiket-center",
     shortDescription:
-      "An operational hub for airline ticketing and Egypt-bound travel document services.",
+      "An internal admin portal for a travel agency's Umrah and Hajj operations.",
     summary:
-      "A travel service platform covering airline ticket booking, Egypt Visa on Arrival, Student Entry Visa, airport IMEI registration, and ticket rescheduling.",
-    category: ["Travel", "Client Work"],
+      "A login-gated internal operations portal for Umrah/Hajj travel agency staff — pilgrim tracking, package cost calculation, and document handling.",
+    category: ["Travel", "Client Work", "Internal Tools"],
     type: "Travel Service / Operational Web App",
     status: "production",
     confidence: "partial",
@@ -340,82 +349,114 @@ export const projects: Project[] = [
     liveUrl: "https://temantiket.vercel.app",
     githubUrl: "https://github.com/darufahma-rgb/temantiket",
     problem:
-      "Travelers and students heading to or from Egypt need several disconnected services — flights, visas, IMEI registration, rescheduling — usually handled through separate, informal channels.",
+      "Running Umrah/Hajj packages involves pilgrim (jamaah) tracking, package cost calculation, document handling, and passport verification — operational work that doesn't scale on spreadsheets and paper.",
     solution:
-      "A single operational hub covering airline ticket bookings, Egypt Visa on Arrival, Student Entry Visa processing, airport IMEI registration, and ticket rescheduling services.",
+      "An internal admin portal (\"Portal Admin\") for travel-agency staff, per its own repository documentation covering jamaah tracking, package cost calculation, document management, PDF generation, and OCR passport scanning.",
+    technicalBuild:
+      "React + TypeScript + Vite + Tailwind CSS, Node.js API, Supabase (Postgres) with Drizzle ORM, Vitest, deployed on Vercel.",
+    notes:
+      "The live product sits behind a login wall, so its internal screens weren't independently viewable in this research pass — the feature list above comes from the repository's own documentation, not a hands-on walkthrough. The specific service list sometimes associated with this project (airline tickets, Egypt Visa on Arrival, Student Entry Visa, airport IMEI services, ticket rescheduling) could not be independently confirmed and isn't claimed here.",
   },
   {
     title: "Temantiket Ticket Generator",
     slug: "temantiket-ticket-generator",
-    shortDescription: "An internal tool for generating travel tickets for the Temantiket operation.",
+    shortDescription:
+      "A public tool that generates professional, IATA-style flight e-tickets for travel agents.",
     summary:
-      "An internal ticket-generation tool supporting Temantiket's day-to-day travel-service operations.",
+      "A flight e-ticket and itinerary generator built for travel agents — real-time preview, multiple templates, and one-click export.",
     category: ["Travel", "Internal Tools"],
     type: "Internal Tool",
     status: "production",
-    confidence: "partial",
+    confidence: "verified",
     featured: false,
-    role: ["Full-Stack Development"],
+    role: ["Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://temantiket-redesign.vercel.app",
     githubUrl:
       "https://github.com/darciatemantaraglobal-gif/temantiket-redesign",
     problem:
-      "Generating consistent, correctly formatted tickets by hand for every booking doesn't scale as an operation grows.",
+      "Formatting a professional-looking flight e-ticket or itinerary by hand, for every booking, is slow and inconsistent — the tool's own tagline is \"Dibuat oleh travel agent, untuk travel agent\" (made by a travel agent, for travel agents).",
     solution:
-      "An internal tool purpose-built to generate tickets for the Temantiket operation.",
+      "A live ticket generator with real-time preview, multiple templates (Direct, Transit, Umrah, Graduation/Wisuda), multi-passenger support, auto-parsing of itinerary codes, and export to PNG, PDF, print, or a WhatsApp-formatted message.",
+    designDirection:
+      "A dark navy hero transitioning into a light slate body, Plus Jakarta Sans for body text and a serif display face for headings — an aviation-ticket-inspired look.",
+    technicalBuild: "Built with Lovable (React/Vite/TypeScript/Tailwind/shadcn stack).",
+    notes:
+      "The live tool itself displays marketing stats (user counts, ticket counts, ratings) — these are the product's own on-page claims, not independently verified, and aren't restated as fact here.",
   },
   {
     title: "IGH Tour",
     slug: "igh-tour",
-    shortDescription: "A travel web app for browsing and booking tour packages.",
-    summary: "A travel web app presenting tour packages and booking information.",
+    shortDescription: "A travel/Umrah operations web app, currently stuck on its loading screen.",
+    summary:
+      "A travel and Umrah/Hajj operations web app, structurally similar to Temantiket Center, that did not load past its loading screen during research.",
     category: ["Travel", "Web Apps"],
     type: "Travel Web App",
-    status: "production",
-    confidence: "partial",
+    status: "development",
+    confidence: "incomplete",
     featured: false,
     role: ["Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://ightour.vercel.app",
     githubUrl: "https://github.com/darciatemantaraglobal-gif/igh-tour",
+    notes:
+      "At the time of research, the live app mounted its shell but never progressed past a \"Memuat…\" (Loading…) screen, and its repository's documentation is word-for-word identical to Temantiket Center's — this looks like an early duplicate or shared scaffold rather than a distinct, finished product. Presented here as in-development rather than production until it's confirmed working.",
   },
   {
     title: "Dreammecca",
     slug: "dreammecca",
-    shortDescription: "An Umrah travel web app.",
-    summary: "A travel/Umrah web app for a travel operator's package offerings.",
-    category: ["Travel", "Web Apps"],
+    shortDescription:
+      "A licensed Umrah travel agency's marketing site, leading with trust and legal verification.",
+    summary:
+      "A full marketing site for PT. Dream Mecca International, a licensed Indonesian Umrah travel agency, built around trust and license verification in a market with known travel scam concerns.",
+    category: ["Travel", "Web Apps", "Client Work"],
     type: "Travel / Umrah Web App",
     status: "production",
-    confidence: "partial",
+    confidence: "verified",
     featured: false,
     role: ["Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://dreammecca.vercel.app",
     githubUrl: "https://github.com/darciatemantaraglobal-gif/dreammecca",
+    problem:
+      "Indonesia's Umrah travel market has a real trust problem — the site leads directly with license verification to counter \"banyak berita penipuan travel Umroh\" (frequent news of Umrah travel scams).",
+    solution:
+      "A content-rich marketing site opening with PPIU/Kemenag license and HIMPUH membership verification, a facilities list (certified Al-Azhar- and Madinah-Islamic-University-trained guides, 4–5 star hotels near both holy mosques, free visa processing, professional photography), a pilgrim equipment/kit list, departure-batch photo galleries, testimonials, an FAQ, and direct WhatsApp contact with a physical Jakarta office address.",
+    designDirection:
+      "Warm cream background, Plus Jakarta Sans body text, a custom serif-style display face for white headline text over photo heroes, and deep navy/indigo text on white pill CTA buttons — a polished, editorial travel-agency look.",
+    technicalBuild:
+      "pnpm workspace monorepo — React + Vite frontend, Express API, PostgreSQL with Drizzle ORM, Zod, Orval for API codegen.",
   },
   {
     title: "Itinerary Mesir",
     slug: "itinerary-mesir",
-    shortDescription: "A digital travel itinerary for an Egypt trip.",
-    summary: "A digital itinerary presenting a structured travel schedule for a trip through Egypt.",
-    category: ["Travel", "Web Apps"],
+    shortDescription:
+      "A personalized, Temantiket-branded digital itinerary built for one client's Egypt trip.",
+    summary:
+      "A bespoke, single-client digital itinerary microsite — a Temantiket-branded deliverable for one named family's 10-day Egypt and Umrah trip.",
+    category: ["Travel", "Client Work"],
     type: "Digital Travel Itinerary",
-    status: "production",
-    confidence: "partial",
+    status: "client-delivery",
+    confidence: "verified",
     featured: false,
     role: ["Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://itinerarymesir.vercel.app",
     githubUrl: "https://github.com/darufahma-rgb/mesir-emas",
+    solution:
+      "A day-by-day 10-day itinerary (Kuala Lumpur → Cairo → Giza → Luxor → Cairo → Alexandria → Jeddah → Makkah Umrah → Jakarta) addressed directly to the traveling family by name, with per-day detail pages, travel tips, a local food guide, a landmark list with map links, and a closing personal message — branded throughout as a Temantiket deliverable rather than a standalone product.",
+    designDirection:
+      "Warm off-white background, Outfit for body text, Playfair Display serif for the large white hero headline over a photo — a premium, editorial travel-magazine feel.",
+    technicalBuild: "React + TypeScript + Vite + Tailwind CSS with shadcn/ui, deployed on Vercel.",
+    notes:
+      "Best framed as a personalized itinerary product Temantiket builds for individual clients, rather than an independent brand of its own.",
   },
   {
     title: "Itinerary El Massa",
     slug: "itinerary-el-massa",
-    shortDescription: "A client-specific digital itinerary built for El Massa Tour & Travel's Umrah departures.",
+    shortDescription: "A multi-departure Umrah itinerary hub built for El Massa Tour & Travel.",
     summary:
-      "A digital itinerary and Umrah departure-schedule page built for El Massa Tour & Travel, presenting programs, hotels, airlines, and pricing for upcoming departures.",
+      "A branded itinerary hub for El Massa Tour & Travel listing multiple scheduled Umrah departures, each linking through to a full day-by-day itinerary.",
     category: ["Travel", "Client Work"],
     type: "Client Travel Itinerary",
     status: "client-delivery",
@@ -426,8 +467,9 @@ export const projects: Project[] = [
     liveUrl: "https://elmassaitinerary.vercel.app",
     githubUrl: "https://github.com/darufahma-rgb/elmassa.oct",
     solution:
-      "A public package browser listing El Massa's Umrah programs with departure month/city, hotels, airline, price breakdown, and booking details via WhatsApp — a customer-facing companion to El Massa's broader digital presence.",
-    technicalBuild: "Vite, React, TypeScript, shadcn/ui.",
+      "A departure-selection landing page (multiple 2026 batches, some marked \"coming soon\") where each open departure links to a full 11-day itinerary — flights, a three-holy-cities guide to Makkah, Madinah, and Thaif with named sites and map links, an itemized inclusions list, and trip-prep tips.",
+    designDirection: "Poppins body text with a custom display face for white headline text over a photo hero.",
+    technicalBuild: "Vite, React, TypeScript, shadcn/ui, Framer Motion.",
   },
 
   // ───────────────────────────── CLIENT SYSTEMS ─────────────────────────────

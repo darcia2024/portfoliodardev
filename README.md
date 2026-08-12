@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Daru — Portfolio
 
-## Getting Started
+Personal portfolio site. Next.js (App Router) + TypeScript + Tailwind CSS v4.
 
-First, run the development server:
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # start the dev server on localhost:3000
+npm run build    # production build (also runs typecheck)
+npm run lint     # eslint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Adding a new project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The whole site is driven by one file: [`src/data/projects.ts`](src/data/projects.ts).
+Nothing else needs to change to add a project — pages, the archive filters,
+the homepage's "More Projects" list, the sitemap, and case study routing all
+read from this file automatically.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To add a project:
 
-## Learn More
+1. Add a new object to the `projects` array in `src/data/projects.ts`,
+   matching the `Project` type in `src/data/types.ts`.
+2. Give it a unique `slug` — this becomes its URL at `/work/[slug]`.
+3. Set `featured: true` only for projects that should appear in the
+   homepage/`/work` editorial "Selected Work" rows. If you add a featured
+   project, also add its slug to the `FEATURED_ORDER` array in
+   `src/app/page.tsx` and `src/app/work/page.tsx` to control where it sits
+   in the sequence.
+4. If you don't have a screenshot yet, leave `gallery` empty — the case
+   study will render a placeholder automatically (see
+   `src/components/preview-placeholder.tsx`) instead of a broken image.
+5. Only fill in case-study fields (`problem`, `solution`,
+   `technicalBuild`, etc.) with information you can actually verify. Use
+   `confidence: "partial"` or `"incomplete"` and the `notes` field to flag
+   anything that hasn't been independently confirmed (a down site, an
+   inaccessible repo, a client-stated-but-unverified feature).
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No other file needs to be touched — the archive's category filters read
+from `ALL_CATEGORIES` in the same data file, so a new `category` value
+there should be added to that list too.
