@@ -9,34 +9,24 @@
     "designDirection": "UI gelap (latar nyaris hitam, teks terang) menggunakan SF Pro Display untuk antarmuka, dipadukan dengan jenis huruf kaligrafi Arab (Amiri, Scheherazade New) untuk konten berskrip Arab — perpaduan yang disengaja agar produk tetap terasa teknis dan modern sekaligus tetap terikat secara visual pada materi Islami/berskrip Arab.",
     "technicalBuild": "Frontend React + Vite + TypeScript, backend Express.js, Supabase untuk autentikasi dan data, Tailwind CSS, Playwright/Vitest untuk pengujian, di-deploy di Vercel dan Railway.",
     "challenges": "Mengkurasi dan menyusun jawaban yang benar-benar bisa diandalkan (aturan keimigrasian dan visa terus berubah) adalah masalah yang lebih sulit dibanding antarmuka chat itu sendiri — akurasinya bergantung pada tool admin internal (AINA Scraper) yang menjaga basis pengetahuan tetap terkini.",
-    "lessons": "Produk AI berbasis komunitas hidup atau mati bergantung pada kualitas data yang memasoknya, bukan pada UI chat-nya — itulah sebabnya tool internal pendamping untuk manajemen pengetahuan diperlukan sejak hari pertama."
-  },
-  "aina-scraper": {
-    "shortDescription": "Sistem manajemen basis pengetahuan internal yang menjaga jawaban AINA tetap terkini.",
-    "summary": "Tool internal yang dilindungi login, digunakan oleh tim AINA sendiri untuk mengelola dan memperbarui basis pengetahuan yang menjadi sumber jawaban asisten chat AINA.",
-    "type": "Infrastruktur AI / Tool Internal",
-    "problem": "Kualitas jawaban AINA hanya sebaik basis pengetahuan di baliknya — seseorang di dalam tim membutuhkan cara untuk menambah, mengoreksi, dan memelihara konten tersebut tanpa harus mengedit database secara manual.",
-    "solution": "Sistem admin internal yang dilindungi login (\"Sistem manajemen knowledge base untuk AINA\" sesuai tagline-nya sendiri) yang memungkinkan tim AINA mengelola konten basis pengetahuan secara langsung.",
-    "technicalBuild": "Node.js/TypeScript, monorepo pnpm, Docker, di-deploy melalui Vercel dan Railway.",
-    "notes": "Akses publik memang sengaja dibatasi hanya sampai layar login — ini adalah tool internal, bukan produk konsumen, sehingga sebagian besar tampilannya tidak terlihat tanpa kredensial."
-  },
-  "aina-investor": {
-    "shortDescription": "Halaman penggalangan dana yang mengutamakan transparansi, merinci secara spesifik ke mana uang investor digunakan.",
-    "summary": "Laporan transparansi publik untuk calon investor AINA, merinci alokasi dana ke dalam peluncuran/infrastruktur, operasional/AI engine, dan pertumbuhan/komunitas — dilengkapi bar progres pendanaan real-time.",
-    "type": "Produk / Landing Page Investor",
-    "problem": "Produk komunitas tahap awal yang meminta dukungan finansial biasanya memberikan sedikit sekali transparansi tentang bagaimana dana benar-benar digunakan — hal ini mengikis kepercayaan audiens yang mengutamakan komunitas.",
-    "solution": "Laporan transparansi khusus (\"Laporan Transparansi 2025\") yang merinci tiga pilar biaya — Launch & Infrastruktur, Operasional & AI Engine, dan Growth & Komunitas — masing-masing dengan kisaran estimasi biaya yang spesifik, disertai penjelasan tentang model AINA yang ramping dan dipimpin langsung oleh founder, FAQ, dan bar progres pendanaan yang diperbarui secara real-time terkait ronde Early Bird.",
-    "designDirection": "Halaman yang menggunakan font Poppins (judul tab browser halaman ini sendiri, yang tidak diedit, \"Purple Black Poppins Landing Page,\" mengindikasikan tema ungu/hitam, meskipun hal ini belum dikonfirmasi secara independen lewat screenshot).",
-    "notes": "Repo GitHub yang dirujuk untuk proyek ini tidak dapat ditemukan di akun yang diharapkan — anggap detail implementasinya belum terverifikasi, meskipun halaman live-nya sendiri dapat diakses dan dibaca sepenuhnya."
-  },
-  "proposal-aina": {
-    "shortDescription": "Pitch deck interaktif berbasis scroll yang menjelaskan masalah, arsitektur, dan roadmap AINA.",
-    "summary": "Situs pitch deck interaktif dan naratif untuk AINA yang ditujukan bagi kolaborator, sponsor, dan kontributor — memaparkan masalahnya, arsitektur sistem 5 lapis, roadmap, dan skema harga kemitraan bertingkat.",
-    "type": "Proposal Produk Interaktif",
-    "problem": "Menjelaskan arsitektur, roadmap, dan nilai sebuah produk AI kepada mitra non-teknis (sponsor UMKM, kontributor, anggota komunitas) sulit dilakukan hanya dengan slide deck biasa.",
-    "solution": "Satu situs scroll tunggal yang memaparkan lima pain point konkret Masisir, kumpulan fitur AINA, perbandingan dengan asisten AI generik, alur cara kerja 5 langkah, penjelasan arsitektur sistem 5 lapis (Knowledge → AI Response → Source & Confidence → Product System → Growth System), roadmap, peran kontributor, dan skema harga sponsorship bertingkat untuk mitra UMKM dan korporat.",
-    "designDirection": "Tema gelap dengan headline Space Grotesk di atas body text Inter — estetika pitch deck SaaS modern yang konsisten dengan bahasa visual inti AINA.",
-    "technicalBuild": "Proyek Node.js dengan direktori frontend/backend/test terpisah, dibangun menggunakan Replit."
+    "lessons": "Produk AI berbasis komunitas hidup atau mati bergantung pada kualitas data yang memasoknya, bukan pada UI chat-nya — itulah sebabnya tool internal pendamping untuk manajemen pengetahuan diperlukan sejak hari pertama.",
+    "subProjects": [
+      {
+        "title": "AINA Scraper",
+        "description": "Tool admin internal yang dilindungi login, dipakai tim AINA untuk mengelola dan memperbarui basis pengetahuan yang menjadi sumber jawaban asisten chat-nya.",
+        "url": "https://ainascraper.vercel.app"
+      },
+      {
+        "title": "AINA Investor",
+        "description": "Laporan transparansi publik untuk calon investor AINA, merinci alokasi dana peluncuran, operasional, dan pertumbuhan, dilengkapi bar progres pendanaan real-time.",
+        "url": "https://transparancyaina.vercel.app"
+      },
+      {
+        "title": "Proposal AINA",
+        "description": "Pitch deck interaktif berbasis scroll yang memandu kolaborator dan sponsor memahami masalah, arsitektur sistem, dan roadmap AINA.",
+        "url": "https://proposalaina.vercel.app"
+      }
+    ]
   },
   "kelas-aigypt": {
     "shortDescription": "Kursus literasi AI berbasis kohort untuk Masisir, dilengkapi perpustakaan konten membership yang berkelanjutan.",
@@ -47,25 +37,19 @@
     "solution": "Program kohort (berjalan dalam batch bernomor, memadukan sesi offline dan online) yang mencakup dasar-dasar dan mindset AI, prompting, penggunaan AI akademik, penggunaan AI organisasi/bisnis, dan modul \"Vibe Coding\", lengkap dengan contoh kasus penggunaan before/after, testimoni alumni bernama, serta dua tingkatan membership — perpustakaan dengan ritme belajar sendiri dan jalur kohort penuh dengan sertifikasi. Membership ini juga mencakup akses ke dua produk saudaranya, Talqeeh dan Deenme.",
     "designDirection": "Tema gelap, menggunakan Inter secara konsisten di seluruh halaman — selaras dengan identitas visual keluarga produk AINA/AIGYPT yang lebih luas.",
     "technicalBuild": "Dibangun di atas Replit.",
-    "lessons": "Menggabungkan membership AIGYPT dengan akses ke Talqeeh dan Deenme menunjukkan nilai memperlakukan produk-produk ini sebagai satu ekosistem untuk komunitas yang sama, alih-alih sebagai produk yang berdiri sendiri-sendiri."
-  },
-  "aigypt-games": {
-    "shortDescription": "Tantangan AI bergaya game yang mengubah keterlibatan komunitas menjadi jalan masuk menuju AINA.",
-    "summary": "Hub mini-app berisi tantangan AI yang menyenangkan — AI Poster Challenge dan game penyusunan prompt modular — yang memberi imbalan berupa akses ke AINA bagi yang berpartisipasi, digunakan sebagai alternatif yang lebih halus dibanding funnel pendaftaran langsung.",
-    "type": "Tantangan AI Interaktif / Aplikasi Web Komunitas",
-    "problem": "Mengajak komunitas mencoba produk AI baru secara langsung lewat halaman pendaftaran biasa memiliki tingkat konversi yang buruk dibandingkan membiarkan orang menemukannya lewat sesuatu yang menyenangkan.",
-    "solution": "Dua game yang sudah live: \"AI Poster Challenge,\" tempat peserta memotret lokasi nyata, mengambil kartu anomali secara acak, dan menggunakan AI untuk membuat poster yang akan dinilai lewat voting komunitas; serta \"Racik Prompt,\" game penyusunan prompt modular yang mengajarkan cara menyusun prompt dari blok gambar/teks/musik/mini-app. Keduanya dilengkapi alur galeri/voting dan leaderboard; menyelesaikan tantangan memberikan akses ke AINA.",
-    "designDirection": "Latar gelap bernuansa ungu dengan Plus Jakarta Sans dan copy yang playful serta banyak menggunakan emoji — terasa jauh lebih kasual dan bergaya game dibanding produk lain dalam keluarga AINA.",
-    "technicalBuild": "TypeScript, Supabase, di-deploy di Vercel."
-  },
-  "intro-aigypt-aina": {
-    "shortDescription": "Situs cerita asal-usul berbab yang memperkenalkan komunitas AIGYPT dan produk AINA sekaligus.",
-    "summary": "Landing page naratif berbasis scroll yang memperkenalkan AIGYPT (komunitasnya) sekaligus AINA (produknya) kepada Masisir yang belum pernah mengenal keduanya.",
-    "type": "Perkenalan Produk / Komunitas",
-    "problem": "AIGYPT dan AINA telah berkembang melewati tiga batch komunitas tanpa adanya satu tempat yang menjelaskan secara berurutan apa sebenarnya masing-masing dari keduanya.",
-    "solution": "Cerita scroll berbab (\"BAB 01 / BAB 02\") yang mencakup pengenalan dasar AI, sejarah komunitas AIGYPT sepanjang batch-batchnya lengkap dengan galeri foto yang bisa difilter, kurikulumnya, penjelasan khusus fitur-fitur AINA (Chat AI, Ruang Produktif, Library Muqorror, flashcard Teman Belajar, Forum Masisir, Berita Masisir), serta bagian tim/kredit bernama dengan catatan dari founder.",
-    "designDirection": "Latar gelap bernuansa violet dengan Plus Jakarta Sans — varian yang lebih lembut dari palet gelap AINA.",
-    "technicalBuild": "TypeScript, monorepo pnpm, di-deploy di Vercel."
+    "lessons": "Menggabungkan membership AIGYPT dengan akses ke Talqeeh dan Deenme menunjukkan nilai memperlakukan produk-produk ini sebagai satu ekosistem untuk komunitas yang sama, alih-alih sebagai produk yang berdiri sendiri-sendiri.",
+    "subProjects": [
+      {
+        "title": "AIGYPT Games",
+        "description": "Hub mini-app berisi tantangan AI yang menyenangkan (AI Poster Challenge dan game penyusunan prompt) yang memberi imbalan akses AINA bagi yang berpartisipasi, alternatif yang lebih halus dibanding funnel pendaftaran langsung.",
+        "url": "https://aigyptgames.vercel.app"
+      },
+      {
+        "title": "Introducing AIGYPT & AINA",
+        "description": "Situs cerita asal-usul berbab, berbasis scroll, yang memperkenalkan komunitas AIGYPT dan produk AINA sekaligus kepada Masisir yang belum pernah mengenal keduanya.",
+        "url": "https://introaigypt.vercel.app"
+      }
+    ]
   },
   "talqeeh": {
     "shortDescription": "Perpustakaan prompt AI terkurasi yang membantu Masisir mempelajari materi kuliah Al-Azhar yang sesungguhnya.",
@@ -121,24 +105,26 @@
     "challenges": "Membangun produk yang benar-benar white-label — setiap tampilan yang dilihat jamaah harus membawa merek agen, bukan merek Umrahme — merupakan tantangan rekayasa yang berbeda dari aplikasi konsumen biasa.",
     "lessons": "Menjual kepada operator, bukan pengguna akhir, mengubah apa yang sebenarnya dibutuhkan produk: branding multi-tenant dan lapisan manajemen admin/batch menjadi sama pentingnya dengan fitur-fitur yang berhadapan langsung dengan jamaah."
   },
-  "temantiket-center": {
-    "shortDescription": "Portal admin internal untuk operasional Umrah dan Haji sebuah agen travel.",
-    "summary": "Portal operasional internal yang dilindungi login untuk staf agen travel Umrah/Haji — pelacakan jamaah, perhitungan biaya paket, dan pengelolaan dokumen.",
-    "type": "Aplikasi Web Layanan Travel / Operasional",
-    "problem": "Menjalankan paket Umrah/Haji melibatkan pelacakan jamaah, perhitungan biaya paket, pengelolaan dokumen, dan verifikasi paspor — pekerjaan operasional yang tidak lagi memadai jika hanya mengandalkan spreadsheet dan kertas.",
-    "solution": "Portal admin internal (\"Portal Admin\") untuk staf agen travel yang, menurut dokumentasi repositorinya sendiri, mencakup pelacakan jamaah, perhitungan biaya paket, manajemen dokumen, pembuatan PDF, dan pemindaian paspor OCR.",
-    "technicalBuild": "React + TypeScript + Vite + Tailwind CSS, API Node.js, Supabase (Postgres) dengan Drizzle ORM, Vitest, di-deploy di Vercel.",
-    "notes": "Produk yang aktif berada di balik login, sehingga layar-layar internalnya tidak dapat dilihat secara independen dalam riset ini — daftar fitur di atas berasal dari dokumentasi repositori itu sendiri, bukan dari penelusuran langsung. Daftar layanan spesifik yang kadang dikaitkan dengan proyek ini (tiket pesawat, Egypt Visa on Arrival, Student Entry Visa, layanan IMEI bandara, penjadwalan ulang tiket) tidak dapat dikonfirmasi secara independen dan tidak diklaim di sini."
-  },
-  "temantiket-ticket-generator": {
-    "shortDescription": "Alat publik yang menghasilkan e-tiket pesawat bergaya IATA yang profesional untuk agen travel.",
-    "summary": "Generator e-tiket pesawat dan itinerary yang dibuat untuk agen travel — pratinjau real-time, berbagai template, dan ekspor sekali klik.",
-    "type": "Alat Internal",
-    "problem": "Memformat e-tiket pesawat atau itinerary yang terlihat profesional secara manual, untuk setiap pemesanan, memakan waktu dan hasilnya tidak konsisten — tagline alat ini sendiri adalah \"Dibuat oleh travel agent, untuk travel agent\".",
-    "solution": "Generator tiket langsung dengan pratinjau real-time, berbagai template (Direct, Transit, Umrah, Graduation/Wisuda), dukungan multi-penumpang, auto-parsing kode itinerary, dan ekspor ke PNG, PDF, cetak, atau pesan berformat WhatsApp.",
-    "designDirection": "Hero berwarna navy gelap yang bertransisi ke bagian isi berwarna slate terang, Plus Jakarta Sans untuk teks isi dan jenis huruf serif display untuk judul — tampilan yang terinspirasi tiket penerbangan.",
-    "technicalBuild": "Dibangun dengan Lovable (stack React/Vite/TypeScript/Tailwind/shadcn).",
-    "notes": "Alat yang aktif ini menampilkan statistik pemasaran (jumlah pengguna, jumlah tiket, rating) — ini adalah klaim yang ditampilkan produk itu sendiri di halamannya, belum diverifikasi secara independen, dan tidak dinyatakan ulang sebagai fakta di sini."
+  "temantiket": {
+    "shortDescription": "Layanan pengurusan Visa on Arrival dan konsierge bandara untuk wisatawan Indonesia yang mendarat di Kairo.",
+    "summary": "Etalase publik Temantiket: pengurusan Visa on Arrival (VOA) dan konsierge bandara penuh (jemput di gate, kawalan imigrasi, bantuan bahasa) untuk wisatawan Indonesia yang tiba di Bandara Kairo.",
+    "type": "Situs Layanan Travel",
+    "problem": "Wisatawan Indonesia yang mendarat di Kairo menghadapi proses imigrasi yang asing, kemungkinan kendala bahasa, dan antrean Visa on Arrival, tanpa ada jaminan bantuan begitu keluar gate.",
+    "solution": "Situs layanan yang mencakup pengurusan VOA, penjemputan di gate oleh staf yang membawa papan nama, kawalan bandara penuh dari kedatangan hingga imigrasi sampai keluar, dan bantuan bahasa, sehingga wisatawan tidak perlu bisa berbahasa Arab atau Inggris. Harga bertingkat berdasarkan ukuran rombongan (solo, 2-6, 7-12, 12+), dengan uang muka 50%. Maskapai yang dilayani meliputi Egypt Air, Turkish Airlines, Emirates, Etihad, dan flydubai di ketiga terminal Bandara Kairo.",
+    "designDirection": "Layout bersih dan modern dengan aksen biru/teal, carousel testimoni, dan fotografi profesional dari operasional bandara yang sesungguhnya.",
+    "notes": "Ini adalah etalase publik dari operasi Temantiket yang lebih luas; portal admin internal dan tool generator tiket adalah tool saudara yang terpisah (lihat di bawah).",
+    "subProjects": [
+      {
+        "title": "Temantiket Center",
+        "description": "Portal admin internal yang dilindungi login, dipakai staf Temantiket untuk pelacakan jamaah, perhitungan biaya paket, manajemen dokumen, dan OCR paspor.",
+        "url": "https://temantiket.vercel.app"
+      },
+      {
+        "title": "Temantiket Ticket Generator",
+        "description": "Alat publik yang menghasilkan e-tiket pesawat bergaya IATA untuk agen travel, dengan pratinjau real-time dan ekspor ke PNG, PDF, atau pesan WhatsApp.",
+        "url": "https://temantiket-redesign.vercel.app"
+      }
+    ]
   },
   "igh-tour": {
     "shortDescription": "Aplikasi web operasional travel/Umrah yang saat ini masih terhenti di layar loading-nya.",
@@ -164,14 +150,6 @@
     "technicalBuild": "React + TypeScript + Vite + Tailwind CSS dengan shadcn/ui, di-deploy di Vercel.",
     "notes": "Paling tepat dipandang sebagai produk itinerary personal yang dibuat Temantiket untuk klien perorangan, bukan sebagai merek independen tersendiri."
   },
-  "itinerary-el-massa": {
-    "shortDescription": "Hub itinerary Umrah multi-keberangkatan yang dibuat untuk El Massa Tour & Travel.",
-    "summary": "Hub itinerary bermerek untuk El Massa Tour & Travel yang mencantumkan beberapa jadwal keberangkatan Umrah, masing-masing tertaut ke itinerary lengkap hari-demi-hari.",
-    "type": "Itinerary Travel Klien",
-    "solution": "Landing page pemilihan keberangkatan (beberapa batch 2026, sebagian ditandai \"coming soon\") di mana setiap keberangkatan yang terbuka tertaut ke itinerary lengkap 11 hari — penerbangan, panduan tiga kota suci Makkah, Madinah, dan Thaif lengkap dengan nama situs dan tautan peta, daftar rincian fasilitas yang termasuk, dan tips persiapan perjalanan.",
-    "designDirection": "Teks isi Poppins dengan jenis huruf display kustom untuk teks judul putih di atas hero foto.",
-    "technicalBuild": "Vite, React, TypeScript, shadcn/ui, Framer Motion."
-  },
   "el-massa-travel-management-system": {
     "shortDescription": "Sistem operasional internal kustom yang dirancang mengikuti alur kerja El Massa Tour & Travel sendiri.",
     "summary": "Sistem operasional travel internal kustom yang dibuat khusus untuk alur kerja bisnis El Massa Tour & Travel.",
@@ -179,7 +157,19 @@
     "problem": "El Massa Tour & Travel membutuhkan perangkat operasional yang dibentuk mengikuti cara bisnis mereka sesungguhnya berjalan, bukan CRM travel generik yang siap pakai.",
     "productThinking": "Sebagai sistem internal yang dikirimkan untuk klien, proyek ini berpusat pada menerjemahkan alur kerja operasional nyata sebuah agen travel tertentu ke dalam perangkat lunak, bukan merilis produk serba guna.",
     "solution": "Sistem internal kustom untuk operasional El Massa Tour & Travel.",
-    "notes": "Ini adalah sistem internal yang dikirimkan untuk klien dan tidak memiliki URL publik. Rangkaian fitur lengkapnya (data pelanggan, paket, pemesanan, peserta, pembayaran, staf, dan administrasi operasional) dijelaskan berdasarkan hubungan dengan klien, namun tidak dapat diverifikasi ulang secara independen dari deployment publik — sehingga layar dan alur kerja spesifik tidak diklaim di sini melebihi apa yang telah dikonfirmasi. Repositori publik yang terkait dengan klien yang sama (elmassaitinerary, el-massa-umrah-hub) merupakan penjelajah paket yang menghadap pelanggan, bukan sistem internal ini."
+    "notes": "Ini adalah sistem internal yang dikirimkan untuk klien dan tidak memiliki URL publik. Rangkaian fitur lengkapnya (data pelanggan, paket, pemesanan, peserta, pembayaran, staf, dan administrasi operasional) dijelaskan berdasarkan hubungan dengan klien, namun tidak dapat diverifikasi ulang secara independen dari deployment publik — sehingga layar dan alur kerja spesifik tidak diklaim di sini melebihi apa yang telah dikonfirmasi. Repositori publik yang terkait dengan klien yang sama (elmassaitinerary, el-massa-umrah-hub) merupakan penjelajah paket yang menghadap pelanggan, bukan sistem internal ini.",
+    "subProjects": [
+      {
+        "title": "El Massa Tour & Travel Logo",
+        "description": "Presentasi identitas brand lengkap untuk mark diamond-and-compass El Massa: konsep logo, sistem warna dan tipografi, serta mockup di banner, kartu nama, dan alat tulis kantor.",
+        "url": "https://elmassa-logo.vercel.app"
+      },
+      {
+        "title": "Itinerary El Massa",
+        "description": "Hub itinerary Umrah multi-keberangkatan yang mencantumkan jadwal keberangkatan El Massa, masing-masing tertaut ke itinerary lengkap hari-demi-hari.",
+        "url": "https://elmassaitinerary.vercel.app"
+      }
+    ]
   },
   "nemsyi": {
     "shortDescription": "Platform discovery tempat Masisir menemukan produk, layanan, dan listing komunitas — lalu berpindah ke WhatsApp untuk bertransaksi.",
@@ -230,13 +220,6 @@
     "technicalBuild": "Situs ini sendiri menyatakan stack paket web-nya: React JS + Tailwind CSS.",
     "notes": "SYMP Studio adalah studio yang sama yang dicantumkan di footer situs presentasi brand El Massa dan MideastLens, dan bio pendirinya menyebut nama Daru secara langsung, mengonfirmasi bahwa ini adalah brand payung untuk layanan branding/web/merchandise milik sang desainer sendiri."
   },
-  "el-massa-logo": {
-    "shortDescription": "Presentasi identitas brand lengkap untuk mark diamond-and-compass milik El Massa Tour & Travel.",
-    "summary": "Situs studi kasus identitas brand untuk El Massa Tour & Travel, menampilkan konsep logo diamond-and-compass yang melambangkan perjalanan spiritual yang aman dan terarah, beserta sistem warna, tipografi, dan mockup yang lengkap.",
-    "type": "Presentasi Identitas Brand",
-    "solution": "Presentasi bergaya slide deck yang menjabarkan konsep logo (sebuah diamond, merujuk pada makna Arab dari \"El Massa,\" dipadukan dengan kompas/bintang yang melambangkan panduan), kepribadian brand (Terpercaya & Profesional, Elegan & Berkelas, Modern & Premium), sistem empat warna (Brown, Cream Sand, Rose Pink, Gold Accent), sistem tipografi Playfair Display + Inter, dan mockup implementasi pada banner, kartu nama, alat tulis kantor, kartu identitas, tote bag, dan kop surat.",
-    "designDirection": "Brown utama (#5C3D2E), cream sand (#F5F1E8), rose pink, dan aksen gold di atas latar halaman putih — palet hangat dan elegan khas travel mewah, dengan headline Playfair Display di atas teks body Inter."
-  },
   "mideastlens-logo": {
     "shortDescription": "Presentasi identitas brand untuk brand media dan visual storytelling Timur Tengah.",
     "summary": "Situs studi kasus identitas brand untuk MideastLens, sebuah brand media visual untuk content creator dan wisatawan, dibangun di sekitar simbol lensa/perspektif dan palet burgundy-and-cream.",
@@ -257,34 +240,19 @@
     "summary": "Produk undangan digital premium untuk pernikahan dan acara.",
     "type": "Undangan Digital / Produk Web Personal",
     "technicalBuild": "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, dibangun melalui Lovable, di-deploy di Vercel.",
-    "notes": "Situs ini me-render secara client-side, sehingga detail visual/konten lengkapnya tidak tertangkap secara independen dalam sesi riset ini, di luar judul halaman dan tech stack yang telah dikonfirmasi."
-  },
-  "der-invoice": {
-    "shortDescription": "Generator invoice gratis tanpa login dengan ekspor PDF client-side.",
-    "summary": "Generator invoice berbasis web untuk freelancer dan usaha kecil — tanpa perlu akun, dengan live preview dan ekspor PDF/PNG.",
-    "type": "Aplikasi Web Utilitas Invoice / Bisnis",
-    "problem": "Freelancer dan UMKM Indonesia sering membutuhkan invoice yang cepat dan profesional tanpa harus mendaftar ke software akuntansi.",
-    "solution": "Tool editor dan live preview berdampingan untuk membuat invoice — detail perusahaan/klien, item baris, info rekening bank, unggah logo dan tanda tangan, serta sejumlah preset warna bernama — dapat diekspor ke PDF atau PNG, dapat digunakan tanpa akun, dengan opsi login untuk menyimpan template.",
-    "technicalBuild": "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, Supabase, dibangun melalui Lovable."
-  },
-  "der-life-os": {
-    "shortDescription": "Sistem operasi personal yang menyatukan keuangan, proyek, invoicing, dan kebiasaan harian ke dalam satu dashboard.",
-    "summary": "Sistem manajemen hidup personal yang sedang aktif dikembangkan — menyatukan keuangan, pelacakan klien/proyek, invoicing, misi harian yang di-gamifikasi, dan pelacakan dokumen perjalanan ke dalam satu dashboard.",
-    "type": "Sistem Operasi Personal",
-    "problem": "Mengelola keuangan, pekerjaan klien, invoice, dan kebiasaan personal di berbagai tool terpisah membuat sulit untuk melihat gambaran utuh dari kehidupan yang sibuk dan multi-proyek.",
-    "solution": "Satu dashboard mode gelap yang mencakup manajemen transaksi (dengan entri otomatis saat invoice ditandai lunas), pelacakan klien dan proyek, otomatisasi siklus hidup invoice, sistem misi harian dengan progresi XP/level, pencatatan produktivitas Islami, dan perencanaan perjalanan dengan pemantauan masa berlaku dokumen.",
-    "technicalBuild": "Monorepo pnpm workspaces, Node.js 24, TypeScript, frontend React + Vite, API Express 5, PostgreSQL dengan Drizzle ORM, hooks React Query dan skema Zod yang dibuat otomatis dari spesifikasi OpenAPI.",
-    "notes": "Tahap awal: saat ini hanya single-profile dengan akses yang dikontrol melalui kode undangan, belum menjadi produk publik. Ditampilkan di sini sebagai tahap pengembangan, bukan produksi."
-  },
-  "el-massa-brand-merchandise": {
-    "shortDescription": "Sistem brand dan merchandise lengkap untuk El Massa Tour & Travel — mulai dari logo hingga tas, apparel, dan buku doa.",
-    "summary": "Sistem brand dan merchandise fisik yang lengkap untuk El Massa Tour & Travel, memperluas identitas diamond-and-compass ke apparel, perlengkapan travel, dan materi cetak.",
-    "type": "Sistem Brand & Merchandise",
-    "problem": "Identitas sebuah brand travel perlu tetap konsisten di puluhan touchpoint fisik yang benar-benar dibawa oleh jamaah — bukan hanya sebuah situs web.",
-    "productThinking": "Sistem merchandise ini memperluas logika brand yang sama yang dibangun dalam pekerjaan identitas logo El Massa, diterapkan pada rentang format fisik yang jauh lebih luas yang digunakan wisatawan sepanjang perjalanan Umrah.",
-    "solution": "Lini merchandise yang mencakup ransel, notebook, buku doa, lanyard, sarung koper, hijab, apparel, mukena, dan seragam staf — dirancang sebagai mockup dalam sistem brand.",
-    "designDirection": "Palet brand brown (#632A0F) dan pink (#F48DA1), diterapkan secara konsisten di semua mockup merchandise.",
-    "notes": "TODO: Tambahkan fotografi mockup merchandise (ransel, notebook, buku doa, lanyard, sarung koper, hijab, apparel, mukena, seragam)."
+    "notes": "Situs ini me-render secara client-side, sehingga detail visual/konten lengkapnya tidak tertangkap secara independen dalam sesi riset ini, di luar judul halaman dan tech stack yang telah dikonfirmasi.",
+    "subProjects": [
+      {
+        "title": "Der Invoice",
+        "description": "Generator invoice gratis tanpa login, dengan editor dan live preview berdampingan, dapat diekspor ke PDF atau PNG.",
+        "url": "https://derinvoice.lovable.app"
+      },
+      {
+        "title": "Der Life OS",
+        "description": "Sistem operasi personal yang sedang aktif dikembangkan, menyatukan keuangan, pelacakan klien/proyek, invoicing, dan kebiasaan harian ke dalam satu dashboard.",
+        "url": "https://github.com/hdmimesir-afk/darulifeos"
+      }
+    ]
   },
   "haramain-visual": {
     "shortDescription": "Eksplorasi branding untuk layanan dokumentasi Umrah dan Saudi.",
@@ -292,13 +260,6 @@
     "type": "Eksplorasi Identitas Brand",
     "solution": "Eksplorasi logo dan sistem brand dengan mockup pada apparel, topi, lanyard, rompi, dan presentasi brand ambassador.",
     "notes": "TODO: Tambahkan mockup brand (logo, topi, lanyard, rompi, foto ambassador)."
-  },
-  "nemsyi-creative-campaign": {
-    "shortDescription": "Arahan kreatif editorial dan neo-brutalist yang mengeksplorasi dunia visual marketplace Nemsyi.",
-    "summary": "Eksplorasi arahan kreatif untuk identitas visual Nemsyi — arahan editorial dan neo-brutalist / terinspirasi riso yang menggambarkan suasana marketplace, layanan, dan komunitas.",
-    "type": "Kampanye Kreatif / Arahan Visual",
-    "solution": "Arahan kreatif yang mencakup layout editorial, neo-brutalism, dan visual terinspirasi riso untuk menggambarkan suasana marketplace, layanan, dan komunitas Nemsyi.",
-    "notes": "TODO: Tambahkan visual arahan kreatif."
   },
   "hamasah-bakery": {
     "shortDescription": "Identitas brand yang hangat dan modern, sedang dalam proses, untuk sebuah bakery.",

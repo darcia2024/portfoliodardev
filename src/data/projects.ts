@@ -36,79 +36,26 @@ export const projects: Project[] = [
       "Curating and structuring genuinely reliable answers (residency and visa rules change) is a harder problem than the chat interface itself — accuracy depends on an internal admin tool (AINA Scraper) that keeps the knowledge base current.",
     lessons:
       "A community AI product lives or dies on the quality of what feeds it, not the chat UI — which is why a companion internal tool for knowledge management was necessary from day one.",
-  },
-  {
-    title: "AINA Scraper",
-    slug: "aina-scraper",
-    shortDescription:
-      "The internal knowledge-base management system that keeps AINA's answers current.",
-    summary:
-      "A login-gated internal tool for AINA's own team to manage and update the knowledge base that AINA's chat assistant draws its answers from.",
-    category: ["AI", "Internal Tools"],
-    type: "AI Infrastructure / Internal Tool",
-    status: "production",
-    confidence: "partial",
-    featured: false,
-    role: ["Full-Stack Development", "AI"],
-    year: "2025",
-    liveUrl: "https://ainascraper.vercel.app",
-    githubUrl: "https://github.com/darciatemantaraglobal-gif/ainascraper",
-    problem:
-      "AINA's answers are only as good as the knowledge base behind them — someone on the team needs a way to add, correct, and maintain that content without editing a database by hand.",
-    solution:
-      "An internal, login-gated admin system (\"Sistem manajemen knowledge base untuk AINA\" per its own tagline) for AINA's team to manage knowledge base content directly.",
-    technicalBuild: "Node.js/TypeScript, pnpm monorepo, Docker, deployed via Vercel and Railway.",
-    notes:
-      "Public access is limited to a login screen by design — this is an internal tool, not a consumer product, so most of its surface isn't visible without credentials.",
-  },
-  {
-    title: "AINA Investor",
-    slug: "aina-investor",
-    shortDescription:
-      "A transparency-first fundraising page that itemizes exactly where investor money goes.",
-    summary:
-      "A public transparency report for prospective AINA investors, breaking down fund allocation across launch/infrastructure, operations/AI engine, and growth/community — with a live funding-progress bar.",
-    category: ["AI", "Product"],
-    type: "Product / Investor Landing Page",
-    status: "production",
-    confidence: "partial",
-    featured: false,
-    role: ["Product Strategy", "UI/UX"],
-    year: "2025",
-    liveUrl: "https://transparancyaina.vercel.app",
-    problem:
-      "Early-stage community products asking for financial backing usually offer little visibility into how funds are actually used — which erodes trust with a community-first audience.",
-    solution:
-      "A dedicated transparency report (\"Laporan Transparansi 2025\") itemizing three cost pillars — Launch & Infrastruktur, Operasional & AI Engine, and Growth & Komunitas — each with a specific estimated cost range, alongside a rationale for AINA's lean, founder-led model, an FAQ, and a live-updating funding-progress bar tied to an Early Bird round.",
-    designDirection:
-      "Poppins-set page (the page's own unedited browser title, \"Purple Black Poppins Landing Page,\" suggests a purple/black theme, though this wasn't independently confirmed by screenshot).",
-    notes:
-      "The GitHub repo referenced for this project could not be located under the expected account — treat the implementation details as unverified even though the live page itself is reachable and fully readable.",
-  },
-  {
-    title: "Proposal AINA",
-    slug: "proposal-aina",
-    shortDescription:
-      "A scroll-driven interactive pitch deck explaining AINA's problem, architecture, and roadmap.",
-    summary:
-      "An interactive, narrative pitch-deck website for AINA aimed at collaborators, sponsors, and contributors — walking through the problem, a 5-layer system architecture, roadmap, and tiered partnership pricing.",
-    category: ["AI", "Product"],
-    type: "Interactive Product Proposal",
-    status: "production",
-    confidence: "verified",
-    featured: false,
-    role: ["Product Strategy", "UI/UX"],
-    year: "2025",
-    liveUrl: "https://proposalaina.vercel.app",
-    githubUrl: "https://github.com/darciatemantaraglobal-gif/proposalaina",
-    problem:
-      "Explaining an AI product's architecture, roadmap, and value to non-technical partners (UMKM sponsors, contributors, community members) is hard to do with a slide deck alone.",
-    solution:
-      "A single scrolling website that walks through five concrete Masisir pain points, AINA's feature set, a comparison against generic AI assistants, a 5-step how-it-works flow, a 5-layer system architecture explainer (Knowledge → AI Response → Source & Confidence → Product System → Growth System), a roadmap, contributor roles, and tiered sponsorship pricing for UMKM and corporate partners.",
-    designDirection:
-      "Dark theme with Space Grotesk headlines over an Inter body — a modern SaaS-pitch-deck aesthetic consistent with AINA's core visual language.",
-    technicalBuild:
-      "Node.js project with separate frontend/backend/test directories, Replit-scaffolded.",
+    subProjects: [
+      {
+        title: "AINA Scraper",
+        description:
+          "The internal, login-gated admin tool AINA's team uses to manage and update the knowledge base its chat assistant draws answers from.",
+        url: "https://ainascraper.vercel.app",
+      },
+      {
+        title: "AINA Investor",
+        description:
+          "A public transparency report for prospective AINA investors, itemizing fund allocation across launch, operations, and growth, with a live funding-progress bar.",
+        url: "https://transparancyaina.vercel.app",
+      },
+      {
+        title: "Proposal AINA",
+        description:
+          "An interactive, scroll-driven pitch deck walking collaborators and sponsors through AINA's problem, system architecture, and roadmap.",
+        url: "https://proposalaina.vercel.app",
+      },
+    ],
   },
   {
     title: "Kelas AIGYPT",
@@ -138,54 +85,20 @@ export const projects: Project[] = [
     technicalBuild: "Built and scaffolded on Replit.",
     lessons:
       "Bundling AIGYPT membership with access to Talqeeh and Deenme shows the value of treating these as one ecosystem for the same community rather than isolated products.",
-  },
-  {
-    title: "AIGYPT Games",
-    slug: "aigypt-games",
-    shortDescription:
-      "Gamified AI challenges that turn community engagement into an on-ramp toward AINA.",
-    summary:
-      "A mini-app hub of playful AI challenges — an AI Poster Challenge and a modular prompt-building game — that reward participation with access to AINA, used as a softer alternative to a direct signup funnel.",
-    category: ["AI", "Education", "Experiments"],
-    type: "Interactive AI Challenge / Community Web App",
-    status: "production",
-    confidence: "verified",
-    featured: false,
-    role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
-    year: "2025",
-    liveUrl: "https://aigyptgames.vercel.app",
-    githubUrl: "https://github.com/darciamuliathiifa-commits/aigyptgames",
-    problem:
-      "Getting a community to try a new AI product cold, via a plain signup page, converts poorly compared to letting people discover it through something fun.",
-    solution:
-      "Two live games: an \"AI Poster Challenge\" where participants photograph a real venue, draw a random anomaly card, and use AI to generate a poster for community voting; and \"Racik Prompt,\" a modular prompt-building game that teaches prompt construction from image/text/music/mini-app blocks. Both include a gallery/voting flow and a leaderboard; completing a challenge grants AINA access.",
-    designDirection:
-      "Dark, purple-tinted background with Plus Jakarta Sans and playful, emoji-driven copy — noticeably more casual and game-like than the rest of the AINA family.",
-    technicalBuild: "TypeScript, Supabase, deployed on Vercel.",
-  },
-  {
-    title: "Introducing AIGYPT & AINA",
-    slug: "intro-aigypt-aina",
-    shortDescription:
-      "A chaptered origin-story site introducing the AIGYPT community and the AINA product together.",
-    summary:
-      "A scroll-driven narrative landing page that introduces both AIGYPT (the community) and AINA (the product) to Masisir who haven't encountered either yet.",
-    category: ["AI", "Product"],
-    type: "Product / Community Introduction",
-    status: "production",
-    confidence: "verified",
-    featured: false,
-    role: ["Product Strategy", "UI/UX"],
-    year: "2025",
-    liveUrl: "https://introaigypt.vercel.app",
-    githubUrl: "https://github.com/darciatemantaraglobal-gif/aigyptpage",
-    problem:
-      "AIGYPT and AINA had grown across three community batches without a single place that explained, in order, what either one actually was.",
-    solution:
-      "A chaptered scroll story (\"BAB 01 / BAB 02\") covering a basic AI primer, AIGYPT's community history across its batches with a filterable photo gallery, its curriculum, a dedicated AINA feature walkthrough (Chat AI, Ruang Produktif, Library Muqorror, Teman Belajar flashcards, Forum Masisir, Berita Masisir), and a named team/credits section with a founder's note.",
-    designDirection:
-      "Dark, violet-tinted background with Plus Jakarta Sans — a softer variant of the AINA dark palette.",
-    technicalBuild: "TypeScript, pnpm monorepo, deployed on Vercel.",
+    subProjects: [
+      {
+        title: "AIGYPT Games",
+        description:
+          "A mini-app hub of gamified AI challenges (an AI Poster Challenge and a prompt-building game) that reward participation with AINA access, used as a softer alternative to a direct signup funnel.",
+        url: "https://aigyptgames.vercel.app",
+      },
+      {
+        title: "Introducing AIGYPT & AINA",
+        description:
+          "A chaptered, scroll-driven origin-story site introducing the AIGYPT community and the AINA product together to Masisir who haven't encountered either yet.",
+        url: "https://introaigypt.vercel.app",
+      },
+    ],
   },
   {
     title: "Talqeeh",
@@ -336,56 +249,41 @@ export const projects: Project[] = [
       "Selling to the operator instead of the end user changes what the product actually needs to be: multi-tenant branding and an admin/batch-management layer become as core as the pilgrim-facing features themselves.",
   },
   {
-    title: "Temantiket Center",
-    slug: "temantiket-center",
+    title: "Temantiket",
+    slug: "temantiket",
     shortDescription:
-      "An internal admin portal for a travel agency's Umrah and Hajj operations.",
+      "Visa on Arrival processing and airport concierge service for Indonesian travelers landing in Cairo.",
     summary:
-      "A login-gated internal operations portal for Umrah/Hajj travel agency staff — pilgrim tracking, package cost calculation, and document handling.",
-    category: ["Travel", "Client Work", "Internal Tools"],
-    type: "Travel Service / Operational Web App",
-    status: "production",
-    confidence: "partial",
-    featured: false,
-    role: ["Product Strategy", "Full-Stack Development"],
-    year: "2025",
-    liveUrl: "https://temantiket.vercel.app",
-    githubUrl: "https://github.com/darufahma-rgb/temantiket",
-    problem:
-      "Running Umrah/Hajj packages involves pilgrim (jamaah) tracking, package cost calculation, document handling, and passport verification — operational work that doesn't scale on spreadsheets and paper.",
-    solution:
-      "An internal admin portal (\"Portal Admin\") for travel-agency staff, per its own repository documentation covering jamaah tracking, package cost calculation, document management, PDF generation, and OCR passport scanning.",
-    technicalBuild:
-      "React + TypeScript + Vite + Tailwind CSS, Node.js API, Supabase (Postgres) with Drizzle ORM, Vitest, deployed on Vercel.",
-    notes:
-      "The live product sits behind a login wall, so its internal screens weren't independently viewable in this research pass — the feature list above comes from the repository's own documentation, not a hands-on walkthrough. The specific service list sometimes associated with this project (airline tickets, Egypt Visa on Arrival, Student Entry Visa, airport IMEI services, ticket rescheduling) could not be independently confirmed and isn't claimed here.",
-  },
-  {
-    title: "Temantiket Ticket Generator",
-    slug: "temantiket-ticket-generator",
-    shortDescription:
-      "A public tool that generates professional, IATA-style flight e-tickets for travel agents.",
-    summary:
-      "A flight e-ticket and itinerary generator built for travel agents — real-time preview, multiple templates, and one-click export.",
-    category: ["Travel", "Internal Tools"],
-    type: "Internal Tool",
+      "Temantiket's public-facing storefront: Visa on Arrival (VOA) processing and full airport concierge (gate pickup, immigration escort, language assistance) for Indonesian travelers arriving at Cairo Airport.",
+    category: ["Travel", "Client Work"],
+    type: "Travel Service Website",
     status: "production",
     confidence: "verified",
-    featured: false,
-    role: ["Full-Stack Development", "UI/UX"],
+    featured: true,
     year: "2025",
-    liveUrl: "https://temantiket-redesign.vercel.app",
-    githubUrl:
-      "https://github.com/darciatemantaraglobal-gif/temantiket-redesign",
+    liveUrl: "https://voatemantiket.site",
     problem:
-      "Formatting a professional-looking flight e-ticket or itinerary by hand, for every booking, is slow and inconsistent — the tool's own tagline is \"Dibuat oleh travel agent, untuk travel agent\" (made by a travel agent, for travel agents).",
+      "Indonesian travelers landing in Cairo face an unfamiliar immigration process, potential language barriers, and queues at Visa on Arrival, with no guaranteed help on the other side of the gate.",
     solution:
-      "A live ticket generator with real-time preview, multiple templates (Direct, Transit, Umrah, Graduation/Wisuda), multi-passenger support, auto-parsing of itinerary codes, and export to PNG, PDF, print, or a WhatsApp-formatted message.",
+      "A service site covering VOA processing, gate pickup with staff holding nameplates, full airport escort from arrival through immigration to exit, and language assistance, so travelers don't need to speak Arabic or English. Pricing is tiered by group size (solo, 2-6, 7-12, 12+), with a 50% deposit upfront. Airlines served include Egypt Air, Turkish Airlines, Emirates, Etihad, and flydubai across Cairo Airport's three terminals.",
     designDirection:
-      "A dark navy hero transitioning into a light slate body, Plus Jakarta Sans for body text and a serif display face for headings — an aviation-ticket-inspired look.",
-    technicalBuild: "Built with Lovable (React/Vite/TypeScript/Tailwind/shadcn stack).",
+      "Clean, modern layout with blue/teal accents on white, a testimonial carousel, and professional photography of the actual airport operations.",
     notes:
-      "The live tool itself displays marketing stats (user counts, ticket counts, ratings) — these are the product's own on-page claims, not independently verified, and aren't restated as fact here.",
+      "This is the public storefront for the wider Temantiket operation; the internal admin portal and the ticket-generator tool are separate sibling tools (see below).",
+    subProjects: [
+      {
+        title: "Temantiket Center",
+        description:
+          "The internal, login-gated admin portal Temantiket's staff use for jamaah tracking, package cost calculation, document management, and passport OCR.",
+        url: "https://temantiket.vercel.app",
+      },
+      {
+        title: "Temantiket Ticket Generator",
+        description:
+          "A public tool that generates professional, IATA-style flight e-tickets for travel agents, with real-time preview and export to PNG, PDF, or WhatsApp-formatted messages.",
+        url: "https://temantiket-redesign.vercel.app",
+      },
+    ],
   },
   {
     title: "IGH Tour",
@@ -454,27 +352,6 @@ export const projects: Project[] = [
     notes:
       "Best framed as a personalized itinerary product Temantiket builds for individual clients, rather than an independent brand of its own.",
   },
-  {
-    title: "Itinerary El Massa",
-    slug: "itinerary-el-massa",
-    shortDescription: "A multi-departure Umrah itinerary hub built for El Massa Tour & Travel.",
-    summary:
-      "A branded itinerary hub for El Massa Tour & Travel listing multiple scheduled Umrah departures, each linking through to a full day-by-day itinerary.",
-    category: ["Travel", "Client Work"],
-    type: "Client Travel Itinerary",
-    status: "client-delivery",
-    confidence: "verified",
-    featured: false,
-    role: ["Full-Stack Development", "UI/UX"],
-    year: "2025",
-    liveUrl: "https://elmassaitinerary.vercel.app",
-    githubUrl: "https://github.com/darufahma-rgb/elmassa.oct",
-    solution:
-      "A departure-selection landing page (multiple 2026 batches, some marked \"coming soon\") where each open departure links to a full 11-day itinerary — flights, a three-holy-cities guide to Makkah, Madinah, and Thaif with named sites and map links, an itemized inclusions list, and trip-prep tips.",
-    designDirection: "Poppins body text with a custom display face for white headline text over a photo hero.",
-    technicalBuild: "Vite, React, TypeScript, shadcn/ui, Framer Motion.",
-  },
-
   // ───────────────────────────── CLIENT SYSTEMS ─────────────────────────────
   {
     title: "El Massa Travel Management System",
@@ -487,7 +364,7 @@ export const projects: Project[] = [
     type: "Custom Internal Travel Management System",
     status: "client-delivery",
     confidence: "incomplete",
-    featured: false,
+    featured: true,
     role: ["Product Strategy", "Full-Stack Development"],
     year: "2025",
     problem:
@@ -498,6 +375,20 @@ export const projects: Project[] = [
       "A custom internal system for El Massa Tour & Travel's operations.",
     notes:
       "This is a client-delivered internal system with no public URL. Its full feature set (customer data, packages, bookings, participants, payments, staff, and operational administration) is described by the client relationship, but not independently re-verifiable from a public deployment — so specific screens and workflows aren't claimed here beyond what's been confirmed. Public repos associated with the same client (elmassaitinerary, el-massa-umrah-hub) are customer-facing package browsers, not this internal system.",
+    subProjects: [
+      {
+        title: "El Massa Tour & Travel Logo",
+        description:
+          "A complete brand-identity presentation for El Massa's diamond-and-compass mark: logo concept, color and type system, and mockups across banners, business cards, and stationery.",
+        url: "https://elmassa-logo.vercel.app",
+      },
+      {
+        title: "Itinerary El Massa",
+        description:
+          "A multi-departure Umrah itinerary hub listing El Massa's scheduled departures, each linking through to a full day-by-day itinerary.",
+        url: "https://elmassaitinerary.vercel.app",
+      },
+    ],
   },
 
   // ───────────────────────────── MARKETPLACE & COMMUNITY ─────────────────────────────
@@ -620,7 +511,7 @@ export const projects: Project[] = [
     type: "Creative / Digital Service Website",
     status: "production",
     confidence: "verified",
-    featured: false,
+    featured: true,
     role: ["Product Strategy", "UI/UX", "Brand Design", "Full-Stack Development"],
     year: "2025",
     liveUrl: "https://symp-us.vercel.app",
@@ -637,26 +528,6 @@ export const projects: Project[] = [
   },
 
   // ───────────────────────────── BRAND PRESENTATION PROJECTS ─────────────────────────────
-  {
-    title: "El Massa Tour & Travel Logo",
-    slug: "el-massa-logo",
-    shortDescription: "A complete brand-identity presentation for El Massa Tour & Travel's diamond-and-compass mark.",
-    summary:
-      "A brand-identity case-study site for El Massa Tour & Travel, presenting a diamond-and-compass logo concept symbolizing safe, guided, spiritual travel, alongside a full color, type, and mockup system.",
-    category: ["Branding", "Client Work"],
-    type: "Brand Identity Presentation",
-    status: "client-delivery",
-    confidence: "verified",
-    featured: false,
-    role: ["Brand Design"],
-    year: "2025",
-    liveUrl: "https://elmassa-logo.vercel.app",
-    brandColor: "#5C3D2E",
-    solution:
-      "A slide-deck-style presentation walking through the logo concept (a diamond, referencing the Arabic meaning of \"El Massa,\" paired with a compass/star symbolizing guidance), brand personality (Terpercaya & Profesional, Elegan & Berkelas, Modern & Premium), a four-color system (Brown, Cream Sand, Rose Pink, Gold Accent), a Playfair Display + Inter typography system, and implementation mockups across banners, business cards, stationery, ID cards, tote bags, and letterhead.",
-    designDirection:
-      "Primary brown (#5C3D2E), cream sand (#F5F1E8), rose pink, and gold accent on a white page background — a warm, elegant, luxury-travel palette with Playfair Display headlines over Inter body text.",
-  },
   {
     title: "Mideastlens Logo",
     slug: "mideastlens-logo",
@@ -709,7 +580,7 @@ export const projects: Project[] = [
     type: "Digital Invitation / Personal Web Product",
     status: "production",
     confidence: "partial",
-    featured: false,
+    featured: true,
     role: ["Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://darcia.id",
@@ -718,80 +589,23 @@ export const projects: Project[] = [
     technicalBuild: "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, built via Lovable, deployed on Vercel.",
     notes:
       "Site renders client-side, so full visual/content detail wasn't independently captured in this research pass beyond the confirmed page title and tech stack.",
-  },
-  {
-    title: "Der Invoice",
-    slug: "der-invoice",
-    shortDescription: "A free, no-login invoice generator with client-side PDF export.",
-    summary:
-      "A web-based invoice generator for freelancers and small businesses — no account required, with live preview and PDF/PNG export.",
-    category: ["Product", "Web Apps"],
-    type: "Invoice / Business Utility Web App",
-    status: "production",
-    confidence: "verified",
-    featured: false,
-    role: ["Full-Stack Development", "UI/UX"],
-    year: "2025",
-    liveUrl: "https://derinvoice.lovable.app",
-    githubUrl: "https://github.com/hdmimesir-afk/derinvoice",
-    problem:
-      "Freelancers and small Indonesian businesses (UMKM) often need a quick, professional invoice without signing up for accounting software.",
-    solution:
-      "A side-by-side editor and live-preview tool for building invoices — company/client details, line items, bank account info, logo and signature upload, a set of named color presets — exportable to PDF or PNG, usable without an account, with optional login for saving templates.",
-    technicalBuild: "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, Supabase, built via Lovable.",
-  },
-  {
-    title: "Der Life OS",
-    slug: "der-life-os",
-    shortDescription: "A personal operating system unifying finance, projects, invoicing, and daily habits into one dashboard.",
-    summary:
-      "A personal life-management system in active development — unifying finance, client/project tracking, invoicing, gamified daily missions, and travel document tracking into a single dashboard.",
-    category: ["Product", "Experiments"],
-    type: "Personal Operating System",
-    status: "development",
-    confidence: "verified",
-    featured: false,
-    role: ["Product Strategy", "Full-Stack Development"],
-    year: "2026",
-    githubUrl: "https://github.com/hdmimesir-afk/darulifeos",
-    problem:
-      "Running finances, client work, invoices, and personal habits across separate tools makes it hard to see the whole picture of a busy, multi-project life.",
-    solution:
-      "A single dark-mode dashboard covering transaction management (with automatic entries when invoices are marked paid), client and project tracking, invoice lifecycle automation, a daily mission system with XP/level progression, Islamic productivity logging, and travel planning with document-expiry monitoring.",
-    technicalBuild:
-      "pnpm workspaces monorepo, Node.js 24, TypeScript, React + Vite frontend, Express 5 API, PostgreSQL with Drizzle ORM, auto-generated React Query hooks and Zod schemas from an OpenAPI spec.",
-    notes:
-      "Early-stage: currently single-profile with access controlled by invitation code, not yet a public product. Presented here as development-stage, not production.",
+    subProjects: [
+      {
+        title: "Der Invoice",
+        description:
+          "A free, no-login invoice generator with a side-by-side editor and live preview, exportable to PDF or PNG.",
+        url: "https://derinvoice.lovable.app",
+      },
+      {
+        title: "Der Life OS",
+        description:
+          "A personal operating system in active development, unifying finance, client/project tracking, invoicing, and daily habits into one dashboard.",
+        url: "https://github.com/hdmimesir-afk/darulifeos",
+      },
+    ],
   },
 
   // ───────────────────────────── BRANDING & VISUAL DESIGN WORK ─────────────────────────────
-  {
-    title: "El Massa Brand & Merchandise System",
-    slug: "el-massa-brand-merchandise",
-    shortDescription:
-      "A full brand and merchandise system for El Massa Tour & Travel — from logo to bags, apparel, and prayer books.",
-    summary:
-      "A complete brand and physical-merchandise system for El Massa Tour & Travel, extending the diamond-and-compass identity across apparel, travel gear, and printed materials.",
-    category: ["Branding", "Client Work"],
-    type: "Brand & Merchandise System",
-    status: "client-delivery",
-    confidence: "partial",
-    featured: true,
-    role: ["Brand Design"],
-    year: "2025",
-    brandColor: "#632A0F",
-    problem:
-      "A travel brand's identity needs to hold up consistently across dozens of physical touchpoints pilgrims actually carry with them — not just a website.",
-    productThinking:
-      "The merchandise system extends the same brand logic established in the El Massa logo identity work, applied to a much wider range of physical formats travelers use throughout an Umrah trip.",
-    solution:
-      "A merchandise line including a backpack, notebook, prayer book, lanyard, luggage cover, hijab, apparel, mukena, and staff uniforms — designed as mockups within the brand system.",
-    designDirection:
-      "Brand palette of brown (#632A0F) and pink (#F48DA1), applied consistently across all merchandise mockups.",
-    gallery: [],
-    notes:
-      "TODO: Add merchandise mockup photography (backpack, notebook, prayer book, lanyard, luggage cover, hijab, apparel, mukena, uniforms).",
-  },
   {
     title: "Haramain Visual / Haramain Capture",
     slug: "haramain-visual",
@@ -809,24 +623,6 @@ export const projects: Project[] = [
       "Logo and brand-system exploration with mockups across apparel, a cap, lanyard, vest, and brand-ambassador presentation.",
     gallery: [],
     notes: "TODO: Add brand mockups (logo, cap, lanyard, vest, ambassador shots).",
-  },
-  {
-    title: "Nemsyi Creative Campaign",
-    slug: "nemsyi-creative-campaign",
-    shortDescription: "Editorial, neo-brutalist creative direction exploring Nemsyi's marketplace visual world.",
-    summary:
-      "A creative-direction exploration for Nemsyi's visual identity — editorial and neo-brutalist / riso-inspired directions depicting marketplace, service, and community scenes.",
-    category: ["Branding", "Experiments"],
-    type: "Creative Campaign / Visual Direction",
-    status: "concept",
-    confidence: "partial",
-    featured: false,
-    role: ["Brand Design", "UI/UX"],
-    year: "2026",
-    solution:
-      "Creative direction spanning editorial layout, neo-brutalism, and riso-inspired visuals to depict Nemsyi's marketplace, service, and community scenes.",
-    gallery: [],
-    notes: "TODO: Add creative direction visuals.",
   },
   {
     title: "Hamasah Bakery",

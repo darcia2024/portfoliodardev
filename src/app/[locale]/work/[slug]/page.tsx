@@ -212,6 +212,36 @@ export default async function CaseStudyPage({
         </CaseStudySection>
       )}
 
+      {project.subProjects && project.subProjects.length > 0 && (
+        <section className="border-t border-border py-16 md:py-24">
+          <Container>
+            <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
+              {t("ecosystemTitle", { title: project.title })}
+            </h2>
+            <div className="mt-8 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              {project.subProjects.map((sub) => (
+                <div key={sub.title}>
+                  <h3 className="font-display text-lg tracking-tight text-foreground">
+                    {sub.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted">{sub.description}</p>
+                  {sub.url && (
+                    <a
+                      href={sub.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-block text-sm text-foreground underline underline-offset-4"
+                    >
+                      {t("visitLiveSite")}
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
       {related.length > 0 && (
         <section className="border-t border-border py-16 md:py-24">
           <Container>

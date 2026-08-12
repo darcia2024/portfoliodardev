@@ -2,18 +2,22 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/container";
 import { FeaturedProjectRow } from "@/components/featured-project-row";
+import { RichProjectCard } from "@/components/rich-project-card";
 import { ArchiveExplorer } from "@/components/archive-explorer";
 import { getAllProjects, getFeaturedProjects } from "@/data/projects";
 
 const FEATURED_ORDER = [
   "aina",
   "umrahme",
-  "talqeeh",
+  "temantiket",
   "nemsyi",
   "markaz-fiqih",
   "kelas-aigypt",
+  "talqeeh",
+  "el-massa-travel-management-system",
+  "symp",
+  "darcia-wedding-invitation",
   "qohiroh-digital-ecosystem",
-  "el-massa-brand-merchandise",
 ];
 
 export async function generateMetadata({
@@ -58,9 +62,17 @@ export default async function WorkPage({
 
       <section className="border-t border-border">
         <Container>
-          {featured.map((project, i) => (
-            <FeaturedProjectRow key={project.slug} project={project} index={i} />
-          ))}
+          <div>
+            {featured.slice(0, 2).map((project, i) => (
+              <FeaturedProjectRow key={project.slug} project={project} index={i} />
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 border-t border-border py-16 sm:grid-cols-2 md:py-24 lg:grid-cols-3">
+            {featured.slice(2).map((project, i) => (
+              <RichProjectCard key={project.slug} project={project} index={i} />
+            ))}
+          </div>
         </Container>
       </section>
 

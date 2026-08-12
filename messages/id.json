@@ -111,6 +111,7 @@
   },
   "caseStudy": {
     "allWork": "← Semua karya",
+    "ecosystemTitle": "Bagian dari ekosistem {title}",
     "role": "Peran: ",
     "visitLiveSite": "Kunjungi situs live ↗",
     "viewRepository": "Lihat repositori ↗",

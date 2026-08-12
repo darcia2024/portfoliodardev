@@ -18,6 +18,13 @@ export type ProjectCategory =
 
 export type ConfidenceLevel = "verified" | "partial" | "incomplete";
 
+/** A lightweight reference to a sibling product within the same ecosystem (see Project.subProjects). */
+export interface SubProject {
+  title: string;
+  description: string;
+  url?: string;
+}
+
 export interface Project {
   title: string;
   slug: string;
@@ -39,6 +46,9 @@ export interface Project {
 
   brandColor?: string;
   gallery?: string[];
+
+  /** Sibling products in the same ecosystem, absorbed into this entry instead of listed separately. */
+  subProjects?: SubProject[];
 
   problem?: string;
   productThinking?: string;
@@ -66,6 +76,7 @@ export type TranslatableProjectFields = Partial<
     | "challenges"
     | "lessons"
     | "notes"
+    | "subProjects"
   >
 >;
 

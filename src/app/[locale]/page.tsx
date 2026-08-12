@@ -16,12 +16,15 @@ import {
 const FEATURED_ORDER = [
   "aina",
   "umrahme",
-  "talqeeh",
+  "temantiket",
   "nemsyi",
   "markaz-fiqih",
   "kelas-aigypt",
+  "talqeeh",
+  "el-massa-travel-management-system",
+  "symp",
+  "darcia-wedding-invitation",
   "qohiroh-digital-ecosystem",
-  "el-massa-brand-merchandise",
 ];
 
 const CAPABILITY_KEYS = ["product", "engineering", "ai", "design"] as const;

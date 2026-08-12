@@ -111,6 +111,7 @@
   },
   "caseStudy": {
     "allWork": "← All work",
+    "ecosystemTitle": "Part of the {title} ecosystem",
     "role": "Role: ",
     "visitLiveSite": "Visit live site ↗",
     "viewRepository": "View repository ↗",
