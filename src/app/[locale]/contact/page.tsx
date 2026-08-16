@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/container";
+import { MailIcon, WhatsAppIcon } from "@/components/contact-icons";
+import { ProjectBriefForm } from "@/components/project-brief-form";
+import { EMAIL_ADDRESS, WHATSAPP_URL } from "@/lib/contact";
 
 export async function generateMetadata({
   params,
@@ -28,34 +31,51 @@ export default async function ContactPage({
     {
       label: t("whatsappLabel"),
       value: "+62 813-111-506-025",
-      href: "https://wa.me/62813111506025",
+      href: WHATSAPP_URL,
+      icon: <WhatsAppIcon className="h-5 w-5" />,
     },
     {
       label: t("emailLabel"),
-      value: "darciamuliathiifa@gmail.com",
-      href: "mailto:darciamuliathiifa@gmail.com",
-    },
-    {
-      label: t("githubLabel"),
-      value: "github.com/darufahma-rgb",
-      href: "https://github.com/darufahma-rgb",
+      value: EMAIL_ADDRESS,
+      href: `mailto:${EMAIL_ADDRESS}`,
+      icon: <MailIcon className="h-5 w-5" />,
     },
   ];
 
   return (
-    <section className="pt-20 pb-28 md:pt-28">
+    <section className="pt-12 pb-20 sm:pt-20 sm:pb-28 md:pt-28">
       <Container>
-        <p className="font-mono text-xs uppercase tracking-widest text-muted-2">
-          {t("eyebrow")}
-        </p>
-        <h1 className="mt-6 max-w-2xl text-balance font-display text-4xl tracking-tight text-foreground sm:text-5xl md:text-6xl">
+        <p className="kicker">{t("eyebrow")}</p>
+        <h1 className="mt-5 max-w-2xl text-balance font-display text-3xl leading-[1.15] tracking-tight text-foreground sm:mt-6 sm:text-5xl md:text-6xl">
           {t("title")}
         </h1>
-        <p className="mt-6 max-w-xl text-pretty text-lg text-muted">
+        <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-muted sm:mt-6 sm:text-lg">
           {t("subtitle")}
         </p>
 
-        <div className="mt-14 divide-y divide-border border-t border-border">
+        <ProjectBriefForm
+          title={t("briefTitle")}
+          intro={t("briefIntro")}
+          projectLabel={t("projectLabel")}
+          projectOptions={t.raw("projectOptions") as { value: string; label: string }[]}
+          timelineLabel={t("timelineLabel")}
+          timelineOptions={t.raw("timelineOptions") as { value: string; label: string }[]}
+          budgetLabel={t("budgetLabel")}
+          budgetOptions={t.raw("budgetOptions") as { value: string; label: string }[]}
+          budgetFallback={t("budgetFallback")}
+          needLabel={t("needLabel")}
+          needPlaceholder={t("needPlaceholder")}
+          submitLabel={t("briefSubmit")}
+          message={{
+            greeting: t("messageGreeting"),
+            project: t("messageProject"),
+            timeline: t("messageTimeline"),
+            budget: t("messageBudget"),
+            need: t("messageNeed"),
+          }}
+        />
+
+        <div className="mt-12 divide-y divide-border border-t border-border sm:mt-14">
           {CHANNELS.map((channel) => (
             <a
               key={channel.label}
@@ -66,12 +86,17 @@ export default async function ContactPage({
                   ? "noopener noreferrer"
                   : undefined
               }
-              className="group flex items-center justify-between py-6"
+              className="group flex items-center justify-between gap-4 py-5 transition-colors hover:bg-surface-2/60 sm:gap-6 sm:py-7"
             >
-              <span className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
-                {channel.label}
+              <span className="flex items-center gap-4">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted transition-colors group-hover:border-accent group-hover:text-accent">
+                  {channel.icon}
+                </span>
+                <span className="font-display text-xl tracking-tight text-foreground transition-colors group-hover:text-accent sm:text-2xl md:text-3xl">
+                  {channel.label}
+                </span>
               </span>
-              <span className="text-sm text-muted transition-colors group-hover:text-foreground md:text-base">
+              <span className="max-w-[10rem] text-right font-mono text-xs text-muted-2 transition-colors group-hover:text-accent sm:text-sm md:max-w-none md:text-base">
                 {channel.value} →
               </span>
             </a>

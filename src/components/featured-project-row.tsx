@@ -8,6 +8,23 @@ import { StatusBadge } from "./status-badge";
 import { PreviewPlaceholder } from "./preview-placeholder";
 import { cn } from "@/lib/utils";
 
+const Arrow = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    aria-hidden
+    className={cn("h-4 w-4", className)}
+  >
+    <path d="M5 12h14M13 5l7 7-7 7" />
+  </svg>
+);
+
+function stripProtocol(url: string): string {
+  return url.replace(/^https?:\/\//, "").replace(/\/$/, "").replace(/^www\./, "");
+}
+
 export function FeaturedProjectRow({
   project,
   index,
@@ -17,6 +34,7 @@ export function FeaturedProjectRow({
 }) {
   const reversed = index % 2 === 1;
   const t = useTranslations("featuredRow");
+  const showLiveUrl = Boolean(project.liveUrl && !project.hideLiveUrl);
 
   return (
     <motion.div
@@ -25,7 +43,7 @@ export function FeaturedProjectRow({
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "grid grid-cols-1 items-center gap-10 border-t border-border py-16 first:border-t-0 first:pt-0 md:grid-cols-12 md:gap-8 md:py-24"
+        "grid grid-cols-1 items-center gap-7 border-t border-border py-12 first:border-t-0 first:pt-0 sm:gap-10 sm:py-16 md:grid-cols-12 md:gap-12 md:py-24"
       )}
     >
       <div
@@ -34,15 +52,14 @@ export function FeaturedProjectRow({
           reversed ? "md:order-2" : "md:order-1"
         )}
       >
-        <span className="font-mono text-xs text-muted-2">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <h3 className="mt-3 font-display text-4xl tracking-tight text-balance text-foreground md:text-5xl">
+        <p className="kicker">
+          <span>
+            {String(index + 1).padStart(2, "0")} — {project.type}
+          </span>
+        </p>
+        <h3 className="mt-4 font-display text-3xl leading-[1.1] tracking-tight text-foreground sm:text-4xl md:mt-5 md:text-5xl">
           {project.title}
         </h3>
-        <p className="mt-3 text-sm uppercase tracking-wide text-muted-2">
-          {project.type}
-        </p>
         <p className="mt-5 max-w-md text-pretty text-base text-muted md:text-lg">
           {project.shortDescription}
         </p>
@@ -51,21 +68,34 @@ export function FeaturedProjectRow({
           <StatusBadge status={project.status} />
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center gap-5">
+        <div className="mt-7 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-7">
           <Link
             href={`/work/${project.slug}`}
-            className="text-sm text-foreground underline underline-offset-4"
+            className="group inline-flex min-h-11 items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-accent"
           >
             {t("readCaseStudy")}
+            <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
-          {project.liveUrl && (
+          {showLiveUrl && (
             <a
-              href={project.liveUrl}
+              href={project.liveUrl!}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted hover:text-foreground"
+              className="group inline-flex min-h-11 items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
             >
               {t("visitLiveSite")}
+              <Arrow className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          )}
+          {project.secondaryUrl && (
+            <a
+              href={project.secondaryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex min-h-11 items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
+            >
+              {stripProtocol(project.secondaryUrl)}
+              <span className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
             </a>
           )}
         </div>
@@ -81,6 +111,7 @@ export function FeaturedProjectRow({
           <PreviewPlaceholder
             label={project.title}
             brandColor={project.brandColor}
+            cover={project.cover}
           />
         </Link>
       </div>

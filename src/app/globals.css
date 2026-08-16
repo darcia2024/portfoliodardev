@@ -1,14 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf9f6;
-  --foreground: #14130f;
-  --muted: #6b6a63;
-  --muted-2: #726f65;
-  --border: #e4e2da;
+  --background: #f7f4ee;
+  --foreground: #191712;
+  --muted: #6f6a5f;
+  --muted-2: #8a8477;
+  --border: #e7e1d5;
   --surface: #ffffff;
-  --surface-2: #f2f0e9;
-  --accent: #14130f;
+  --surface-2: #efe9df;
+  --accent: #a0793b;
+}
+
+/* Dark mode — warm near-black with champagne accents */
+html.dark {
+  --background: #14120d;
+  --foreground: #f2eee4;
+  --muted: #9b9486;
+  --muted-2: #7a7366;
+  --border: #2c281f;
+  --surface: #1d1a13;
+  --surface-2: #26221a;
+  --accent: #c9a15e;
 }
 
 @theme inline {
@@ -33,15 +45,20 @@ html {
   color-scheme: light;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-feature-settings: "ss01" 1, "cv01" 1;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .font-display {
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 550;
+  letter-spacing: -0.01em;
 }
 
 ::selection {
@@ -57,11 +74,54 @@ body {
   text-wrap: pretty;
 }
 
+/* Editorial section kicker — mono label with a hairline rule */
+.kicker {
+  @apply flex items-center gap-3 font-mono text-xs uppercase tracking-[0.22em] text-muted-2;
+}
+
+.kicker::before {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 2.5rem;
+  background: var(--accent);
+}
+
+@media (max-width: 639px) {
+  .kicker {
+    font-size: 0.625rem;
+    letter-spacing: 0.18em;
+  }
+
+  .kicker::before {
+    width: 2rem;
+  }
+}
+
+/* Hover lift for elegant cards */
+.lift {
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lift:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-transition,
+  .theme-transition * {
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
   }
 }

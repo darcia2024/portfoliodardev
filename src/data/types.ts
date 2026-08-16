@@ -42,9 +42,14 @@ export interface Project {
   year?: string;
 
   liveUrl?: string;
+  hideLiveUrl?: boolean;
+  secondaryUrl?: string;
   githubUrl?: string;
 
   brandColor?: string;
+
+  /** Editorial cover screenshot/mockup shown in the featured row and rich cards (path under public/). */
+  cover?: string;
   gallery?: string[];
 
   /** Sibling products in the same ecosystem, absorbed into this entry instead of listed separately. */
@@ -57,6 +62,7 @@ export interface Project {
   technicalBuild?: string;
   challenges?: string;
   lessons?: string;
+  outcomes?: string[];
 
   notes?: string;
 }
@@ -75,6 +81,7 @@ export type TranslatableProjectFields = Partial<
     | "technicalBuild"
     | "challenges"
     | "lessons"
+    | "outcomes"
     | "notes"
     | "subProjects"
   >

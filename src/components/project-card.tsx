@@ -14,7 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
     >
       <div className="flex-1">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-          <h3 className="font-display text-xl tracking-tight text-foreground transition-colors group-hover:text-muted md:text-2xl">
+          <h3 className="font-display text-xl tracking-tight text-foreground transition-colors group-hover:text-accent md:text-2xl">
             {project.title}
           </h3>
           {project.year && (
@@ -33,7 +33,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <span className="hidden shrink-0 text-sm text-muted-2 transition-transform group-hover:translate-x-1 group-hover:text-foreground md:inline-block">
+      <span className="hidden shrink-0 font-mono text-xs uppercase tracking-wider text-muted-2 transition-colors group-hover:translate-x-1 group-hover:text-accent md:inline-block">
         {t("viewCaseStudy")}
       </span>
     </Link>

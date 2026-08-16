@@ -30,8 +30,8 @@ export function LanguageSwitcher({ className }: { className?: string }) {
           className={cn(
             "rounded-full px-2.5 py-1 transition-colors",
             locale === activeLocale
-              ? "bg-foreground text-background"
-              : "text-muted hover:text-foreground"
+              ? "bg-accent text-background"
+              : "text-muted hover:text-accent"
           )}
         >
           {LOCALE_LABEL[locale]}

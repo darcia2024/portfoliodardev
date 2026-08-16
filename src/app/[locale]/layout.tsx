@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -7,10 +7,17 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { ThemeProvider } from "@/components/theme-toggle";
 import "../globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
   subsets: ["latin"],
   display: "swap",
 });
@@ -39,7 +46,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: {
       default: t("title"),
-      template: "%s · Daru",
+      template: "%s · Dar Dev Portfolio",
     },
     description: t("description"),
     openGraph: {
@@ -82,13 +89,15 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} h-full`}
+      className={`${plusJakartaSans.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} h-full dark`}
     >
-      <body className="min-h-full flex flex-col font-sans antialiased">
+      <body className="min-h-full flex flex-col overflow-x-clip font-sans antialiased">
         <NextIntlClientProvider>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
+          <ThemeProvider>
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

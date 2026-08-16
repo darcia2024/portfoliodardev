@@ -8,6 +8,8 @@ import { StatusBadge } from "@/components/status-badge";
 import { PreviewPlaceholder } from "@/components/preview-placeholder";
 import { CaseStudySection } from "@/components/case-study-section";
 import { ProjectCard } from "@/components/project-card";
+import { LightboxGallery } from "@/components/lightbox-gallery";
+import Image from "next/image";
 import {
   getAllProjects,
   getAllSlugs,
@@ -64,6 +66,7 @@ export default async function CaseStudyPage({
 
   const t = await getTranslations("caseStudy");
   const tCategory = await getTranslations("categories");
+  const showLiveUrl = Boolean(project.liveUrl && !project.hideLiveUrl);
 
   const related = getAllProjects(locale)
     .filter((p) => p.slug !== project.slug)
@@ -76,9 +79,22 @@ export default async function CaseStudyPage({
     .slice(0, 3)
     .map((entry) => entry.project);
 
+  const galleryImages = Array.from(
+    new Set((project.gallery ?? []).filter((src) => src !== project.cover))
+  );
+  const outcomes = project.outcomes ?? [
+    t(`outcomeStatus.${project.status}`),
+    showLiveUrl
+      ? t("outcomeLive")
+      : t("outcomeScope", { type: project.type }),
+    project.role?.length
+      ? t("outcomeRole", { role: project.role.join(", ") })
+      : t("outcomeDelivery"),
+  ];
+
   return (
     <>
-      <section className="pt-20 pb-14 md:pt-28">
+      <section className="pt-12 pb-10 sm:pt-20 sm:pb-14 md:pt-28">
         <Container>
           <Link
             href="/work"
@@ -87,7 +103,7 @@ export default async function CaseStudyPage({
             {t("allWork")}
           </Link>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2">
+          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 sm:mt-8">
             <StatusBadge status={project.status} />
             <span className="text-xs text-muted-2">·</span>
             <span className="text-xs text-muted-2">
@@ -101,31 +117,41 @@ export default async function CaseStudyPage({
             )}
           </div>
 
-          <h1 className="mt-5 text-balance font-display text-4xl tracking-tight text-foreground sm:text-5xl md:text-6xl">
+          <h1 className="mt-5 text-balance font-display text-3xl tracking-tight text-foreground sm:text-5xl md:text-6xl">
             {project.title}
           </h1>
-          <p className="mt-3 text-sm uppercase tracking-wide text-muted-2">
+          <p className="mt-3 text-xs uppercase tracking-wide text-muted-2 sm:text-sm">
             {project.type}
           </p>
-          <p className="mt-6 max-w-2xl text-pretty text-lg text-muted">
+          <p className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:mt-6 sm:text-lg">
             {project.summary ?? project.shortDescription}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-6">
+          <div className="mt-7 flex flex-col items-start gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
             {project.role && (
               <div className="text-sm text-muted-2">
                 <span className="text-muted">{t("role")}</span>
                 {project.role.join(", ")}
               </div>
             )}
-            {project.liveUrl && (
+            {showLiveUrl && (
               <a
-                href={project.liveUrl}
+                href={project.liveUrl!}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-foreground underline underline-offset-4"
+                className="inline-flex min-h-11 items-center text-sm text-foreground underline underline-offset-4"
               >
                 {t("visitLiveSite")}
+              </a>
+            )}
+            {project.secondaryUrl && (
+              <a
+                href={project.secondaryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center text-sm text-foreground underline underline-offset-4"
+              >
+                {project.secondaryUrl.replace(/^https?:\/\//, "").replace(/\/$/, "").replace(/^www\./, "")}
               </a>
             )}
             {project.githubUrl && (
@@ -133,23 +159,32 @@ export default async function CaseStudyPage({
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-foreground underline underline-offset-4"
+                className="inline-flex min-h-11 items-center text-sm text-foreground underline underline-offset-4"
               >
-                {t("viewRepository")}
+                GitHub
               </a>
             )}
           </div>
         </Container>
       </section>
 
-      <section className="border-t border-border py-10 md:py-14">
+      <section className="border-t border-border py-8 sm:py-10 md:py-14">
         <Container>
           <PreviewPlaceholder
             label={project.title}
             brandColor={project.brandColor}
+            cover={project.cover}
           />
         </Container>
       </section>
+
+      {galleryImages.length > 0 && (
+        <section className="border-t border-border py-8 sm:py-10 md:py-14">
+          <Container>
+            <LightboxGallery images={galleryImages} title={project.title} />
+          </Container>
+        </section>
+      )}
 
       {project.notes && (
         <Container>
@@ -197,6 +232,34 @@ export default async function CaseStudyPage({
         </CaseStudySection>
       )}
 
+      <section className="border-t border-border py-12 sm:py-14 md:py-20">
+        <Container className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-12 md:gap-10">
+          <div className="md:col-span-4">
+            <p className="kicker">{t("outcomesLabel")}</p>
+            <h2 className="mt-4 font-display text-2xl leading-snug tracking-tight text-foreground md:text-3xl">
+              {t("outcomesTitle")}
+            </h2>
+          </div>
+          <div className="md:col-span-8">
+            <div className="divide-y divide-border border-y border-border">
+              {outcomes.map((outcome, index) => (
+                <div
+                  key={outcome}
+                  className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-3 py-5 sm:grid-cols-[2rem_minmax(0,1fr)] sm:gap-4 md:py-6"
+                >
+                  <span className="font-mono text-xs tracking-wider text-accent">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-base leading-relaxed text-muted md:text-lg">
+                    {outcome}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <CaseStudySection eyebrow={t("currentState")}>
         <p>
           {t("currentStateIntro")}{" "}
@@ -213,12 +276,12 @@ export default async function CaseStudyPage({
       )}
 
       {project.subProjects && project.subProjects.length > 0 && (
-        <section className="border-t border-border py-16 md:py-24">
+        <section className="border-t border-border py-12 sm:py-16 md:py-24">
           <Container>
             <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
               {t("ecosystemTitle", { title: project.title })}
             </h2>
-            <div className="mt-8 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-7 grid grid-cols-1 gap-8 sm:mt-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
               {project.subProjects.map((sub) => (
                 <div key={sub.title}>
                   <h3 className="font-display text-lg tracking-tight text-foreground">
@@ -242,8 +305,46 @@ export default async function CaseStudyPage({
         </section>
       )}
 
+      {project.secondaryUrl && (
+        <section className="border-t border-border py-12 sm:py-16 md:py-24">
+          <Container>
+            <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
+              {t("relatedSiteTitle")}
+            </h2>
+            <div className="mt-8 grid grid-cols-1 gap-5 sm:mt-10 sm:gap-8 lg:grid-cols-2">
+              {["/markaz-feature-3.png", "/markaz-feature-4.png"].map((src, i) => (
+                <div
+                  key={src}
+                  className="lift group relative w-full overflow-hidden rounded-[28px] border border-border"
+                >
+                  <Image
+                    src={src}
+                    alt={project.title + " related site screenshot " + (i + 1)}
+                    width={2048}
+                    height={1168}
+                    className="w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 max-w-2xl text-pretty text-base text-muted md:text-lg">
+              {t("relatedSiteNote")}
+            </p>
+            <a
+              href={project.secondaryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+            >
+              {t("exploreRelatedSite")}
+              <span className="transition-transform duration-300 group-hover:translate-x-0.5">↗</span>
+            </a>
+          </Container>
+        </section>
+      )}
+
       {related.length > 0 && (
-        <section className="border-t border-border py-16 md:py-24">
+        <section className="border-t border-border py-12 sm:py-16 md:py-24">
           <Container>
             <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
               {t("relatedWork")}

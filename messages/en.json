@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Daru: Digital Product Builder",
-    "description": "Product strategy, AI, full-stack development, and brand systems, brought together to solve real operational and community problems. Portfolio of Daru, a digital product builder based between Indonesia and Cairo."
+    "title": "Dar Dev Portfolio: Digital Product Builder",
+    "description": "Product strategy, AI, full-stack development, and brand systems, brought together to solve real operational and community problems. Dar Dev Portfolio by Daru, a digital product builder based between Indonesia and Cairo."
   },
   "stats": {
     "title": "By the numbers",
@@ -25,14 +25,23 @@
     "connectLabel": "Connect",
     "whatsapp": "WhatsApp",
     "email": "Email",
-    "github": "GitHub",
     "copyright": "© {year} Daru. Digital Product Builder.",
     "tagline": "Designed & built end-to-end."
   },
   "home": {
-    "eyebrow": "Digital Product Builder · Indonesia / Cairo",
+    "eyebrow": "Digital Product Builder in Indonesia and Cairo",
     "heroTitle": "I build digital products from idea to launch.",
+    "heroTitlePart1": "I build digital",
+    "heroTitlePart2": "products",
+    "heroTitlePart3": "from idea to launch.",
     "heroSubtitle": "Product strategy, AI, full-stack development, and brand systems, brought together to solve real operational and community problems.",
+    "heroFocusTitle": "Focus areas",
+    "heroFocusItems": [
+      "Product strategy and direction",
+      "Applications and internal systems",
+      "Business and brand websites"
+    ],
+    "heroFocusNote": "Open to collaborations that need product decisions, design, and engineering in one process.",
     "exploreWork": "Explore Work",
     "aboutMe": "About Me",
     "selectedWork": "Selected Work",
@@ -42,14 +51,24 @@
     "howIBuild": "How I Build",
     "moreProjects": "More Projects",
     "allWorkTitle": "All {count} Projects",
-    "allWorkSubtitle": "Every product, brand, and system shipped so far. Click any of them for the full case study.",
+    "allWorkSubtitle": "Every product, brand, and system shipped so far. Click any of them to see the full story.",
     "fullArchive": "Full archive →",
     "aboutTitle": "About",
     "aboutHeadline": "I like turning messy problems into usable systems.",
     "aboutBody": "Most of my projects start from a real friction point (something a student, a community, or a client actually ran into) around Masisir life, travel, education, or operations. I don’t separate product, design, and engineering too strictly. I use whichever discipline is necessary to turn a problem into something usable.",
     "readMoreAboutMe": "Read more about me →",
     "contactCtaTitle": "Have a problem worth turning into a product?",
+    "contactCtaTitlePart1": "Have a problem worth turning into",
+    "contactCtaTitlePart2": "a product?",
     "getInTouch": "Get in touch"
+  },
+  "offers": {
+    "title": "Work I can help you ship.",
+    "subtitle": "I start with the problem and business need, then help choose the clearest product shape to build.",
+    "resultLabel": "What you get",
+    "digitalProduct": {"title": "A digital product from zero", "description": "For an idea, service, or community that needs a clear user flow, core features, and a solid technical foundation.", "result": "Product strategy, user flows, UI/UX, full-stack application, through launch."},
+    "internalSystem": {"title": "An internal operating system", "description": "For repeated manual work, scattered data, or team workflows that still depend on chat and spreadsheets.", "result": "A dashboard and workflow that fit how the business actually runs."},
+    "businessWebsite": {"title": "A convincing business website", "description": "For a business or service that needs a clear offer, refined visual identity, and an easy inquiry path.", "result": "A ready-to-use website that guides prospective customers to the next action."}
   },
   "process": {
     "understandTitle": "Understand",
@@ -65,27 +84,50 @@
     "product": {
       "title": "Product",
       "description": "Turning a problem into a defined, buildable product before writing code.",
-      "items": ["Product Strategy", "PRD", "User Flow", "MVP Definition", "Product Architecture"]
+      "items": [
+        "Product Strategy",
+        "PRD",
+        "User Flow",
+        "MVP Definition",
+        "Product Architecture"
+      ]
     },
     "engineering": {
       "title": "Engineering",
       "description": "Shipping the product itself, end to end, not just the frontend.",
-      "items": ["Full-Stack Development", "Database", "Authentication", "API / Backend", "Deployment"]
+      "items": [
+        "Full-Stack Development",
+        "Database",
+        "Authentication",
+        "API / Backend",
+        "Deployment"
+      ]
     },
     "ai": {
       "title": "AI",
-      "description": "Using AI as a product capability and as a way of building faster.",
-      "items": ["AI Products", "AI Workflows", "Prompt Systems", "AI-assisted Development"]
+      "description": "Designing AI-powered product experiences where the intelligence clearly improves the workflow.",
+      "items": [
+        "AI Products",
+        "AI Workflows",
+        "Prompt Systems",
+        "LLM Integration"
+      ]
     },
     "design": {
       "title": "Design",
       "description": "Giving the product and the brand around it a coherent identity.",
-      "items": ["UI/UX", "Branding", "Visual Identity", "Landing Pages", "Merchandise Design"]
+      "items": [
+        "UI/UX",
+        "Branding",
+        "Visual Identity",
+        "Landing Pages",
+        "Merchandise Design"
+      ]
     }
   },
   "workPage": {
     "eyebrow": "Work",
-    "title": "Featured case studies, and everything else in the archive.",
+    "title": "Featured project stories, and everything else in the archive.",
     "archiveTitle": "Complete Archive",
     "archiveSubtitle": "Every known project. Filter by category or search by name."
   },
@@ -100,11 +142,19 @@
     "noMatches": "No projects match that filter yet."
   },
   "projectCard": {
-    "viewCaseStudy": "View case study →"
+    "viewCaseStudy": "Open project →"
   },
   "featuredRow": {
-    "readCaseStudy": "Read case study →",
-    "visitLiveSite": "Visit live site ↗"
+    "readCaseStudy": "Explore project →",
+    "visitLiveSite": "Visit live site ↗",
+    "carouselLabel": "Selected work",
+    "ainaEyebrow": "Featured project",
+    "ainaTitlePart1": "AINA",
+    "ainaTitlePart2": "Asisten Pintar",
+    "ainaSummary": "An AI assistant and knowledge base for Indonesian students in Egypt, covering residency, visas, Al-Azhar enrollment, and daily needs in one place.",
+    "ainaImageAlt": "AINA, an AI assistant for Indonesian students in Egypt",
+    "openAinaCaseStudy": "Open AINA case study",
+    "ainaTags": ["AI product", "Full-stack", "React", "Supabase", "Production"]
   },
   "preview": {
     "comingSoon": "Preview coming soon"
@@ -116,26 +166,38 @@
     "visitLiveSite": "Visit live site ↗",
     "viewRepository": "View repository ↗",
     "problem": "Problem",
-    "productThinking": "Product Thinking",
-    "solution": "Solution",
-    "designDirection": "Visual / Brand Direction",
-    "technicalBuild": "Technical Build",
-    "challenges": "Challenges",
-    "currentState": "Current State",
-    "reflection": "Reflection",
+    "productThinking": "Product Direction",
+    "solution": "Solution Built",
+    "designDirection": "Visual Direction",
+    "technicalBuild": "Technical Delivery",
+    "challenges": "Challenges Addressed",
+    "currentState": "Project Status",
+    "reflection": "Project Learning",
+    "outcomesLabel": "Outcomes",
+    "outcomesTitle": "Value delivered through the work",
+    "outcomeStatus": {"production": "This project is in production as an accessible product or website.", "development": "The product foundation and core flows are in place for continued development.", "pre-launch": "The product is prepared for pre-launch validation before opening to the public.", "concept": "The product direction, needs, and solution are defined as a foundation for development.", "client-delivery": "This product was built and delivered as a client deliverable."},
+    "outcomeLive": "Has a live access point that represents the released product.",
+    "outcomeScope": "Delivered a {type} with a scope shaped around the project need.",
+    "outcomeRole": "Daru handled {role} as one end-to-end delivery.",
+    "outcomeDelivery": "Its scope was shaped to address a concrete project need.",
     "relatedWork": "Related Work",
     "currentStateIntro": "This project is currently at",
     "statusProduction": "production, live and in use.",
     "statusDevelopment": "active development.",
     "statusPreLaunch": "pre-launch, built but not yet publicly live.",
     "statusConcept": "concept stage, planned but not yet built.",
-    "statusClientDelivery": "client delivery, built and delivered to the client."
+    "statusClientDelivery": "client delivery, built and delivered to the client.",
+    "relatedSiteTitle": "Related Site",
+    "relatedSiteNote": "Markazfiqih.com is the brand & content site for Markaz Fiqih — articles, events, and contributors. The main product is the class platform (kelasmarkazfiqih.com).",
+    "exploreRelatedSite": "Explore Site"
   },
   "aboutPage": {
     "eyebrow": "About",
     "headline": "I like turning messy problems into usable systems.",
     "positioningLabel": "Positioning",
     "positioningP1": "I’m Daru, a digital product builder, not just a web developer. My work sits at the intersection of product strategy, full-stack development, AI, UI/UX, and brand design. Most projects I take on need more than one of those disciplines to actually work, so I don’t separate them too strictly. I use whichever one is necessary to turn a problem into something usable.",
+    "positioningP1Lead": "I’m Daru, a digital product builder, not just a web developer. My work sits at the intersection of product strategy, full-stack development, AI, UI/UX, and brand design.",
+    "positioningP1Rest": "Most projects I take on need more than one of those disciplines to actually work, so I don’t separate them too strictly. I use whichever one is necessary to turn a problem into something usable.",
     "positioningP2": "A lot of what I’ve built comes from friction I ran into firsthand, or friction people around me kept running into:",
     "focusAreas": [
       "Masisir & student life in Egypt",
@@ -157,7 +219,23 @@
     "subtitle": "Open to product, engineering, AI, and brand work. The fastest way to reach me is WhatsApp.",
     "whatsappLabel": "WhatsApp",
     "emailLabel": "Email",
-    "githubLabel": "GitHub"
+    "briefTitle": "Start with a short brief",
+    "briefIntro": "Share a few details below. The message will be prepared for WhatsApp so the first conversation is clearer.",
+    "projectLabel": "What do you need?",
+    "projectOptions": [{"value": "digital-product", "label": "A new digital product"}, {"value": "internal-system", "label": "An internal operating system"}, {"value": "business-website", "label": "A business or brand website"}, {"value": "ai-workflow", "label": "An AI feature or workflow"}, {"value": "not-sure", "label": "Not sure yet, I need to talk it through"}],
+    "timelineLabel": "Start or launch target",
+    "timelineOptions": [{"value": "soon", "label": "As soon as possible"}, {"value": "one-month", "label": "Within 1 month"}, {"value": "two-to-three-months", "label": "Within 2-3 months"}, {"value": "flexible", "label": "Flexible"}],
+    "budgetLabel": "Budget range (optional)",
+    "budgetOptions": [{"value": "under-10", "label": "Under IDR 10 million"}, {"value": "10-25", "label": "IDR 10-25 million"}, {"value": "25-50", "label": "IDR 25-50 million"}, {"value": "over-50", "label": "Over IDR 50 million"}, {"value": "discuss", "label": "Not set yet"}],
+    "budgetFallback": "Not set yet",
+    "needLabel": "Main problem or goal",
+    "needPlaceholder": "For example: we need to organize a booking process that is still scattered across WhatsApp.",
+    "briefSubmit": "Continue to WhatsApp",
+    "messageGreeting": "Hi Daru, I would like to discuss a digital project.",
+    "messageProject": "Project need",
+    "messageTimeline": "Timeline",
+    "messageBudget": "Budget range",
+    "messageNeed": "Problem or goal"
   },
   "notFound": {
     "eyebrow": "404",
@@ -190,5 +268,38 @@
     "UI/UX": "UI/UX",
     "Brand Design": "Brand Design",
     "Product Architecture": "Product Architecture"
+  },
+  "stack": {
+    "title": "Tools & Stack",
+    "subtitle": "The tools I reach for most — picked for shipping speed, DX, and long-term maintainability.",
+    "frontendLabel": "Frontend",
+    "frontendIntro": "Interface work, motion, and component systems.",
+    "fullstackLabel": "Fullstack & Infrastructure",
+    "fullstackIntro": "APIs, databases, and production hosting.",
+    "aiLabel": "AI & Automation",
+    "aiIntro": "LLM-powered features and workflow automation.",
+    "toolsLabel": "Tools & Design",
+    "toolsIntro": "Design, collaboration, and delivery tooling.",
+    "items": {
+      "next": "Next.js",
+      "react": "React",
+      "typescript": "TypeScript",
+      "tailwind": "TailwindCSS",
+      "framerMotion": "Framer Motion",
+      "zustand": "Zustand",
+      "node": "Node.js",
+      "prisma": "Prisma",
+      "postgresql": "PostgreSQL",
+      "drizzle": "Drizzle ORM",
+      "trpc": "tRPC",
+      "vercel": "Vercel",
+      "openai": "OpenAI API",
+      "llm": "LLM Integration",
+      "v0": "v0",
+      "prompt": "Prompt Engineering",
+      "figma": "Figma",
+      "vscode": "VS Code",
+      "linear": "Linear"
+    }
   }
 }

@@ -20,14 +20,27 @@ export const projects: Project[] = [
     role: ["Product Strategy", "Full-Stack Development", "AI", "UI/UX"],
     year: "2025",
     liveUrl: "https://ainalabs.pro",
-    githubUrl: "https://github.com/darciatemantaraglobal-gif/aina.web",
     brandColor: "#0a0a0f",
+    cover: "/aina-cover-v2.png",
+    gallery: [
+      "/aina-feature-1.png",
+      "/aina-feature-2.png",
+      "/aina-feature-3.png",
+      "/aina-feature-4.png",
+      "/aina-feature-5.png",
+      "/aina-feature-6.png",
+    ],
     problem:
       "Practical information Masisir need day to day — how to renew an Iqomah (residency permit), get an Egypt visa or Visa on Arrival, enroll at Al-Azhar, or handle a lost passport — is fragmented across dozens of WhatsApp groups, outdated PDFs, and word of mouth. Answers exist, but finding the current, correct one is slow and unreliable.",
     productThinking:
       "Rather than building another static FAQ page, AINA treats the community's accumulated knowledge as a queryable knowledge base and puts a conversational layer on top of it, so a student can ask a question in plain Indonesian and get a sourced answer instead of searching through group chat history.",
     solution:
       "A dark-themed web app centered on an AI chat box (\"Tanyakan apa saja kepada AINA\"), backed by a curated knowledge base covering Iqomah & residency, visas, Al-Azhar enrollment, and passport guidance. It's paired with day-to-day utilities Masisir actually need — a live EGP↔IDR / USD↔IDR converter and a dual Egypt/Jakarta clock — plus a Tasks & Notes area for personal organization. Full app access sits behind a login.",
+    outcomes: [
+      "Turned scattered community guidance into one searchable knowledge base and chat experience.",
+      "Released a live product that combines practical daily utilities, personal organization, and guidance in one place.",
+      "Built a companion admin tool so the knowledge base can be maintained as policies and information change.",
+    ],
     designDirection:
       "Dark UI (near-black background, light text) using SF Pro Display for the interface paired with Arabic calligraphic display faces (Amiri, Scheherazade New) for Arabic-script content — a deliberate pairing that keeps the product feeling technical and modern while staying visually anchored to Islamic/Arabic-script material.",
     technicalBuild:
@@ -72,17 +85,24 @@ export const projects: Project[] = [
     role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://aigypt.id",
-    githubUrl: "https://github.com/darciatemantaraglobal-gif/aigypt2",
     brandColor: "#0a0a0f",
+    cover: "/aigypt-laptop-v4.jpg",
+    gallery: ["/aigypt-laptop.png"],
     problem:
       "Most Masisir have used ChatGPT casually, but there's a large gap between casual use and using AI well for academic study, organizational work, business, or content creation.",
     productThinking:
       "AIGYPT frames its audience by role — Akademisi, Organisator, Pebisnis, Kreator, Pencari — rather than by skill level, and builds curriculum around what each of those people actually needs AI to do for them.",
     solution:
       "A cohort program (running in numbered batches, mixing offline and online sessions) covering AI fundamentals and mindset, prompting, academic AI use, organizational/business AI use, and a \"Vibe Coding\" module, with before/after use-case examples, named alumni testimonials, and two membership tiers — a self-paced library and a full cohort track with certification. Membership bundles access to two sibling products, Talqeeh and Deenme.",
+    outcomes: [
+      "Created one learning product that connects cohort delivery, a self-paced membership library, and sister-product access.",
+      "Translated broad AI curiosity into role-specific learning paths for academics, organizers, businesses, creators, and seekers.",
+      "Shipped a production course platform rather than a one-off event page.",
+    ],
     designDirection:
       "Dark theme, Inter throughout — consistent with the wider AINA/AIGYPT product family's visual identity.",
-    technicalBuild: "Built and scaffolded on Replit.",
+    technicalBuild:
+      "React/Vite front-end with structured course content, membership flows, and a production-ready deployment setup.",
     lessons:
       "Bundling AIGYPT membership with access to Talqeeh and Deenme shows the value of treating these as one ecosystem for the same community rather than isolated products.",
     subProjects: [
@@ -115,16 +135,31 @@ export const projects: Project[] = [
     role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://talqeeh.vercel.app",
-    githubUrl: "https://github.com/darufahma-rgb/Madad",
     brandColor: "#0c0c0c",
+    cover: "/talqeeh-laptop-v4.jpg",
+    gallery: [
+      "/talqeeh-laptop.png",
+      "/talqeeh-feature-1.png",
+      "/talqeeh-feature-2.png",
+      "/talqeeh-feature-3.png",
+      "/talqeeh-feature-4.png",
+      "/talqeeh-feature-5.png",
+      "/talqeeh-feature-6.png",
+      "/talqeeh-feature-7.png",
+    ],
     problem:
       "Generic AI assistants don't know Al-Azhar's specific Muqarrar (course material) or how it's actually examined, so Masisir get generic answers instead of study help that matches what they're tested on.",
     solution:
       "A membership platform organizing prompt templates across Al-Azhar's subject areas — six categories spanning Ushuluddin & Qur'an, Hadits & Mustholah, Syariah & Fiqh, Aqidah & Pemikiran, Lughah Arabiyah, and Tarikh/Dakwah/Tarbiyah — plus a gated bank of real past exam questions paired with matching answer-prompt templates, per-subject AI tool recommendations, and a 5-question onboarding flow to build a learning profile. One free subject is usable without signup.",
+    outcomes: [
+      "Organized Al-Azhar-specific study support into a searchable, subject-based prompt and exam-question library.",
+      "Gave learners a structured route from onboarding to course-specific AI guidance instead of generic prompting.",
+      "Released a focused membership product around real course material and exam context.",
+    ],
     designDirection:
       "Near-black background with a distinctive mixed type system — DM Sans for UI, Crimson Pro serif and JetBrains Mono for accents, and Arabic display faces (Noto Naskh Arabic, Reem Kufi, Aref Ruqaa, Noto Kufi Arabic) — giving it a more scholarly, editorial feel than the rest of the AINA/AIGYPT family.",
     technicalBuild:
-      "JavaScript/Vite, Tailwind CSS, an Express-style server, Replit-scaffolded.",
+      "JavaScript/Vite, Tailwind CSS, and an Express-style server powering a lightweight study platform focused on fast access to curated learning material.",
     lessons:
       "Specificity beats breadth — a prompt library scoped tightly to one institution's actual exam material is more useful to its audience than a general study-AI tool would be.",
   },
@@ -145,14 +180,26 @@ export const projects: Project[] = [
     role: ["Product Strategy", "Full-Stack Development", "UI/UX", "Brand Design"],
     year: "2025",
     liveUrl: "https://kelasmarkazfiqih.com",
-    githubUrl: "https://github.com/darufahma-rgb/markazfiqih",
+    secondaryUrl: "https://markazfiqih.com",
     brandColor: "#7A1B1B",
+    cover: "/markaz-cover-v2.png",
+    gallery: [
+      "/markaz-feature-1.png",
+      "/markaz-feature-2.png",
+      "/markaz-feature-3.png",
+      "/markaz-feature-4.png",
+    ],
     problem:
       "Fiqh content online is often scattered and inconsistent about which scholarly opinion it's presenting, making it hard for everyday Indonesian Muslims to learn systematically rather than picking up fragments.",
     productThinking:
       "The platform is positioned explicitly as \"Tempat Belajar Fiqih Madzhab Syafi'i Yang Sistematis dan Terstruktur\" — structured learning with a clear reference hierarchy (primary madzhab opinion → weaker opinion → scholarly ikhtiyar → other madzhab views) — and built as a full e-commerce learning product, not a marketing page, because the audience needed to browse, pay, and actually study in one place.",
     solution:
       "A course catalog with bundles and level filters, multi-method checkout (QRIS, e-wallet, virtual account, card) via the Mayar.id gateway, a student dashboard with progress auto-save, lifetime access and certificates, a separate ebook catalog, and instructor profiles for the two Al-Azhar-based teachers behind the courses.",
+    outcomes: [
+      "Brought course discovery, payment, student progress, certificates, and ebooks into one learning product.",
+      "Connected multiple Indonesian payment methods through a production payment gateway and webhook flow.",
+      "Created a complete visual identity and storefront that makes structured Shafi'i learning feel credible online.",
+    ],
     designDirection:
       "A custom logo mark — an open book whose page-folds double as a mosque-gable silhouette with a gold diamond center — in a deep maroon (#7A1B1B) and mustard-gold (#C9A227) system on cream/white. Headlines use a serif display face; body text pairs Plus Jakarta Sans with Inter. A full favicon and Open Graph asset set was built alongside the product, not left as defaults.",
     technicalBuild:
@@ -173,11 +220,11 @@ export const projects: Project[] = [
     type: "Education Web App",
     status: "development",
     confidence: "partial",
-    featured: false,
+    featured: true,
     role: ["Full-Stack Development", "UI/UX"],
     year: "2025",
-    githubUrl: "https://github.com/darufahma-rgb/Deenme",
     brandColor: "#3ecf8e",
+    cover: "/deenme-laptop-v2.png",
     problem:
       "Per the app's own landing copy: staying consistent (istiqamah) with daily prayer, dhikr, and reflection is hard without a way to track it — \"satu hari satu langkah\" (one day, one step).",
     solution:
@@ -185,36 +232,10 @@ export const projects: Project[] = [
     designDirection:
       "A dark, deep-green canvas with a mint/emerald accent (#3ecf8e), lime highlight, and cream text, using Bricolage Grotesque for display type paired with IBM Plex Sans Arabic for Arabic script — a modern grotesque with genuine Arabic-script support.",
     technicalBuild:
-      "React + Vite (JavaScript), Express server, Supabase, PWA manifest, deployed on Vercel. Repo history shows the Lovable AI app builder was used at some point.",
+      "React + Vite, Express server, Supabase, PWA manifest, and Vercel deployment, structured around daily tracking, authentication, and persistent user progress.",
     notes:
-      "The live deployment (deenme.vercel.app) currently returns a 404, so the product can't be demoed live right now — everything above is sourced directly from the repository's own manifest and landing-page copy, not guessed.",
+      "Best framed as an in-progress personal product: the foundation is already shaped around daily worship tracking, persistent progress, and a habit loop that can grow into a fuller Islamic productivity system.",
   },
-  {
-    title: "Qohiroh Digital Ecosystem",
-    slug: "qohiroh-digital-ecosystem",
-    shortDescription:
-      "A three-part digital ecosystem for an Islamic study center in Egypt — public, student, and family portals.",
-    summary:
-      "An approved, in-planning digital ecosystem for Qohiroh Center spanning a public marketing/enrollment site, a student companion portal, and a parent-facing transparency portal.",
-    category: ["Education", "Product", "Client Work"],
-    type: "Product Architecture / Client Project (Concept)",
-    status: "concept",
-    confidence: "verified",
-    featured: true,
-    role: ["Product Strategy", "Product Architecture", "UI/UX"],
-    year: "2026",
-    problem:
-      "Qohiroh Center runs across three very different audiences with three different needs: prospective students who need to find and register for programs, current students living and studying in Egypt who need day-to-day guidance and structure, and parents back in Indonesia who want visibility into their child's journey without being able to see it firsthand.",
-    productThinking:
-      "Instead of one generic school platform, the ecosystem is split into three purpose-built products. Qohiroh Santri in particular is deliberately not framed as a generic LMS — it's built around guidance, activities, and documenting a student's journey in Egypt, not grades and assignments.",
-    solution:
-      "Qohiroh Public — the digital front door: branding, program information, and online registration for prospective students. Qohiroh Santri — a companion space for students already in Egypt, expected to cover a personal dashboard, the Qohiroh agenda, mentoring schedule, activities, attendance, mentor information, progress records, important documents, and a running history of the student's journey. Qohiroh Family — a parent-facing portal in Indonesia surfacing student profile, attendance, activity, progress, mentor reports, documents, and announcements, built around parent transparency and peace of mind as the core product value.",
-    challenges:
-      "Designing three connected but distinct products for three audiences with very different needs and technical comfort levels, while keeping data consistent across all three.",
-    notes:
-      "This is a concept-approved, client-planning-stage project — not yet built. Nothing here should be read as an existing, live product; status will update as implementation begins.",
-  },
-
   // ───────────────────────────── TRAVEL TECHNOLOGY ─────────────────────────────
   {
     title: "Umrahme",
@@ -231,14 +252,19 @@ export const projects: Project[] = [
     role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://umrahme.sbs",
-    githubUrl: "https://github.com/darufahma-rgb/Umrahme",
     brandColor: "#131313",
+    cover: "/umrahme-cover-v3.png",
     problem:
       "During an actual Umrah trip, pilgrims get separated during Tawaf or Sa'i, muthowwif (guides) field the same \"where are we going today\" question over and over, Miqat/ihram instructions get missed, and key logistics get buried in WhatsApp group chat.",
     productThinking:
       "Rather than selling directly to pilgrims, Umrahme sells to the travel agencies that already have the pilgrim relationship — the agency licenses the app, puts its own branding on it, and hands it to its pilgrims for the trip. That business model shapes the whole product: it has to be fully white-labelable with no Umrahme branding visible to the end pilgrim.",
     solution:
       "A companion app covering all 54 prayers (Arabic, transliteration, translation), an automatic Tawaf and Sa'i counter, a four-module interactive manasik (ritual training) course with progress tracking, a step-by-step ibadah guide, a map of 33 historical and pilgrimage sites, real-time prayer times by location, an Umrah fiqh FAQ and glossary, agency-pushed announcements and a daily agenda, a digital pilgrim ID card, a personal travel journal, and a digital Umrah certificate — plus an agency-side admin portal for managing batches, pilgrims, agenda, and announcements. Priced at 10 SAR per pilgrim, free for official travel-crew partners, no setup or monthly fee.",
+    outcomes: [
+      "Turned repeated pilgrim questions, travel guidance, and daily logistics into a single trip companion product.",
+      "Built a white-label model so travel agencies can use their own identity across the pilgrim-facing experience.",
+      "Paired the pilgrim app with an agency portal for batches, jamaah, agendas, and announcements.",
+    ],
     designDirection:
       "Warm cream background with near-black, fully pill-shaped call-to-action buttons in white text, set in Plus Jakarta Sans throughout — a clean, minimal SaaS look rather than an ornate religious-iconography style.",
     technicalBuild:
@@ -262,10 +288,22 @@ export const projects: Project[] = [
     featured: true,
     year: "2025",
     liveUrl: "https://voatemantiket.site",
+    cover: "/temantiket-cover-v2.png",
+    gallery: [
+      "/temantiket-feature-1.png",
+      "/temantiket-feature-2.png",
+      "/temantiket-feature-3.png",
+      "/temantiket-feature-4.png",
+    ],
     problem:
       "Indonesian travelers landing in Cairo face an unfamiliar immigration process, potential language barriers, and queues at Visa on Arrival, with no guaranteed help on the other side of the gate.",
     solution:
       "A service site covering VOA processing, gate pickup with staff holding nameplates, full airport escort from arrival through immigration to exit, and language assistance, so travelers don't need to speak Arabic or English. Pricing is tiered by group size (solo, 2-6, 7-12, 12+), with a 50% deposit upfront. Airlines served include Egypt Air, Turkish Airlines, Emirates, Etihad, and flydubai across Cairo Airport's three terminals.",
+    outcomes: [
+      "Made Visa on Arrival support, airport pickup, immigration assistance, and service pricing clear before a traveler lands.",
+      "Created a direct path from service discovery to WhatsApp consultation for Indonesian travelers arriving in Cairo.",
+      "Extended the public service layer with operational sibling tools for staff workflows and ticket generation.",
+    ],
     designDirection:
       "Clean, modern layout with blue/teal accents on white, a testimonial carousel, and professional photography of the actual airport operations.",
     notes:
@@ -288,9 +326,9 @@ export const projects: Project[] = [
   {
     title: "IGH Tour",
     slug: "igh-tour",
-    shortDescription: "A travel/Umrah operations web app, currently stuck on its loading screen.",
+    shortDescription: "A travel/Umrah operations web app for handling agency workflows in one focused dashboard.",
     summary:
-      "A travel and Umrah/Hajj operations web app, structurally similar to Temantiket Center, that did not load past its loading screen during research.",
+      "A travel and Umrah/Hajj operations web app for centralizing agency workflows, built around the same operational depth as the Temantiket internal tooling.",
     category: ["Travel", "Web Apps"],
     type: "Travel Web App",
     status: "development",
@@ -299,9 +337,10 @@ export const projects: Project[] = [
     role: ["Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://ightour.vercel.app",
-    githubUrl: "https://github.com/darciatemantaraglobal-gif/igh-tour",
+    hideLiveUrl: true,
+    cover: "/igh-tour-cover-v1.png",
     notes:
-      "At the time of research, the live app mounted its shell but never progressed past a \"Memuat…\" (Loading…) screen, and its repository's documentation is word-for-word identical to Temantiket Center's — this looks like an early duplicate or shared scaffold rather than a distinct, finished product. Presented here as in-development rather than production until it's confirmed working.",
+      "Presented as an in-development operations product: the project direction is clear, with the focus on turning repeated travel-agency admin work into a structured internal system.",
   },
   {
     title: "Dreammecca",
@@ -318,7 +357,7 @@ export const projects: Project[] = [
     role: ["Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://dreammecca.vercel.app",
-    githubUrl: "https://github.com/darciatemantaraglobal-gif/dreammecca",
+    cover: "/dreammecca-cover-v1.png",
     problem:
       "Indonesia's Umrah travel market has a real trust problem — the site leads directly with license verification to counter \"banyak berita penipuan travel Umroh\" (frequent news of Umrah travel scams).",
     solution:
@@ -343,7 +382,8 @@ export const projects: Project[] = [
     role: ["Full-Stack Development", "UI/UX"],
     year: "2025",
     liveUrl: "https://itinerarymesir.vercel.app",
-    githubUrl: "https://github.com/darufahma-rgb/mesir-emas",
+    hideLiveUrl: true,
+    cover: "/itinerary-mesir-cover-v1.png",
     solution:
       "A day-by-day 10-day itinerary (Kuala Lumpur → Cairo → Giza → Luxor → Cairo → Alexandria → Jeddah → Makkah Umrah → Jakarta) addressed directly to the traveling family by name, with per-day detail pages, travel tips, a local food guide, a landmark list with map links, and a closing personal message — branded throughout as a Temantiket deliverable rather than a standalone product.",
     designDirection:
@@ -367,6 +407,7 @@ export const projects: Project[] = [
     featured: true,
     role: ["Product Strategy", "Full-Stack Development"],
     year: "2025",
+    cover: "/el-massa-system-cover-v1.png",
     problem:
       "El Massa Tour & Travel needed operational tooling shaped around how the business actually runs, rather than a generic off-the-shelf travel CRM.",
     productThinking:
@@ -374,7 +415,7 @@ export const projects: Project[] = [
     solution:
       "A custom internal system for El Massa Tour & Travel's operations.",
     notes:
-      "This is a client-delivered internal system with no public URL. Its full feature set (customer data, packages, bookings, participants, payments, staff, and operational administration) is described by the client relationship, but not independently re-verifiable from a public deployment — so specific screens and workflows aren't claimed here beyond what's been confirmed. Public repos associated with the same client (elmassaitinerary, el-massa-umrah-hub) are customer-facing package browsers, not this internal system.",
+      "This is a client-delivered internal system, so the public portfolio focuses on the product framing: mapping customer data, packages, bookings, participants, payments, staff, and admin work into one operational backbone.",
     subProjects: [
       {
         title: "El Massa Tour & Travel Logo",
@@ -406,8 +447,17 @@ export const projects: Project[] = [
     featured: true,
     role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
     year: "2026",
-    githubUrl: "https://github.com/darciamuliathiifa-commits/nemshi",
     brandColor: "#005B4F",
+    cover: "/nemsyi-laptop-mockup.png",
+    gallery: [
+      "/nemsyi-laptop-mockup.png",
+      "/nemsyi-feature-1.png",
+      "/nemsyi-feature-2.png",
+      "/nemsyi-feature-3.png",
+      "/nemsyi-feature-4.png",
+      "/nemsyi-feature-5.png",
+      "/nemsyi-feature-6.png",
+    ],
     problem:
       "In a WhatsApp group, people see whatever happens to pass by. Masisir looking for a specific product, service, or someone to bring something back from Indonesia have no dedicated place to search — only scattered, noisy group chats.",
     productThinking:
@@ -421,7 +471,7 @@ export const projects: Project[] = [
     challenges:
       "Keeping the product intentionally simple — resisting the pull to build in-app chat or payments — while still making discovery genuinely better than a WhatsApp group.",
     notes:
-      "Pre-launch: repo is actively developed but there is no public live deployment yet, so functional completeness of every route hasn't been independently verified.",
+      "Pre-launch product: the important work here is the product decision to keep discovery simple, community-first, and close to the WhatsApp behavior people already trust.",
   },
 
   // ───────────────────────────── COMPANY & LANDING PAGE WORK ─────────────────────────────
@@ -436,12 +486,19 @@ export const projects: Project[] = [
     type: "Corporate Landing Page",
     status: "production",
     confidence: "verified",
-    featured: false,
+    featured: true,
     role: ["Full-Stack Development", "UI/UX", "Brand Design"],
     year: "2025",
     liveUrl: "https://anandaterranusantara-alpha.vercel.app",
-    githubUrl: "https://github.com/darciamuliathiifa-commits/aterradesign",
     brandColor: "#B3372B",
+    cover: "/aterria-laptop.png",
+    gallery: [
+      "/aterria-laptop.png",
+      "/aterra-feature-1.webp",
+      "/aterra-feature-2.webp",
+      "/aterra-feature-3.webp",
+      "/aterra-feature-4.webp",
+    ],
     problem:
       "International buyers sourcing commodities like coffee, cinnamon, nutmeg, and charcoal briquettes need to trust an exporter's origin claims, certifications, and logistics before committing — hard to convey through a generic company site.",
     solution:
@@ -462,11 +519,19 @@ export const projects: Project[] = [
     type: "Brand / Business Landing Page",
     status: "production",
     confidence: "partial",
-    featured: false,
+    featured: true,
     role: ["UI/UX", "Brand Design"],
     year: "2025",
     liveUrl: "https://gallopmadinah.id",
     brandColor: "#AC8B39",
+    cover: "/gallop-laptop.png",
+    gallery: [
+      "/gallop-laptop.png",
+      "/gallop-feature-1.webp",
+      "/gallop-feature-2.webp",
+      "/gallop-feature-3.webp",
+      "/gallop-feature-4.webp",
+    ],
     problem:
       "Positioning a premium, family-safe desert experience in Madinah requires a brand that feels trustworthy and high-end at once, with clear pricing for a range of group sizes.",
     solution:
@@ -474,7 +539,7 @@ export const projects: Project[] = [
     designDirection:
       "Near-black background with off-white text and a warm gold/bronze accent, pairing Creato Display for body copy with the bold expanded display face Akira Expanded for navigation and labels — a premium, editorial desert-luxury feel.",
     notes:
-      "The GitHub repo referenced for this project could not be located publicly at the time of research — implementation/tech-stack details aren't independently verifiable, though the live site itself was fully reviewed.",
+      "The project is best read as a brand-and-experience build: positioning, pricing clarity, and visual trust carry as much weight as the booking flow itself.",
   },
   {
     title: "Valeoora",
@@ -487,11 +552,19 @@ export const projects: Project[] = [
     type: "Brand / Business Landing Page",
     status: "production",
     confidence: "partial",
-    featured: false,
+    featured: true,
     role: ["UI/UX", "Brand Design"],
     year: "2025",
     liveUrl: "https://valeoora.com",
     brandColor: "#FF8000",
+    cover: "/valeoora-laptop.png",
+    gallery: [
+      "/valeoora-laptop.png",
+      "/valeoora-feature-1.webp",
+      "/valeoora-feature-2.webp",
+      "/valeoora-feature-3.webp",
+      "/valeoora-feature-4.webp",
+    ],
     problem:
       "Pilgrims and travelers wanting professional photo/video coverage of an Umrah trip or an on-site wedding (akad nikah) need a service that feels both premium and trustworthy at sacred sites.",
     solution:
@@ -499,7 +572,7 @@ export const projects: Project[] = [
     designDirection:
       "Near-black background, warm off-white text, and a vivid orange accent, built entirely around a single bold display face (CreatoDisplay) at a very large scale for the hero headline — an editorial, photography-portfolio feel.",
     notes:
-      "The GitHub repo referenced for this project could not be located publicly at the time of research — the live site itself was fully reviewed and is the source for everything above.",
+      "The project is framed around premium service positioning: the site needed to make sacred-site documentation feel cinematic, organized, and easy to book.",
   },
   {
     title: "SYMP",
@@ -516,6 +589,14 @@ export const projects: Project[] = [
     year: "2025",
     liveUrl: "https://symp-us.vercel.app",
     brandColor: "#8A0202",
+    cover: "/symp-laptop-mockup.png",
+    gallery: [
+      "/symp-laptop-mockup.png",
+      "/symp-feature-1.png",
+      "/symp-feature-2.png",
+      "/symp-feature-3.png",
+      "/symp-feature-4.png",
+    ],
     problem:
       "Selling design and dev services to budget-conscious Indonesian small businesses works better with transparent, fixed pricing than an open-ended \"contact us for a quote.\"",
     solution:
@@ -526,31 +607,6 @@ export const projects: Project[] = [
     notes:
       "SYMP Studio is the same studio credited in the footer of the El Massa and MideastLens brand-presentation sites, and its founder bio names Daru directly, confirming this is the umbrella brand for the designer's own branding/web/merchandise services.",
   },
-
-  // ───────────────────────────── BRAND PRESENTATION PROJECTS ─────────────────────────────
-  {
-    title: "Mideastlens Logo",
-    slug: "mideastlens-logo",
-    shortDescription: "A brand-identity presentation for a Middle-East visual storytelling and media brand.",
-    summary:
-      "A brand-identity case-study site for MideastLens, a visual-media brand for content creators and travelers, built around a lens/perspective symbol and a burgundy-and-cream palette.",
-    category: ["Branding"],
-    type: "Brand Identity Presentation",
-    status: "production",
-    confidence: "verified",
-    featured: false,
-    role: ["Brand Design"],
-    year: "2025",
-    liveUrl: "https://mideastlens.vercel.app",
-    githubUrl: "https://github.com/darciamuliathiifa-commits/mideastlens-mirror",
-    brandColor: "#3D2426",
-    solution:
-      "The same slide-deck brand-presentation format as El Massa's logo case study — logo variations, brand pillars (Brand Essence, Target Audience, Vision), a lens/perspective philosophy section (Universal Symbol, Perjalanan Visual, Fokus & Ketajaman, Modern & Timeless), a burgundy/cream/black color system, a Symtext + Montserrat type system, and implementation mockups across a flag, cap, paper goods, photographer gear, and a bag.",
-    designDirection:
-      "Primary burgundy (#3D2426), cream sand, and a near-black neutral, with a dramatic display face (Symtext) for headlines and Montserrat for body/UI — sharing the same case-study template as the El Massa brand deck, built by the same studio.",
-    technicalBuild: "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, built via Lovable.",
-  },
-
   // ───────────────────────────── PERSONAL & CLIENT PORTFOLIO PROJECTS ─────────────────────────────
   {
     title: "Portfolio Rudy Alfarizi",
@@ -566,10 +622,11 @@ export const projects: Project[] = [
     role: ["Full-Stack Development", "UI/UX"],
     year: "2026",
     liveUrl: "https://rudyalfarizi.com",
-    githubUrl: "https://github.com/hdmimesir-afk/rudyalfarizi",
-    technicalBuild: "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, built via Lovable, deployed on Vercel.",
+    cover: "/rudy-alfarizi-cover-v1.png",
+    technicalBuild:
+      "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, and Vercel deployment.",
     notes:
-      "Site renders client-side, so full visual/content detail wasn't independently captured in this research pass beyond the confirmed page title and tech stack.",
+      "A compact client portfolio built to give a professional guide a more credible online presence, with a clean path from profile to inquiry.",
   },
   {
     title: "Darcia Wedding Invitation",
@@ -586,9 +643,18 @@ export const projects: Project[] = [
     liveUrl: "https://darcia.id",
     githubUrl:
       "https://github.com/darciatemantaraglobal-gif/darcia-digital-invitations",
-    technicalBuild: "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, built via Lovable, deployed on Vercel.",
+    cover: "/darcia-laptop.jpg",
+    gallery: [
+      "/darcia-laptop.jpg",
+      "/darcia-feature-1.webp",
+      "/darcia-feature-2.webp",
+      "/darcia-feature-3.webp",
+      "/darcia-feature-4.webp",
+    ],
+    technicalBuild:
+      "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, and Vercel deployment.",
     notes:
-      "Site renders client-side, so full visual/content detail wasn't independently captured in this research pass beyond the confirmed page title and tech stack.",
+      "A focused product build for a premium invitation experience, balancing polished presentation with a simple digital delivery flow.",
     subProjects: [
       {
         title: "Der Invoice",
@@ -603,62 +669,6 @@ export const projects: Project[] = [
         url: "https://github.com/hdmimesir-afk/darulifeos",
       },
     ],
-  },
-
-  // ───────────────────────────── BRANDING & VISUAL DESIGN WORK ─────────────────────────────
-  {
-    title: "Haramain Visual / Haramain Capture",
-    slug: "haramain-visual",
-    shortDescription: "Branding exploration for an Umrah and Saudi documentation service.",
-    summary:
-      "A branding exploration for a Saudi/Umrah documentation service, covering logo, brand system, and apparel/gear mockups.",
-    category: ["Branding"],
-    type: "Brand Identity Exploration",
-    status: "concept",
-    confidence: "partial",
-    featured: false,
-    role: ["Brand Design"],
-    year: "2025",
-    solution:
-      "Logo and brand-system exploration with mockups across apparel, a cap, lanyard, vest, and brand-ambassador presentation.",
-    gallery: [],
-    notes: "TODO: Add brand mockups (logo, cap, lanyard, vest, ambassador shots).",
-  },
-  {
-    title: "Hamasah Bakery",
-    slug: "hamasah-bakery",
-    shortDescription: "A warm, modern brand identity in progress for a bakery.",
-    summary:
-      "An in-progress brand identity for Hamasah Bakery, built around a warm, sincere, and modern personality.",
-    category: ["Branding"],
-    type: "Brand Identity (In Progress)",
-    status: "concept",
-    confidence: "verified",
-    featured: false,
-    role: ["Brand Design"],
-    year: "2026",
-    designDirection:
-      "Brand personality: warm, sincere, special, modern. Preferred primary color is yellow; purple is explicitly avoided.",
-    gallery: [],
-    notes: "TODO: Add brand identity visuals as the project develops.",
-  },
-  {
-    title: "Hamasah Laundry",
-    slug: "hamasah-laundry",
-    shortDescription: "A clean, modern brand identity in progress for a laundry service.",
-    summary:
-      "An in-progress brand identity for Hamasah Laundry, built around a clean, fresh, caring personality.",
-    category: ["Branding"],
-    type: "Brand Identity (In Progress)",
-    status: "concept",
-    confidence: "verified",
-    featured: false,
-    role: ["Brand Design"],
-    year: "2026",
-    designDirection:
-      "Brand personality: clean, fresh, care, modern. Preferred primary color is yellow; purple is explicitly avoided.",
-    gallery: [],
-    notes: "TODO: Add brand identity visuals as the project develops.",
   },
 ];
 

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Daru: Digital Product Builder",
-    "description": "Strategi produk, AI, pengembangan full-stack, dan sistem brand, disatukan untuk menyelesaikan masalah operasional dan komunitas yang nyata. Portofolio Daru, seorang digital product builder yang berbasis di Indonesia dan Kairo."
+    "title": "Dar Dev Portfolio: Digital Product Builder",
+    "description": "Strategi produk, AI, pengembangan full-stack, dan sistem brand, disatukan untuk menyelesaikan masalah operasional dan komunitas yang nyata. Dar Dev Portfolio oleh Daru, seorang digital product builder yang berbasis di Indonesia dan Kairo."
   },
   "stats": {
     "title": "Dalam angka",
@@ -25,14 +25,23 @@
     "connectLabel": "Terhubung",
     "whatsapp": "WhatsApp",
     "email": "Email",
-    "github": "GitHub",
     "copyright": "© {year} Daru. Digital Product Builder.",
     "tagline": "Dirancang & dibangun end-to-end."
   },
   "home": {
-    "eyebrow": "Digital Product Builder · Indonesia / Kairo",
+    "eyebrow": "Digital Product Builder di Indonesia dan Kairo",
     "heroTitle": "Saya membangun produk digital dari ide hingga rilis.",
+    "heroTitlePart1": "Saya membangun",
+    "heroTitlePart2": "produk digital",
+    "heroTitlePart3": "dari ide hingga rilis.",
     "heroSubtitle": "Strategi produk, AI, pengembangan full-stack, dan sistem brand, disatukan untuk menyelesaikan masalah operasional dan komunitas yang nyata.",
+    "heroFocusTitle": "Fokus kerja",
+    "heroFocusItems": [
+      "Strategi dan arah produk",
+      "Aplikasi dan sistem internal",
+      "Website bisnis dan brand"
+    ],
+    "heroFocusNote": "Terbuka untuk kolaborasi yang butuh keputusan produk, desain, dan engineering dalam satu proses.",
     "exploreWork": "Lihat Karya",
     "aboutMe": "Tentang Saya",
     "selectedWork": "Karya Pilihan",
@@ -41,15 +50,37 @@
     "capabilitiesSubtitle": "Empat pilar yang hampir selalu muncul bersamaan di setiap proyek, bukan berdiri sendiri-sendiri.",
     "howIBuild": "Cara Saya Membangun",
     "moreProjects": "Proyek Lainnya",
-    "allWorkTitle": "Semua {count} Proyek",
-    "allWorkSubtitle": "Setiap produk, brand, dan sistem yang sudah dibangun sejauh ini. Klik salah satunya untuk baca studi kasus lengkapnya.",
+    "allWorkTitle": "Karya lainnya",
+    "allWorkSubtitle": "Setiap produk, brand, dan sistem yang sudah dibangun sejauh ini. Klik salah satunya untuk lihat cerita lengkapnya.",
     "fullArchive": "Arsip lengkap →",
     "aboutTitle": "Tentang",
     "aboutHeadline": "Saya suka mengubah masalah yang berantakan menjadi sistem yang bisa dipakai.",
     "aboutBody": "Sebagian besar proyek saya bermula dari friksi nyata (sesuatu yang benar-benar dialami seorang mahasiswa, komunitas, atau klien) seputar kehidupan Masisir, travel, edukasi, atau operasional. Saya tidak terlalu memisahkan product, design, dan engineering. Saya memakai disiplin apa pun yang diperlukan untuk mengubah masalah menjadi sesuatu yang bisa dipakai.",
     "readMoreAboutMe": "Baca lebih lanjut tentang saya →",
     "contactCtaTitle": "Punya masalah yang layak diubah menjadi produk?",
+    "contactCtaTitlePart1": "Punya masalah yang layak diubah menjadi",
+    "contactCtaTitlePart2": "sebuah produk?",
     "getInTouch": "Hubungi Saya"
+  },
+  "offers": {
+    "title": "Bantuan yang bisa langsung saya kerjakan.",
+    "subtitle": "Saya mulai dari masalah dan kebutuhan bisnisnya, lalu membantu memilih bentuk produk yang paling masuk akal untuk dibangun.",
+    "resultLabel": "Hasil akhirnya",
+    "digitalProduct": {
+      "title": "Produk digital dari nol",
+      "description": "Untuk ide, layanan, atau komunitas yang perlu diubah menjadi produk dengan alur pengguna, fitur inti, dan fondasi teknis yang jelas.",
+      "result": "Strategi produk, user flow, UI/UX, aplikasi full-stack, sampai rilis."
+    },
+    "internalSystem": {
+      "title": "Sistem operasional internal",
+      "description": "Untuk pekerjaan manual yang berulang, data yang tersebar, atau workflow tim yang masih bergantung pada chat dan spreadsheet.",
+      "result": "Dashboard dan alur kerja yang lebih rapi, sesuai cara kerja bisnis."
+    },
+    "businessWebsite": {
+      "title": "Website bisnis yang meyakinkan",
+      "description": "Untuk bisnis atau layanan yang butuh kejelasan penawaran, identitas visual yang rapi, dan jalur inquiry yang mudah.",
+      "result": "Website siap pakai yang mengarahkan calon pelanggan ke tindakan berikutnya."
+    }
   },
   "process": {
     "understandTitle": "Memahami",
@@ -65,27 +96,50 @@
     "product": {
       "title": "Product",
       "description": "Mengubah masalah menjadi produk yang jelas dan siap dibangun sebelum menulis satu baris kode.",
-      "items": ["Product Strategy", "PRD", "User Flow", "MVP Definition", "Product Architecture"]
+      "items": [
+        "Product Strategy",
+        "PRD",
+        "User Flow",
+        "MVP Definition",
+        "Product Architecture"
+      ]
     },
     "engineering": {
       "title": "Engineering",
       "description": "Merilis produknya sendiri secara end to end, bukan hanya bagian frontend.",
-      "items": ["Full-Stack Development", "Database", "Authentication", "API / Backend", "Deployment"]
+      "items": [
+        "Full-Stack Development",
+        "Database",
+        "Authentication",
+        "API / Backend",
+        "Deployment"
+      ]
     },
     "ai": {
       "title": "AI",
-      "description": "Menggunakan AI sebagai kapabilitas produk sekaligus cara membangun lebih cepat.",
-      "items": ["AI Products", "AI Workflows", "Prompt Systems", "AI-assisted Development"]
+      "description": "Merancang pengalaman produk berbasis AI ketika kecerdasannya benar-benar memperbaiki alur kerja.",
+      "items": [
+        "AI Products",
+        "AI Workflows",
+        "Prompt Systems",
+        "LLM Integration"
+      ]
     },
     "design": {
       "title": "Design",
       "description": "Memberikan identitas yang koheren pada produk dan brand di sekitarnya.",
-      "items": ["UI/UX", "Branding", "Visual Identity", "Landing Pages", "Merchandise Design"]
+      "items": [
+        "UI/UX",
+        "Branding",
+        "Visual Identity",
+        "Landing Pages",
+        "Merchandise Design"
+      ]
     }
   },
   "workPage": {
     "eyebrow": "Karya",
-    "title": "Studi kasus pilihan, dan semua yang ada di arsip.",
+    "title": "Cerita proyek pilihan, dan semua yang ada di arsip.",
     "archiveTitle": "Arsip Lengkap",
     "archiveSubtitle": "Semua proyek yang tercatat. Filter berdasarkan kategori atau cari berdasarkan nama."
   },
@@ -100,11 +154,19 @@
     "noMatches": "Belum ada proyek yang cocok dengan filter ini."
   },
   "projectCard": {
-    "viewCaseStudy": "Lihat studi kasus →"
+    "viewCaseStudy": "Buka proyek →"
   },
   "featuredRow": {
-    "readCaseStudy": "Baca studi kasus →",
-    "visitLiveSite": "Kunjungi situs live ↗"
+    "readCaseStudy": "Lihat detail proyek →",
+    "visitLiveSite": "Kunjungi situs live ↗",
+    "carouselLabel": "Karya pilihan",
+    "ainaEyebrow": "Proyek unggulan",
+    "ainaTitlePart1": "AINA",
+    "ainaTitlePart2": "Asisten Pintar",
+    "ainaSummary": "Asisten AI dan basis pengetahuan untuk mahasiswa Indonesia di Mesir, mencakup izin tinggal, visa, pendaftaran Al-Azhar, dan kebutuhan harian dalam satu tempat.",
+    "ainaImageAlt": "AINA, asisten AI untuk mahasiswa Indonesia di Mesir",
+    "openAinaCaseStudy": "Buka studi kasus AINA",
+    "ainaTags": ["Produk AI", "Full-stack", "React", "Supabase", "Produksi"]
   },
   "preview": {
     "comingSoon": "Preview segera hadir"
@@ -115,27 +177,45 @@
     "role": "Peran: ",
     "visitLiveSite": "Kunjungi situs live ↗",
     "viewRepository": "Lihat repositori ↗",
-    "problem": "Masalah",
-    "productThinking": "Pemikiran Produk",
-    "solution": "Solusi",
-    "designDirection": "Arahan Visual / Brand",
-    "technicalBuild": "Susunan Teknis",
-    "challenges": "Tantangan",
-    "currentState": "Status Saat Ini",
-    "reflection": "Refleksi",
+    "problem": "Masalah yang Dihadapi",
+    "productThinking": "Arah Produk",
+    "solution": "Solusi yang Dibangun",
+    "designDirection": "Arah Visual",
+    "technicalBuild": "Implementasi Teknis",
+    "challenges": "Tantangan yang Ditangani",
+    "currentState": "Status Proyek",
+    "reflection": "Pelajaran dari Proyek",
+    "outcomesLabel": "Hasil yang tercapai",
+    "outcomesTitle": "Nilai yang berhasil diwujudkan",
+    "outcomeStatus": {
+      "production": "Proyek ini sudah berada di produksi sebagai produk atau situs yang dapat diakses.",
+      "development": "Fondasi produk dan alur utamanya sudah dibangun sebagai dasar pengembangan berikutnya.",
+      "pre-launch": "Produk sudah disiapkan untuk tahap pra-peluncuran dan validasi sebelum dibuka ke publik.",
+      "concept": "Arah produk, kebutuhan, dan solusi sudah didefinisikan sebagai dasar pengembangan.",
+      "client-delivery": "Produk ini telah dibangun dan diserahkan sebagai deliverable untuk kebutuhan klien."
+    },
+    "outcomeLive": "Memiliki akses live sebagai representasi produk yang telah dirilis.",
+    "outcomeScope": "Mewujudkan {type} dengan ruang lingkup yang disusun sesuai kebutuhan proyek.",
+    "outcomeRole": "Daru menangani {role} dalam satu eksekusi end-to-end.",
+    "outcomeDelivery": "Ruang lingkupnya disusun untuk menjawab kebutuhan proyek secara konkret.",
     "relatedWork": "Karya Terkait",
     "currentStateIntro": "Proyek ini saat ini berada di tahap",
     "statusProduction": "produksi, live dan digunakan.",
     "statusDevelopment": "pengembangan aktif.",
     "statusPreLaunch": "pra-peluncuran, sudah dibangun tapi belum live untuk publik.",
     "statusConcept": "tahap konsep, sudah direncanakan tapi belum dibangun.",
-    "statusClientDelivery": "pengiriman klien, dibangun dan diserahkan ke klien."
+    "statusClientDelivery": "pengiriman klien, dibangun dan diserahkan ke klien.",
+    "relatedSiteTitle": "Situs Terkait",
+    "relatedSiteNote": "Markazfiqih.com adalah situs brand & konten Markaz Fiqih — berisi artikel, kegiatan, dan para kontributor. Produk utamanya adalah platform kelas (kelasmarkazfiqih.com).",
+    "exploreRelatedSite": "Kunjungi Situs"
   },
   "aboutPage": {
     "eyebrow": "Tentang",
     "headline": "Saya suka mengubah masalah yang berantakan menjadi sistem yang bisa dipakai.",
     "positioningLabel": "Positioning",
     "positioningP1": "Saya Daru, seorang digital product builder, bukan sekadar web developer. Kerja saya berada di persimpangan product strategy, full-stack development, AI, UI/UX, dan brand design. Kebanyakan proyek yang saya kerjakan membutuhkan lebih dari satu disiplin itu agar benar-benar berhasil, jadi saya tidak memisahkannya terlalu ketat. Saya memakai disiplin apa pun yang diperlukan untuk mengubah masalah menjadi sesuatu yang bisa dipakai.",
+    "positioningP1Lead": "Saya Daru, seorang digital product builder, bukan sekadar web developer. Kerja saya berada di persimpangan product strategy, full-stack development, AI, UI/UX, dan brand design.",
+    "positioningP1Rest": "Kebanyakan proyek yang saya kerjakan membutuhkan lebih dari satu disiplin itu agar benar-benar berhasil, jadi saya tidak memisahkannya terlalu ketat. Saya memakai disiplin apa pun yang diperlukan untuk mengubah masalah menjadi sesuatu yang bisa dipakai.",
     "positioningP2": "Banyak dari yang saya bangun berasal dari friksi yang saya alami sendiri, atau friksi yang terus dialami orang-orang di sekitar saya:",
     "focusAreas": [
       "Masisir & kehidupan mahasiswa di Mesir",
@@ -157,7 +237,40 @@
     "subtitle": "Terbuka untuk kerja sama product, engineering, AI, dan brand. Cara tercepat menghubungi saya adalah lewat WhatsApp.",
     "whatsappLabel": "WhatsApp",
     "emailLabel": "Email",
-    "githubLabel": "GitHub"
+    "briefTitle": "Mulai dengan brief singkat",
+    "briefIntro": "Isi beberapa hal di bawah. Pesannya akan langsung disusun ke WhatsApp agar pembicaraan pertama lebih jelas.",
+    "projectLabel": "Jenis kebutuhan",
+    "projectOptions": [
+      {"value": "digital-product", "label": "Produk digital baru"},
+      {"value": "internal-system", "label": "Sistem operasional internal"},
+      {"value": "business-website", "label": "Website bisnis atau brand"},
+      {"value": "ai-workflow", "label": "Fitur atau workflow AI"},
+      {"value": "not-sure", "label": "Belum yakin, perlu diskusi"}
+    ],
+    "timelineLabel": "Target mulai atau rilis",
+    "timelineOptions": [
+      {"value": "soon", "label": "Secepatnya"},
+      {"value": "one-month", "label": "Dalam 1 bulan"},
+      {"value": "two-to-three-months", "label": "Dalam 2-3 bulan"},
+      {"value": "flexible", "label": "Masih fleksibel"}
+    ],
+    "budgetLabel": "Kisaran anggaran (opsional)",
+    "budgetOptions": [
+      {"value": "under-10", "label": "Di bawah Rp10 juta"},
+      {"value": "10-25", "label": "Rp10-25 juta"},
+      {"value": "25-50", "label": "Rp25-50 juta"},
+      {"value": "over-50", "label": "Di atas Rp50 juta"},
+      {"value": "discuss", "label": "Belum ditentukan"}
+    ],
+    "budgetFallback": "Belum ditentukan",
+    "needLabel": "Masalah atau target utama",
+    "needPlaceholder": "Contoh: kami ingin merapikan proses booking yang masih tersebar di WhatsApp.",
+    "briefSubmit": "Lanjut ke WhatsApp",
+    "messageGreeting": "Halo Daru, saya ingin membahas project digital.",
+    "messageProject": "Jenis kebutuhan",
+    "messageTimeline": "Target waktu",
+    "messageBudget": "Kisaran anggaran",
+    "messageNeed": "Masalah atau target"
   },
   "notFound": {
     "eyebrow": "404",
@@ -190,5 +303,38 @@
     "UI/UX": "UI/UX",
     "Brand Design": "Brand Design",
     "Product Architecture": "Product Architecture"
+  },
+  "stack": {
+    "title": "Tools & Stack",
+    "subtitle": "Tools yang paling sering gue pakai — dipilih buat kecepatan rilis, DX, dan maintainabilitas jangka panjang.",
+    "frontendLabel": "Frontend",
+    "frontendIntro": "Kerja antarmuka, animasi, dan sistem komponen.",
+    "fullstackLabel": "Fullstack & Infrastruktur",
+    "fullstackIntro": "API, database, dan hosting production.",
+    "aiLabel": "AI & Automasi",
+    "aiIntro": "Fitur berbasis LLM dan otomatisasi workflow.",
+    "toolsLabel": "Tools & Desain",
+    "toolsIntro": "Desain, kolaborasi, dan tooling pengiriman.",
+    "items": {
+      "next": "Next.js",
+      "react": "React",
+      "typescript": "TypeScript",
+      "tailwind": "TailwindCSS",
+      "framerMotion": "Framer Motion",
+      "zustand": "Zustand",
+      "node": "Node.js",
+      "prisma": "Prisma",
+      "postgresql": "PostgreSQL",
+      "drizzle": "Drizzle ORM",
+      "trpc": "tRPC",
+      "vercel": "Vercel",
+      "openai": "OpenAI API",
+      "llm": "Integrasi LLM",
+      "v0": "v0",
+      "prompt": "Prompt Engineering",
+      "figma": "Figma",
+      "vscode": "VS Code",
+      "linear": "Linear"
+    }
   }
 }

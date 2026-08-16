@@ -6,6 +6,7 @@
     "problem": "Informasi praktis yang dibutuhkan Masisir sehari-hari — cara memperpanjang Iqomah (izin tinggal), mengurus visa Mesir atau Visa on Arrival, mendaftar di Al-Azhar, atau mengurus paspor yang hilang — tersebar di puluhan grup WhatsApp, PDF yang sudah usang, dan informasi dari mulut ke mulut. Jawabannya ada, tetapi menemukan yang terkini dan benar memakan waktu dan tidak bisa diandalkan.",
     "productThinking": "Alih-alih membangun halaman FAQ statis lainnya, AINA memperlakukan pengetahuan yang terkumpul dari komunitas sebagai basis pengetahuan yang bisa ditelusuri, lalu menambahkan lapisan percakapan di atasnya, sehingga mahasiswa bisa mengajukan pertanyaan dalam bahasa Indonesia sehari-hari dan mendapatkan jawaban bersumber, alih-alih harus menelusuri riwayat obrolan grup.",
     "solution": "Aplikasi web bertema gelap yang berpusat pada kotak chat AI (\"Tanyakan apa saja kepada AINA\"), didukung oleh basis pengetahuan terkurasi yang mencakup Iqomah & keimigrasian, visa, pendaftaran Al-Azhar, dan panduan paspor. Aplikasi ini dilengkapi dengan utilitas harian yang benar-benar dibutuhkan Masisir — konverter EGP↔IDR / USD↔IDR real-time dan jam ganda Mesir/Jakarta — serta area Tasks & Notes untuk pengorganisasian pribadi. Akses penuh ke aplikasi berada di balik login.",
+    "outcomes": ["Mengubah panduan komunitas yang sebelumnya tersebar menjadi satu basis pengetahuan dan pengalaman chat yang dapat ditelusuri.", "Merilis produk live yang menyatukan utilitas harian, pengorganisasian pribadi, dan panduan praktis dalam satu tempat.", "Membangun tool admin pendamping agar basis pengetahuan dapat terus diperbarui saat aturan dan informasi berubah."],
     "designDirection": "UI gelap (latar nyaris hitam, teks terang) menggunakan SF Pro Display untuk antarmuka, dipadukan dengan jenis huruf kaligrafi Arab (Amiri, Scheherazade New) untuk konten berskrip Arab — perpaduan yang disengaja agar produk tetap terasa teknis dan modern sekaligus tetap terikat secara visual pada materi Islami/berskrip Arab.",
     "technicalBuild": "Frontend React + Vite + TypeScript, backend Express.js, Supabase untuk autentikasi dan data, Tailwind CSS, Playwright/Vitest untuk pengujian, di-deploy di Vercel dan Railway.",
     "challenges": "Mengkurasi dan menyusun jawaban yang benar-benar bisa diandalkan (aturan keimigrasian dan visa terus berubah) adalah masalah yang lebih sulit dibanding antarmuka chat itu sendiri — akurasinya bergantung pada tool admin internal (AINA Scraper) yang menjaga basis pengetahuan tetap terkini.",
@@ -35,8 +36,9 @@
     "problem": "Sebagian besar Masisir sudah menggunakan ChatGPT secara kasual, tetapi ada kesenjangan besar antara penggunaan kasual dengan penggunaan AI yang baik untuk studi akademik, kerja organisasi, bisnis, atau pembuatan konten.",
     "productThinking": "AIGYPT memetakan audiensnya berdasarkan peran — Akademisi, Organisator, Pebisnis, Kreator, Pencari — bukan berdasarkan level keterampilan, dan menyusun kurikulum berdasarkan apa yang benar-benar dibutuhkan masing-masing peran tersebut dari AI.",
     "solution": "Program kohort (berjalan dalam batch bernomor, memadukan sesi offline dan online) yang mencakup dasar-dasar dan mindset AI, prompting, penggunaan AI akademik, penggunaan AI organisasi/bisnis, dan modul \"Vibe Coding\", lengkap dengan contoh kasus penggunaan before/after, testimoni alumni bernama, serta dua tingkatan membership — perpustakaan dengan ritme belajar sendiri dan jalur kohort penuh dengan sertifikasi. Membership ini juga mencakup akses ke dua produk saudaranya, Talqeeh dan Deenme.",
+    "outcomes": ["Menyatukan kohort, perpustakaan membership mandiri, dan akses produk saudara dalam satu pengalaman belajar.", "Mengubah ketertarikan AI yang masih umum menjadi jalur belajar berdasarkan peran: akademisi, organisator, pebisnis, kreator, dan pencari.", "Merilis platform kursus produksi, bukan hanya halaman acara satu kali."],
     "designDirection": "Tema gelap, menggunakan Inter secara konsisten di seluruh halaman — selaras dengan identitas visual keluarga produk AINA/AIGYPT yang lebih luas.",
-    "technicalBuild": "Dibangun di atas Replit.",
+    "technicalBuild": "Frontend React/Vite dengan struktur konten kursus, alur membership, dan setup deployment production-ready.",
     "lessons": "Menggabungkan membership AIGYPT dengan akses ke Talqeeh dan Deenme menunjukkan nilai memperlakukan produk-produk ini sebagai satu ekosistem untuk komunitas yang sama, alih-alih sebagai produk yang berdiri sendiri-sendiri.",
     "subProjects": [
       {
@@ -57,8 +59,9 @@
     "type": "Studi Islam × AI / Aplikasi Web Edukasi",
     "problem": "Asisten AI generik tidak mengetahui Muqarrar (materi kuliah) spesifik Al-Azhar atau bagaimana materi itu sebenarnya diujikan, sehingga Masisir mendapatkan jawaban generik alih-alih bantuan belajar yang sesuai dengan apa yang diujikan kepada mereka.",
     "solution": "Platform membership yang mengorganisasi template prompt di seluruh bidang studi Al-Azhar — enam kategori yang mencakup Ushuluddin & Qur'an, Hadits & Mustholah, Syariah & Fiqh, Aqidah & Pemikiran, Lughah Arabiyah, dan Tarikh/Dakwah/Tarbiyah — dilengkapi bank soal ujian tahun-tahun sebelumnya yang asli (dibatasi akses) beserta template prompt jawaban yang sesuai, rekomendasi tool AI per mata kuliah, dan alur onboarding 5 pertanyaan untuk membangun profil belajar. Satu mata kuliah gratis bisa digunakan tanpa perlu mendaftar.",
+    "outcomes": ["Mengorganisasi bantuan belajar Al-Azhar ke dalam perpustakaan prompt dan bank soal yang dikelompokkan per mata kuliah.", "Memberi mahasiswa jalur dari onboarding menuju panduan AI yang relevan dengan materi kuliah mereka, bukan prompting generik.", "Merilis produk membership yang fokus pada materi dan konteks ujian nyata."],
     "designDirection": "Latar nyaris hitam dengan sistem tipografi campuran yang khas — DM Sans untuk UI, serif Crimson Pro dan JetBrains Mono untuk aksen, serta jenis huruf Arab (Noto Naskh Arabic, Reem Kufi, Aref Ruqaa, Noto Kufi Arabic) — memberikan kesan yang lebih akademis dan editorial dibanding produk lain dalam keluarga AINA/AIGYPT.",
-    "technicalBuild": "JavaScript/Vite, Tailwind CSS, server bergaya Express, dibangun di atas Replit.",
+    "technicalBuild": "JavaScript/Vite, Tailwind CSS, dan server bergaya Express yang menjalankan platform belajar ringan untuk akses cepat ke materi terkurasi.",
     "lessons": "Kespesifikan mengalahkan keluasan — perpustakaan prompt yang dibatasi ketat pada materi ujian nyata satu institusi lebih berguna bagi audiensnya dibanding tool AI belajar yang bersifat umum."
   },
   "markaz-fiqih": {
@@ -68,6 +71,7 @@
     "problem": "Konten fiqh di internet sering kali tersebar dan tidak konsisten mengenai pendapat ulama mana yang sedang disajikan, sehingga menyulitkan umat Muslim Indonesia pada umumnya untuk belajar secara sistematis, bukan sekadar memungut potongan-potongan informasi.",
     "productThinking": "Platform ini secara eksplisit diposisikan sebagai \"Tempat Belajar Fiqih Madzhab Syafi'i Yang Sistematis dan Terstruktur\" — pembelajaran terstruktur dengan hierarki rujukan yang jelas (pendapat utama madzhab → pendapat yang lebih lemah → ikhtiyar ulama → pandangan madzhab lain) — dan dibangun sebagai produk pembelajaran e-commerce yang lengkap, bukan sekadar halaman pemasaran, karena audiensnya perlu menelusuri, membayar, dan benar-benar belajar di satu tempat.",
     "solution": "Katalog kursus dengan bundle dan filter level, checkout multi-metode (QRIS, e-wallet, virtual account, kartu) melalui gateway Mayar.id, dashboard siswa dengan auto-save progres, akses seumur hidup dan sertifikat, katalog ebook terpisah, serta profil pengajar untuk dua guru berbasis Al-Azhar di balik kursus-kursus ini.",
+    "outcomes": ["Menyatukan pencarian kursus, pembayaran, progres belajar, sertifikat, dan ebook dalam satu produk pembelajaran.", "Menghubungkan beragam metode pembayaran Indonesia lewat payment gateway dan alur webhook produksi.", "Menciptakan identitas visual dan storefront yang membuat pembelajaran fiqh Syafi'i terstruktur terasa kredibel secara online."],
     "designDirection": "Logo mark khusus — buku terbuka yang lipatan halamannya sekaligus membentuk siluet atap masjid dengan pusat berbentuk berlian emas — dalam sistem warna maroon tua (#7A1B1B) dan emas mustard (#C9A227) di atas latar krem/putih. Headline menggunakan jenis huruf serif display; body text memadukan Plus Jakarta Sans dengan Inter. Set aset favicon dan Open Graph yang lengkap dibangun khusus bersamaan dengan produk, bukan dibiarkan default.",
     "technicalBuild": "Frontend React + Vite + TypeScript dengan Tailwind CSS v4 dan konvensi shadcn/ui; backend Express 5 + Drizzle ORM; Supabase (Postgres + Edge Functions) untuk data dan webhook pembayaran; payment gateway Mayar.id; monorepo pnpm; di-deploy di Vercel.",
     "challenges": "Mengintegrasikan payment gateway Indonesia yang sesungguhnya (webhook, pelacakan status pembayaran, berbagai metode pembayaran) ke dalam platform pembelajaran adalah masalah yang secara signifikan berbeda dibanding situs pemasaran kursus pada umumnya.",
@@ -80,18 +84,8 @@
     "problem": "Menurut copy landing page aplikasi ini sendiri: menjaga konsistensi (istiqamah) dalam salat, dzikir, dan refleksi harian itu sulit tanpa adanya cara untuk melacaknya — \"satu hari satu langkah\".",
     "solution": "Pelacak salat yang mencatat lima waktu salat harian sebagai tepat waktu/telat/qadha dengan jadwal yang dibuat otomatis (metode perhitungan Egyptian Authority atau KEMENAG Indonesia), panduan dzikir/doa setelah salat lengkap dengan teks Arab dan transliterasi, \"Bank Doa\" berisi 50+ doa, jurnal refleksi harian dengan bantuan AI untuk merapikan tulisan dan interpretasi mimpi, serta tampilan statistik dengan penilaian A–F, heatmap kalender, dan sistem rank bergaya game 8 tingkat dari \"Mubtadi\" hingga \"Ulul Albab.\" Tingkatan membership \"Talqeeh\" yang bersifat invite-only turut disebutkan, tetapi tidak dijelaskan lebih lanjut dalam kode yang dapat diakses.",
     "designDirection": "Latar gelap hijau tua dengan aksen mint/emerald (#3ecf8e), highlight lime, dan teks krem, menggunakan Bricolage Grotesque untuk display type dipadukan dengan IBM Plex Sans Arabic untuk skrip Arab — grotesque modern dengan dukungan skrip Arab yang sesungguhnya.",
-    "technicalBuild": "React + Vite (JavaScript), server Express, Supabase, manifest PWA, di-deploy di Vercel. Riwayat repo menunjukkan bahwa app builder Lovable AI pernah digunakan pada suatu titik.",
-    "notes": "Deployment live-nya (deenme.vercel.app) saat ini mengembalikan 404, sehingga produk ini tidak bisa didemokan secara live untuk saat ini — semua informasi di atas bersumber langsung dari manifest repository dan copy landing page-nya sendiri, bukan dugaan."
-  },
-  "qohiroh-digital-ecosystem": {
-    "shortDescription": "Ekosistem digital tiga bagian untuk pusat studi Islam di Mesir — portal publik, siswa, dan keluarga.",
-    "summary": "Ekosistem digital yang telah disetujui dan sedang dalam tahap perencanaan untuk Qohiroh Center, mencakup situs pemasaran/pendaftaran publik, portal pendamping siswa, dan portal transparansi yang menghadap ke orang tua.",
-    "type": "Arsitektur Produk / Proyek Klien (Konsep)",
-    "problem": "Qohiroh Center melayani tiga audiens yang sangat berbeda dengan tiga kebutuhan yang berbeda pula: calon siswa yang perlu mencari dan mendaftar program, siswa yang sedang tinggal dan belajar di Mesir yang membutuhkan bimbingan dan struktur harian, serta orang tua di Indonesia yang ingin memiliki visibilitas atas perjalanan anak mereka tanpa bisa menyaksikannya secara langsung.",
-    "productThinking": "Alih-alih satu platform sekolah generik, ekosistem ini dipecah menjadi tiga produk yang dirancang khusus sesuai tujuannya. Qohiroh Santri secara khusus sengaja tidak dibingkai sebagai LMS generik — produk ini dibangun di sekitar bimbingan, kegiatan, dan pendokumentasian perjalanan siswa di Mesir, bukan nilai dan tugas.",
-    "solution": "Qohiroh Public — pintu depan digital: branding, informasi program, dan pendaftaran online untuk calon siswa. Qohiroh Santri — ruang pendamping untuk siswa yang sudah berada di Mesir, direncanakan mencakup dashboard pribadi, agenda Qohiroh, jadwal mentoring, kegiatan, kehadiran, informasi mentor, catatan progres, dokumen penting, dan riwayat perjalanan siswa yang berjalan terus. Qohiroh Family — portal yang menghadap ke orang tua di Indonesia, menampilkan profil siswa, kehadiran, kegiatan, progres, laporan mentor, dokumen, dan pengumuman, dibangun di sekitar transparansi bagi orang tua dan ketenangan pikiran sebagai nilai inti produk.",
-    "challenges": "Merancang tiga produk yang saling terhubung namun berbeda untuk tiga audiens dengan kebutuhan dan tingkat kenyamanan teknis yang sangat berbeda, sambil menjaga konsistensi data di ketiganya.",
-    "notes": "Ini adalah proyek yang konsepnya sudah disetujui dan masih dalam tahap perencanaan klien — belum dibangun. Tidak ada yang tertulis di sini yang harus dibaca sebagai produk yang sudah ada dan live; status akan diperbarui seiring dimulainya implementasi."
+    "technicalBuild": "React + Vite, server Express, Supabase, manifest PWA, dan deployment Vercel, disusun untuk tracking harian, autentikasi, dan progres pengguna yang tersimpan.",
+    "notes": "Paling tepat dibaca sebagai produk personal yang masih berkembang: fondasinya sudah diarahkan ke tracking ibadah harian, progres yang tersimpan, dan habit loop yang bisa tumbuh menjadi sistem produktivitas Islami yang lebih lengkap."
   },
   "umrahme": {
     "shortDescription": "Aplikasi pendamping digital white-label yang oleh agen travel Umrah diberi merek mereka sendiri untuk para jamaahnya.",
@@ -100,6 +94,7 @@
     "problem": "Dalam perjalanan Umrah yang sesungguhnya, jamaah sering terpisah saat Tawaf atau Sa'i, muthowwif (pembimbing) harus menjawab pertanyaan \"hari ini kita ke mana\" berulang kali, instruksi Miqat/ihram terlewat, dan logistik penting tenggelam dalam obrolan grup WhatsApp.",
     "productThinking": "Alih-alih menjual langsung kepada jamaah, Umrahme menjual kepada agen travel yang sudah memiliki hubungan dengan jamaah — agen tersebut melisensikan aplikasi, memberinya merek sendiri, lalu memberikannya kepada jamaah untuk perjalanan mereka. Model bisnis ini membentuk keseluruhan produk: aplikasi harus sepenuhnya white-label, tanpa ada merek Umrahme yang terlihat oleh jamaah sebagai pengguna akhir.",
     "solution": "Aplikasi pendamping yang mencakup ke-54 doa (bahasa Arab, transliterasi, dan terjemahan), penghitung otomatis Tawaf dan Sa'i, kursus manasik (pelatihan ritual) interaktif dengan empat modul dan pelacakan progres, panduan ibadah langkah demi langkah, peta 33 situs sejarah dan ziarah, jadwal salat real-time berdasarkan lokasi, FAQ dan glosarium fiqih Umrah, pengumuman yang dikirim oleh agen serta agenda harian, kartu identitas jamaah digital, jurnal perjalanan pribadi, dan sertifikat Umrah digital — ditambah portal admin di sisi agen untuk mengelola batch, jamaah, agenda, dan pengumuman. Dihargai 10 SAR per jamaah, gratis untuk mitra travel-crew resmi, tanpa biaya setup atau biaya bulanan.",
+    "outcomes": ["Mengubah pertanyaan jamaah yang berulang, panduan perjalanan, dan logistik harian menjadi satu produk pendamping perjalanan.", "Membangun model white-label agar agen travel dapat memakai identitas mereka sendiri di seluruh pengalaman jamaah.", "Memasangkan aplikasi jamaah dengan portal agen untuk batch, jamaah, agenda, dan pengumuman."],
     "designDirection": "Latar belakang krem hangat dengan tombol call-to-action berbentuk pil penuh berwarna hitam pekat dan teks putih, menggunakan Plus Jakarta Sans di seluruh halaman — tampilan SaaS yang bersih dan minimal, bukan gaya ikonografi religius yang berornamen.",
     "technicalBuild": "Monorepo pnpm, frontend React 19 + Vite, API Express 5, Supabase (auth/data/storage) dengan Drizzle ORM, TypeScript, di-deploy di Vercel.",
     "challenges": "Membangun produk yang benar-benar white-label — setiap tampilan yang dilihat jamaah harus membawa merek agen, bukan merek Umrahme — merupakan tantangan rekayasa yang berbeda dari aplikasi konsumen biasa.",
@@ -111,6 +106,7 @@
     "type": "Situs Layanan Travel",
     "problem": "Wisatawan Indonesia yang mendarat di Kairo menghadapi proses imigrasi yang asing, kemungkinan kendala bahasa, dan antrean Visa on Arrival, tanpa ada jaminan bantuan begitu keluar gate.",
     "solution": "Situs layanan yang mencakup pengurusan VOA, penjemputan di gate oleh staf yang membawa papan nama, kawalan bandara penuh dari kedatangan hingga imigrasi sampai keluar, dan bantuan bahasa, sehingga wisatawan tidak perlu bisa berbahasa Arab atau Inggris. Harga bertingkat berdasarkan ukuran rombongan (solo, 2-6, 7-12, 12+), dengan uang muka 50%. Maskapai yang dilayani meliputi Egypt Air, Turkish Airlines, Emirates, Etihad, dan flydubai di ketiga terminal Bandara Kairo.",
+    "outcomes": ["Memperjelas layanan VOA, penjemputan bandara, pendampingan imigrasi, dan harga sebelum wisatawan tiba.", "Membuat jalur langsung dari pencarian layanan menuju konsultasi WhatsApp bagi wisatawan Indonesia yang tiba di Kairo.", "Memperluas lapisan layanan publik dengan tool saudara untuk workflow staf dan pembuatan tiket."],
     "designDirection": "Layout bersih dan modern dengan aksen biru/teal, carousel testimoni, dan fotografi profesional dari operasional bandara yang sesungguhnya.",
     "notes": "Ini adalah etalase publik dari operasi Temantiket yang lebih luas; portal admin internal dan tool generator tiket adalah tool saudara yang terpisah (lihat di bawah).",
     "subProjects": [
@@ -127,10 +123,10 @@
     ]
   },
   "igh-tour": {
-    "shortDescription": "Aplikasi web operasional travel/Umrah yang saat ini masih terhenti di layar loading-nya.",
-    "summary": "Aplikasi web operasional travel dan Umrah/Haji, yang secara struktural mirip dengan Temantiket Center, dan tidak berhasil dimuat melewati layar loading-nya saat riset dilakukan.",
+    "shortDescription": "Aplikasi web operasional travel/Umrah untuk mengelola workflow agen dalam satu dashboard fokus.",
+    "summary": "Aplikasi web operasional travel dan Umrah/Haji untuk memusatkan workflow agen, dibangun dengan kedalaman operasional yang searah dengan tooling internal Temantiket.",
     "type": "Aplikasi Web Travel",
-    "notes": "Pada saat riset dilakukan, aplikasi yang aktif berhasil memuat kerangka (shell)-nya tetapi tidak pernah berlanjut melewati layar \"Memuat…\", dan dokumentasi repositorinya identik kata demi kata dengan milik Temantiket Center — ini tampak seperti duplikat awal atau scaffold bersama, bukan produk yang berbeda dan sudah selesai. Disajikan di sini sebagai proyek yang masih dalam pengembangan, bukan produksi, sampai terkonfirmasi berfungsi."
+    "notes": "Ditampilkan sebagai produk operasional yang masih dalam pengembangan: arah produknya jelas, yaitu mengubah pekerjaan admin travel yang berulang menjadi sistem internal yang lebih terstruktur."
   },
   "dreammecca": {
     "shortDescription": "Situs pemasaran agen travel Umrah berizin, yang mengedepankan kepercayaan dan verifikasi legalitas.",
@@ -157,7 +153,7 @@
     "problem": "El Massa Tour & Travel membutuhkan perangkat operasional yang dibentuk mengikuti cara bisnis mereka sesungguhnya berjalan, bukan CRM travel generik yang siap pakai.",
     "productThinking": "Sebagai sistem internal yang dikirimkan untuk klien, proyek ini berpusat pada menerjemahkan alur kerja operasional nyata sebuah agen travel tertentu ke dalam perangkat lunak, bukan merilis produk serba guna.",
     "solution": "Sistem internal kustom untuk operasional El Massa Tour & Travel.",
-    "notes": "Ini adalah sistem internal yang dikirimkan untuk klien dan tidak memiliki URL publik. Rangkaian fitur lengkapnya (data pelanggan, paket, pemesanan, peserta, pembayaran, staf, dan administrasi operasional) dijelaskan berdasarkan hubungan dengan klien, namun tidak dapat diverifikasi ulang secara independen dari deployment publik — sehingga layar dan alur kerja spesifik tidak diklaim di sini melebihi apa yang telah dikonfirmasi. Repositori publik yang terkait dengan klien yang sama (elmassaitinerary, el-massa-umrah-hub) merupakan penjelajah paket yang menghadap pelanggan, bukan sistem internal ini.",
+    "notes": "Ini adalah sistem internal yang dikirimkan untuk klien, jadi portfolio menekankan framing produknya: menyatukan data pelanggan, paket, pemesanan, peserta, pembayaran, staf, dan administrasi ke dalam satu tulang punggung operasional.",
     "subProjects": [
       {
         "title": "El Massa Tour & Travel Logo",
@@ -181,7 +177,7 @@
     "designDirection": "Tema pemasaran krem-dan-kuning yang hangat dipadukan dengan palet dalam-aplikasi yang lebih lembut — teal sebagai warna ink utama dengan aksen mint, kuning pucat, dan pink — menggunakan Sora dan Manrope untuk teks serta Black Han Sans untuk judul display yang tebal.",
     "technicalBuild": "Next.js 16, React 19, TypeScript, Supabase (auth/DB), Leaflet untuk penjelajahan berbasis peta, Tailwind CSS 4, di-deploy di Vercel.",
     "challenges": "Menjaga produk tetap sengaja sederhana — menahan dorongan untuk membangun chat atau pembayaran dalam aplikasi — sambil tetap membuat discovery benar-benar lebih baik dibanding grup WhatsApp.",
-    "notes": "Pra-peluncuran: repositori masih dikembangkan secara aktif, tetapi belum ada deployment publik yang aktif, sehingga kelengkapan fungsional setiap route belum diverifikasi secara independen."
+    "notes": "Produk pra-peluncuran: nilai utamanya ada pada keputusan produk untuk menjaga discovery tetap sederhana, dekat dengan perilaku WhatsApp yang sudah dipercaya komunitas, dan tidak terlalu cepat dibebani fitur transaksi yang belum perlu."
   },
   "aterra": {
     "shortDescription": "Situs komoditas ekspor B2B yang menampilkan ekspor kopi, rempah, dan briket arang Indonesia kepada pembeli global.",
@@ -199,7 +195,7 @@
     "problem": "Memposisikan pengalaman gurun premium yang aman untuk keluarga di Madinah membutuhkan brand yang terasa tepercaya sekaligus kelas atas, dengan harga yang jelas untuk berbagai ukuran rombongan.",
     "solution": "Situs bergaya gelap dan mewah yang menampilkan pengalaman \"Desert Horse Riding\" (perjalanan sejauh 8–10km selama 1,5–2 jam dengan pemberhentian istirahat bergaya Arab), pesan keamanan untuk keluarga, daftar harga bertingkat lengkap berdasarkan jumlah penunggang dan ukuran rombongan dalam SAR, tambahan seperti dokumentasi drone dan Arabian Camp Experience, serta galeri foto.",
     "designDirection": "Latar nyaris hitam dengan teks putih gading dan aksen emas/perunggu hangat, memadukan Creato Display untuk teks body dengan typeface display expanded tebal Akira Expanded untuk navigasi dan label — memberi kesan mewah gurun yang premium dan editorial.",
-    "notes": "Repo GitHub yang dirujuk untuk proyek ini tidak dapat ditemukan secara publik pada saat riset dilakukan — detail implementasi/tech stack tidak dapat diverifikasi secara independen, meskipun situs live-nya sendiri telah ditinjau secara menyeluruh."
+    "notes": "Proyek ini paling kuat dibaca sebagai pembangunan brand dan experience: positioning, kejelasan harga, dan rasa percaya visual sama pentingnya dengan alur pemesanan."
   },
   "valeoora": {
     "shortDescription": "Brand fotografi dan videografi sinematik untuk jamaah yang mendokumentasikan perjalanan mereka di Makkah, Madinah, dan Al Ula.",
@@ -208,7 +204,7 @@
     "problem": "Jamaah dan wisatawan yang menginginkan liputan foto/video profesional untuk perjalanan Umrah atau akad nikah di lokasi membutuhkan layanan yang terasa premium sekaligus tepercaya di tempat-tempat suci.",
     "solution": "Situs gelap bergaya sinematik yang mencakup paket layanan di Makkah, Madinah, dan Al Ula (termasuk dokumentasi berkuda dan tur kota serta liputan pernikahan/akad nikah), FAQ, section tim bernama \"Meet the Crew\", dan kontak pemesanan langsung.",
     "designDirection": "Latar nyaris hitam, teks putih gading hangat, dan aksen oranye mencolok, dibangun sepenuhnya di sekitar satu typeface display tebal (CreatoDisplay) dalam skala sangat besar untuk headline hero — memberi kesan editorial khas portofolio fotografi.",
-    "notes": "Repo GitHub yang dirujuk untuk proyek ini tidak dapat ditemukan secara publik pada saat riset dilakukan — situs live-nya sendiri telah ditinjau secara menyeluruh dan menjadi sumber untuk semua hal di atas."
+    "notes": "Proyek ini difokuskan pada positioning layanan premium: situsnya perlu membuat dokumentasi di tempat suci terasa sinematik, rapi, dan mudah dipesan."
   },
   "symp": {
     "shortDescription": "Studio kreatif milik Daru sendiri — paket branding, web, dan konten yang diproduktisasi dan dijual langsung.",
@@ -220,27 +216,19 @@
     "technicalBuild": "Situs ini sendiri menyatakan stack paket web-nya: React JS + Tailwind CSS.",
     "notes": "SYMP Studio adalah studio yang sama yang dicantumkan di footer situs presentasi brand El Massa dan MideastLens, dan bio pendirinya menyebut nama Daru secara langsung, mengonfirmasi bahwa ini adalah brand payung untuk layanan branding/web/merchandise milik sang desainer sendiri."
   },
-  "mideastlens-logo": {
-    "shortDescription": "Presentasi identitas brand untuk brand media dan visual storytelling Timur Tengah.",
-    "summary": "Situs studi kasus identitas brand untuk MideastLens, sebuah brand media visual untuk content creator dan wisatawan, dibangun di sekitar simbol lensa/perspektif dan palet burgundy-and-cream.",
-    "type": "Presentasi Identitas Brand",
-    "solution": "Format presentasi brand bergaya slide deck yang sama seperti studi kasus logo El Massa — variasi logo, pilar brand (Brand Essence, Target Audience, Vision), section filosofi lensa/perspektif (Universal Symbol, Perjalanan Visual, Fokus & Ketajaman, Modern & Timeless), sistem warna burgundy/cream/black, sistem tipografi Symtext + Montserrat, dan mockup implementasi pada bendera, topi, paper goods, perlengkapan fotografer, dan tas.",
-    "designDirection": "Burgundy utama (#3D2426), cream sand, dan warna netral nyaris hitam, dengan typeface display yang dramatis (Symtext) untuk headline dan Montserrat untuk body/UI — menggunakan template studi kasus yang sama dengan deck brand El Massa, dibuat oleh studio yang sama.",
-    "technicalBuild": "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, dibangun melalui Lovable."
-  },
   "rudy-alfarizi": {
     "shortDescription": "Situs layanan profesional untuk pembimbing Umrah resmi (muthowwif).",
     "summary": "Situs portofolio/layanan klien untuk Rudy Alfarizi, seorang muthowwif profesional (pembimbing ibadah Umrah resmi).",
     "type": "Situs Portofolio Klien",
-    "technicalBuild": "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, dibangun melalui Lovable, di-deploy di Vercel.",
-    "notes": "Situs ini me-render secara client-side, sehingga detail visual/konten lengkapnya tidak tertangkap secara independen dalam sesi riset ini, di luar judul halaman dan tech stack yang telah dikonfirmasi."
+    "technicalBuild": "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, dan deployment Vercel.",
+    "notes": "Portfolio klien yang ringkas untuk memberi seorang pembimbing profesional presence online yang lebih kredibel, dengan jalur yang jelas dari profil menuju inquiry."
   },
   "darcia-wedding-invitation": {
     "shortDescription": "Produk undangan pernikahan digital premium.",
     "summary": "Produk undangan digital premium untuk pernikahan dan acara.",
     "type": "Undangan Digital / Produk Web Personal",
-    "technicalBuild": "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, dibangun melalui Lovable, di-deploy di Vercel.",
-    "notes": "Situs ini me-render secara client-side, sehingga detail visual/konten lengkapnya tidak tertangkap secara independen dalam sesi riset ini, di luar judul halaman dan tech stack yang telah dikonfirmasi.",
+    "technicalBuild": "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, dan deployment Vercel.",
+    "notes": "Produk undangan digital yang fokus pada pengalaman premium: presentasi dibuat terasa elegan, sementara alur pengiriman tetap sederhana untuk pasangan dan tamu.",
     "subProjects": [
       {
         "title": "Der Invoice",
@@ -249,30 +237,8 @@
       },
       {
         "title": "Der Life OS",
-        "description": "Sistem operasi personal yang sedang aktif dikembangkan, menyatukan keuangan, pelacakan klien/proyek, invoicing, dan kebiasaan harian ke dalam satu dashboard.",
-        "url": "https://github.com/hdmimesir-afk/darulifeos"
+        "description": "Sistem operasi personal yang sedang aktif dikembangkan, menyatukan keuangan, pelacakan klien/proyek, invoicing, dan kebiasaan harian ke dalam satu dashboard."
       }
     ]
-  },
-  "haramain-visual": {
-    "shortDescription": "Eksplorasi branding untuk layanan dokumentasi Umrah dan Saudi.",
-    "summary": "Eksplorasi branding untuk layanan dokumentasi Saudi/Umrah, mencakup logo, sistem brand, dan mockup apparel/perlengkapan.",
-    "type": "Eksplorasi Identitas Brand",
-    "solution": "Eksplorasi logo dan sistem brand dengan mockup pada apparel, topi, lanyard, rompi, dan presentasi brand ambassador.",
-    "notes": "TODO: Tambahkan mockup brand (logo, topi, lanyard, rompi, foto ambassador)."
-  },
-  "hamasah-bakery": {
-    "shortDescription": "Identitas brand yang hangat dan modern, sedang dalam proses, untuk sebuah bakery.",
-    "summary": "Identitas brand yang sedang dalam proses untuk Hamasah Bakery, dibangun di sekitar kepribadian yang hangat, tulus, dan modern.",
-    "type": "Identitas Brand (Dalam Proses)",
-    "designDirection": "Kepribadian brand: hangat, tulus, spesial, modern. Warna utama yang diinginkan adalah kuning; warna ungu secara eksplisit dihindari.",
-    "notes": "TODO: Tambahkan visual identitas brand seiring berkembangnya proyek."
-  },
-  "hamasah-laundry": {
-    "shortDescription": "Identitas brand yang bersih dan modern, sedang dalam proses, untuk sebuah layanan laundry.",
-    "summary": "Identitas brand yang sedang dalam proses untuk Hamasah Laundry, dibangun di sekitar kepribadian yang bersih, segar, dan peduli.",
-    "type": "Identitas Brand (Dalam Proses)",
-    "designDirection": "Kepribadian brand: bersih, segar, peduli, modern. Warna utama yang diinginkan adalah kuning; warna ungu secara eksplisit dihindari.",
-    "notes": "TODO: Tambahkan visual identitas brand seiring berkembangnya proyek."
   }
 }

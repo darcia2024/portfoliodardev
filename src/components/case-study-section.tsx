@@ -10,14 +10,12 @@ export function CaseStudySection({
   children: React.ReactNode;
 }) {
   return (
-    <section className="border-t border-border py-14 md:py-20">
-      <Container className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-10">
+    <section className="border-t border-border py-12 sm:py-14 md:py-20">
+      <Container className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-12 md:gap-10">
         <div className="md:col-span-4">
-          <p className="font-mono text-xs uppercase tracking-widest text-muted-2">
-            {eyebrow}
-          </p>
+          <p className="kicker">{eyebrow}</p>
           {title && (
-            <h2 className="mt-3 font-display text-2xl tracking-tight text-foreground">
+            <h2 className="mt-4 font-display text-2xl leading-snug tracking-tight text-foreground md:text-3xl">
               {title}
             </h2>
           )}

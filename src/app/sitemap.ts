@@ -11,7 +11,7 @@ function alternates(path: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ["", "/work", "/archive", "/about", "/contact"];
+  const staticPaths = ["", "/work", "/about", "/contact"];
   const projectPaths = getAllSlugs().map((slug) => `/work/${slug}`);
 
   const entries: MetadataRoute.Sitemap = [];
