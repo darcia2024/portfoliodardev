@@ -206,7 +206,7 @@
     "statusConcept": "tahap konsep, sudah direncanakan tapi belum dibangun.",
     "statusClientDelivery": "pengiriman klien, dibangun dan diserahkan ke klien.",
     "relatedSiteTitle": "Situs Terkait",
-    "relatedSiteNote": "Markazfiqih.com adalah situs brand & konten Markaz Fiqih — berisi artikel, kegiatan, dan para kontributor. Produk utamanya adalah platform kelas (kelasmarkazfiqih.com).",
+    "relatedSiteNote": "Markazfiqih.com adalah situs brand & konten Markaz Fiqih , berisi artikel, kegiatan, dan para kontributor. Produk utamanya adalah platform kelas (kelasmarkazfiqih.com).",
     "exploreRelatedSite": "Kunjungi Situs"
   },
   "aboutPage": {
@@ -306,7 +306,7 @@
   },
   "stack": {
     "title": "Tools & Stack",
-    "subtitle": "Tools yang paling sering gue pakai — dipilih buat kecepatan rilis, DX, dan maintainabilitas jangka panjang.",
+    "subtitle": "Tools yang paling sering gue pakai , dipilih buat kecepatan rilis, DX, dan maintainabilitas jangka panjang.",
     "frontendLabel": "Frontend",
     "frontendIntro": "Kerja antarmuka, animasi, dan sistem komponen.",
     "fullstackLabel": "Fullstack & Infrastruktur",

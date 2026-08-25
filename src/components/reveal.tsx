@@ -49,7 +49,7 @@ export function Reveal({
 }
 
 /**
- * Staggered list reveal — wraps a list of items with an increasing delay so
+ * Staggered list reveal , wraps a list of items with an increasing delay so
  * rows/cards flow in one after another while scrolling.
  */
 export function StaggerReveal({

@@ -65,7 +65,7 @@ export default async function Home({
         SHOWCASE_GRID_SLUGS.indexOf(a.slug as (typeof SHOWCASE_GRID_SLUGS)[number]) -
         SHOWCASE_GRID_SLUGS.indexOf(b.slug as (typeof SHOWCASE_GRID_SLUGS)[number])
     );
-  // Homepage All Work grid order — Aterra, Valeoora and Gallop Madinah lead the
+  // Homepage All Work grid order , Aterra, Valeoora and Gallop Madinah lead the
   // grid, followed by the remaining non-featured projects in definition order.
   const GRID_ORDER = [
     "aterra",

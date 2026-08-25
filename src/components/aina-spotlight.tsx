@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { Reveal, StaggerReveal } from "@/components/reveal";
 
 /**
- * AINA Featured Spotlight — a full-width editorial showcase for the
+ * AINA Featured Spotlight , a full-width editorial showcase for the
  * signature AINA project, placed right after the hero on the home page.
  * Uses the editorial cover mockup in public/aina-cover-v2.png.
  */

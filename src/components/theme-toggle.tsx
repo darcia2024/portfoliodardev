@@ -31,7 +31,7 @@ const ThemeContext = createContext<{
  * Single source of truth for the light/dark theme, shared across every
  * consumer (desktop nav, mobile nav). Each ThemeToggle used to own its own
  * independent state, which raced against the others over the same
- * document.documentElement/localStorage — whichever instance's effect ran
+ * document.documentElement/localStorage , whichever instance's effect ran
  * last would silently overwrite the others' choice.
  */
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
@@ -39,7 +39,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // HTML; the real theme (from localStorage/system preference) is only read
   // after mount, avoiding a hydration mismatch. Persisting is done directly
   // at each point the theme actually changes (below) rather than via an
-  // effect reactive to `theme` — that effect would also fire once for this
+  // effect reactive to `theme` , that effect would also fire once for this
   // placeholder "light" value and clobber a real stored "dark" preference
   // before the mount-correction below has a chance to run.
   const [theme, setTheme] = useState<Theme>("dark");

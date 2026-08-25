@@ -188,7 +188,7 @@
     "statusConcept": "concept stage, planned but not yet built.",
     "statusClientDelivery": "client delivery, built and delivered to the client.",
     "relatedSiteTitle": "Related Site",
-    "relatedSiteNote": "Markazfiqih.com is the brand & content site for Markaz Fiqih — articles, events, and contributors. The main product is the class platform (kelasmarkazfiqih.com).",
+    "relatedSiteNote": "Markazfiqih.com is the brand & content site for Markaz Fiqih , articles, events, and contributors. The main product is the class platform (kelasmarkazfiqih.com).",
     "exploreRelatedSite": "Explore Site"
   },
   "aboutPage": {
@@ -271,7 +271,7 @@
   },
   "stack": {
     "title": "Tools & Stack",
-    "subtitle": "The tools I reach for most — picked for shipping speed, DX, and long-term maintainability.",
+    "subtitle": "The tools I reach for most , picked for shipping speed, DX, and long-term maintainability.",
     "frontendLabel": "Frontend",
     "frontendIntro": "Interface work, motion, and component systems.",
     "fullstackLabel": "Fullstack & Infrastructure",

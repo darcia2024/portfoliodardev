@@ -11,7 +11,7 @@
   --accent: #a0793b;
 }
 
-/* Dark mode — warm near-black with champagne accents */
+/* Dark mode , warm near-black with champagne accents */
 html.dark {
   --background: #14120d;
   --foreground: #f2eee4;
@@ -74,7 +74,7 @@ body {
   text-wrap: pretty;
 }
 
-/* Editorial section kicker — mono label with a hairline rule */
+/* Editorial section kicker , mono label with a hairline rule */
 .kicker {
   @apply flex items-center gap-3 font-mono text-xs uppercase tracking-[0.22em] text-muted-2;
 }

@@ -54,7 +54,7 @@ export function FeaturedProjectRow({
       >
         <p className="kicker">
           <span>
-            {String(index + 1).padStart(2, "0")} — {project.type}
+            {String(index + 1).padStart(2, "0")} / {project.type}
           </span>
         </p>
         <h3 className="mt-4 font-display text-3xl leading-[1.1] tracking-tight text-foreground sm:text-4xl md:mt-5 md:text-5xl">

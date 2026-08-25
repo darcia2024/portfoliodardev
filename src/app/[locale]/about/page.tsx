@@ -119,7 +119,7 @@ export default async function AboutPage({
                     (item) => (
                       <li
                         key={item}
-                        className="font-mono text-xs uppercase tracking-wider text-muted-2 before:mr-2 before:content-['—']"
+                        className="font-mono text-xs uppercase tracking-wider text-muted-2 before:mr-2 before:content-['/']"
                       >
                         {item}
                       </li>

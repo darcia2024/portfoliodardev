@@ -131,7 +131,7 @@ export function FeaturedCarousel({
                 <div className="flex items-start justify-between gap-4">
                   <p className="kicker">
                     <span>
-                      {String(active + i + 1).padStart(2, "0")} — {project.type}
+                      {String(active + i + 1).padStart(2, "0")} / {project.type}
                     </span>
                   </p>
                   <StatusBadge status={project.status} />
@@ -257,7 +257,7 @@ export function FeaturedCarousel({
                   <div className="flex items-start justify-between gap-4">
                     <p className="kicker">
                       <span>
-                        {String(i + 1).padStart(2, "0")} — {project.type}
+                        {String(i + 1).padStart(2, "0")} / {project.type}
                       </span>
                     </p>
                     <StatusBadge status={project.status} />

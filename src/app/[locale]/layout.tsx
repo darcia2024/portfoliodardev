@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Plus_Jakarta_Sans, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
@@ -92,6 +93,7 @@ export default async function LocaleLayout({
       className={`${plusJakartaSans.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} h-full dark`}
     >
       <body className="min-h-full flex flex-col overflow-x-clip font-sans antialiased">
+        <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
         <NextIntlClientProvider>
           <ThemeProvider>
             <SiteHeader />
