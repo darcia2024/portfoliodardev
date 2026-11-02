@@ -87,7 +87,12 @@ export const projects: Project[] = [
     liveUrl: "https://aigypt.id",
     brandColor: "#0a0a0f",
     cover: "/aigypt-laptop-v4.jpg",
-    gallery: ["/aigypt-laptop.png"],
+    gallery: [
+      "/aigypt-laptop.png",
+      "/kelas-aigypt-gallery-1.webp",
+      "/kelas-aigypt-gallery-2.webp",
+      "/kelas-aigypt-gallery-3.webp",
+    ],
     problem:
       "Most Masisir have used ChatGPT casually, but there's a large gap between casual use and using AI well for academic study, organizational work, business, or content creation.",
     productThinking:
@@ -254,6 +259,11 @@ export const projects: Project[] = [
     liveUrl: "https://umrahme.sbs",
     brandColor: "#131313",
     cover: "/umrahme-cover-v3.png",
+    gallery: [
+      "/umrahme-gallery-1.webp",
+      "/umrahme-gallery-2.webp",
+      "/umrahme-gallery-3.webp",
+    ],
     problem:
       "During an actual Umrah trip, pilgrims get separated during Tawaf or Sa'i, muthowwif (guides) field the same \"where are we going today\" question over and over, Miqat/ihram instructions get missed, and key logistics get buried in WhatsApp group chat.",
     productThinking:
@@ -358,6 +368,11 @@ export const projects: Project[] = [
     year: "2025",
     liveUrl: "https://dreammecca.vercel.app",
     cover: "/dreammecca-cover-v1.png",
+    gallery: [
+      "/dreammecca-gallery-1.webp",
+      "/dreammecca-gallery-2.webp",
+      "/dreammecca-gallery-3.webp",
+    ],
     problem:
       "Indonesia's Umrah travel market has a real trust problem , the site leads directly with license verification to counter \"banyak berita penipuan travel Umroh\" (frequent news of Umrah travel scams).",
     solution:
@@ -384,6 +399,10 @@ export const projects: Project[] = [
     liveUrl: "https://itinerarymesir.vercel.app",
     hideLiveUrl: true,
     cover: "/itinerary-mesir-cover-v1.png",
+    gallery: [
+      "/itinerary-mesir-gallery-1.webp",
+      "/itinerary-mesir-gallery-2.webp",
+    ],
     solution:
       "A day-by-day 10-day itinerary (Kuala Lumpur → Cairo → Giza → Luxor → Cairo → Alexandria → Jeddah → Makkah Umrah → Jakarta) addressed directly to the traveling family by name, with per-day detail pages, travel tips, a local food guide, a landmark list with map links, and a closing personal message , branded throughout as a Temantiket deliverable rather than a standalone product.",
     designDirection:
@@ -623,6 +642,11 @@ export const projects: Project[] = [
     year: "2026",
     liveUrl: "https://rudyalfarizi.com",
     cover: "/rudy-alfarizi-cover-v1.png",
+    gallery: [
+      "/rudy-alfarizi-gallery-1.webp",
+      "/rudy-alfarizi-gallery-2.webp",
+      "/rudy-alfarizi-gallery-3.webp",
+    ],
     technicalBuild:
       "Vite, TypeScript, React, shadcn-ui, Tailwind CSS, and Vercel deployment.",
     notes:
@@ -688,6 +712,15 @@ export const projects: Project[] = [
     year: "2026",
     brandColor: "#0c0c0c",
     cover: "/hamasah-cover-v1.png",
+    gallery: [
+      "/hamasah-international-gallery-1.webp",
+      "/hamasah-international-gallery-2.webp",
+      "/hamasah-international-gallery-3.webp",
+      "/hamasah-international-gallery-4.webp",
+      "/hamasah-international-gallery-5.webp",
+      "/hamasah-international-gallery-6.webp",
+      "/hamasah-international-gallery-7.webp",
+    ],
     problem:
       "Running a study-abroad program means juggling applicant documents, guardian communication, student progress, invoices, visas, and dormitory stock across chat threads and spreadsheets. Each handoff between staff, guardians, and students is a place where something gets lost.",
     productThinking:
@@ -722,6 +755,12 @@ export const projects: Project[] = [
     year: "2026",
     brandColor: "#0c0c0c",
     cover: "/barber-member-cover-v1.png",
+    gallery: [
+      "/barber-member-system-gallery-1.webp",
+      "/barber-member-system-gallery-2.webp",
+      "/barber-member-system-gallery-3.webp",
+      "/barber-member-system-gallery-4.webp",
+    ],
     problem:
       "Paper punch cards get lost, and a barbershop owner cannot see which customers return, which barber they prefer, or what a discount really cost.",
     productThinking:
@@ -758,6 +797,12 @@ export const projects: Project[] = [
     year: "2026",
     brandColor: "#0c0c0c",
     cover: "/kpi-ppmi-mesir-cover-v1.png",
+    gallery: [
+      "/kpi-ppmi-mesir-gallery-1.webp",
+      "/kpi-ppmi-mesir-gallery-2.webp",
+      "/kpi-ppmi-mesir-gallery-3.webp",
+      "/kpi-ppmi-mesir-gallery-4.webp",
+    ],
     problem:
       "An organization whose leadership changes every period loses its working knowledge at each handover. Decisions, tasks, and records live in personal chats and files.",
     productThinking:
