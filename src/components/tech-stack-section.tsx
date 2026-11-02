@@ -58,7 +58,7 @@ export function TechStackSection() {
       <Container>
         <Reveal>
           <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
-            <span className="mr-3 font-mono text-xs not-italic text-muted-2">05</span>
+            <span className="mr-3 font-mono text-xs not-italic text-muted-2">04</span>
             {t("title")}
           </h2>
           <p className="mt-3 max-w-lg text-muted">{t("subtitle")}</p>

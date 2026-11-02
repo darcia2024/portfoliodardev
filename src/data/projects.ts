@@ -670,6 +670,109 @@ export const projects: Project[] = [
       },
     ],
   },
+
+  // ───────────────────────────── OPERATIONS PLATFORMS (2026) ─────────────────────────────
+  {
+    title: "Hamasah International",
+    slug: "hamasah-international",
+    shortDescription:
+      "A public website and internal portal for an Al-Azhar study-guidance program in Cairo, from enrollment to LMS and billing.",
+    summary:
+      "A full operations platform for Hamasah International, a study-guidance program for students heading to Al-Azhar. One system covers the public site, applicant enrollment, a staff console, guardian and student portals, an LMS, and billing, visa, and dormitory operations.",
+    category: ["Education", "Internal Tools", "Client Work"],
+    type: "Education Operations Platform / Web App",
+    status: "client-delivery",
+    confidence: "partial",
+    featured: true,
+    role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
+    year: "2026",
+    brandColor: "#0c0c0c",
+    cover: "/hamasah-cover-v1.png",
+    problem:
+      "Running a study-abroad program means juggling applicant documents, guardian communication, student progress, invoices, visas, and dormitory stock across chat threads and spreadsheets. Each handoff between staff, guardians, and students is a place where something gets lost.",
+    productThinking:
+      "Instead of separate tools per task, the platform treats every group of people as a role with its own view of the same data: admin, enrollment officer, finance, supervisor, teacher, guardian, and student. Access per role is written down as a policy and covered by tests, so who can see what is checked rather than assumed.",
+    solution:
+      "A public site (programs, fees, articles, enrollment form) feeding an officer console with an applicant pipeline, document review, and ready-to-send WhatsApp messages. Applicants can track their status and re-upload files. Guardians and students get a portal with worship and memorization records, report cards, invoices, and receipts as PDFs. Teachers run an LMS with materials, assignments, and graded quizzes. Finance and admin handle numbered invoices, visa files, dormitory inventory, CSV imports, and an audit log of staff activity.",
+    technicalBuild:
+      "Node.js 22 with a single production dependency (pg), plain HTML, CSS, and JavaScript served by the same server (no build step, fast on weak connections), PostgreSQL on Supabase with ordered SQL migrations, private Supabase Storage buckets with signed links for applicant files, deployed to Vercel. Tests run on in-process PGlite in CI on Node 22 and 24, including an access-matrix test for every role.",
+    challenges:
+      "Handling applicants' identity documents and guardians' data means security is part of the product: a security-audit pass, a basic firewall, private file storage, and scripts that refuse to write to production without an explicit confirmation.",
+    lessons:
+      "Writing the permission model as data and testing it matters more than any single feature, because it is what lets a seven-role system keep changing safely.",
+    outcomes: [
+      "Replaced scattered chat-and-spreadsheet handling with one system from enrollment to alumni records.",
+      "Gave seven roles their own views of the same data, backed by an automated access-matrix test.",
+      "Kept production changes deliberate: a runbook, ordered migrations, and write-protected scripts.",
+    ],
+  },
+  {
+    title: "Barber Member System",
+    slug: "barber-member-system",
+    shortDescription:
+      "A digital membership, POS, and 5-tier loyalty system for barbershops, with optional NFC onboarding at the cashier desk.",
+    summary:
+      "A PWA and QR-based membership system for barbershops: a digital loyalty card for customers, a fast cashier POS, tiered rewards from Silver to Black, and an owner dashboard across branches.",
+    category: ["Product", "Web Apps", "Client Work"],
+    type: "Membership & Loyalty Platform / PWA",
+    status: "pre-launch",
+    confidence: "partial",
+    featured: false,
+    role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
+    year: "2026",
+    brandColor: "#0c0c0c",
+    cover: "/barber-member-cover-v1.png",
+    problem:
+      "Paper punch cards get lost, and a barbershop owner cannot see which customers return, which barber they prefer, or what a discount really cost.",
+    productThinking:
+      "The cashier is the bottleneck, so the whole flow is designed around a transaction under a minute: scan the member's QR, pick the service and barber, redeem points. The offer is sold in three scopes, from a core MVP to a full PWA with an optional NFC stand, so a small shop can start small.",
+    solution:
+      "A five-tab mobile PWA (home with member card and tier progress, rewards, QR scan, products, store locator), a cashier POS, a daily cash-closing flow with blind counts, a barber performance view, and an owner dashboard with revenue and point-mutation audit. Members move up five tiers automatically as points accumulate.",
+    technicalBuild:
+      "Static mobile-first HTML with a self-hosted Supabase client so the till keeps working if the outside network is flaky. PostgreSQL 17 with row-level security on every table and anonymous access denied. An offline queue with client-generated UUIDs for idempotency, server-generated invoice numbers to avoid collisions across devices, and Asia/Jakarta day boundaries. Deployed on Vercel.",
+    challenges:
+      "A till has to keep working offline and still never double-count a sale, which is why the queue is idempotent and invoice numbering lives on the server.",
+    lessons:
+      "Writing the handover document (who enters where, what each role sees, what is still missing) is part of delivering the system, not an afterthought.",
+    subProjects: [
+      {
+        title: "TapTapin",
+        description:
+          "A lighter loyalty app for small shops: customers tap an NFC tag or scan a QR, enter a WhatsApp number, and see their points; the cashier confirms each transaction from a dashboard. Built with Next.js 16, Drizzle ORM, Better Auth, and Supabase.",
+      },
+    ],
+  },
+  {
+    title: "KPI PPMI Mesir Digital System",
+    slug: "kpi-ppmi-mesir",
+    shortDescription:
+      "A digital system for a student organization in Egypt, designed from a 113-screen blueprint and built module by module.",
+    summary:
+      "A governance and operations system for KPI PPMI Mesir, covering tasks, meetings, finance, evaluation, knowledge, and handover. It is designed as a full blueprint first, then built in stages on a hosted Supabase backend under a strict confidentiality SOP.",
+    category: ["Internal Tools", "Web Apps", "Client Work"],
+    type: "Organization Operations System / Web App",
+    status: "development",
+    confidence: "partial",
+    featured: false,
+    role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
+    year: "2026",
+    brandColor: "#0c0c0c",
+    cover: "/kpi-ppmi-mesir-cover-v1.png",
+    problem:
+      "An organization whose leadership changes every period loses its working knowledge at each handover. Decisions, tasks, and records live in personal chats and files.",
+    productThinking:
+      "Before writing code, the scope was mapped as a blueprint: 113 screens, 61 entities, 11 flows, and 28 recorded decisions, together with a PRD and an execution roadmap with acceptance gates. Building in stages against that map keeps a large system honest about what is finished and what is not.",
+    solution:
+      "A portal with a task board, meetings with voting, finance, evaluation, a knowledge base, handover records, and bilingual article publishing, with an audit trail and role-based access.",
+    technicalBuild:
+      "Next.js with TypeScript, Supabase (Auth, PostgreSQL with row-level security), deployed on Vercel. Local development uses synthetic TEST data only; hosted environments follow a confidentiality SOP, and organization data is never used to train AI models.",
+    challenges:
+      "Being exact about status: passing tests and a successful build do not mean a workflow has been accepted. Activation of periods, official mandates, and multi-role user testing are tracked as separate gates.",
+    lessons:
+      "For sensitive organizational data, the data rules (what never enters the repository) belong in the product spec from day one.",
+    notes:
+      "In development. Shown here as a case study of the planning and staged delivery; no organization data is displayed.",
+  },
 ];
 
 /** Merges in the Indonesian translation overlay when locale is "id"; falls back to English for any untranslated field. */

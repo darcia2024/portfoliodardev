@@ -240,5 +240,46 @@
         "description": "Sistem operasi personal yang sedang aktif dikembangkan, menyatukan keuangan, pelacakan klien/proyek, invoicing, dan kebiasaan harian ke dalam satu dashboard."
       }
     ]
+  },
+  "hamasah-international": {
+    "shortDescription": "Website publik dan portal internal untuk program bimbingan studi Al-Azhar di Kairo, dari pendaftaran sampai LMS dan tagihan.",
+    "summary": "Platform operasional lengkap untuk Hamasah International, program bimbingan studi bagi calon mahasiswa Al-Azhar. Satu sistem mencakup situs publik, pendaftaran calon santri, konsol petugas, portal wali dan santri, LMS, serta operasional tagihan, visa, dan asrama.",
+    "type": "Platform Operasional Pendidikan / Aplikasi Web",
+    "problem": "Menjalankan program studi ke luar negeri berarti mengurus berkas pendaftar, komunikasi dengan wali, perkembangan santri, tagihan, visa, dan inventaris asrama lewat grup chat dan spreadsheet. Setiap serah terima antara petugas, wali, dan santri adalah celah tempat sesuatu bisa hilang.",
+    "productThinking": "Alih-alih satu alat untuk satu tugas, platform ini memperlakukan tiap kelompok orang sebagai peran dengan tampilannya sendiri atas data yang sama: admin, petugas pendaftaran, keuangan, musyrif, guru, wali, dan santri. Hak akses per peran ditulis sebagai kebijakan dan diuji otomatis, jadi siapa boleh melihat apa diperiksa, bukan diasumsikan.",
+    "solution": "Situs publik (program, biaya, artikel, formulir pendaftaran) yang terhubung ke konsol petugas dengan pipeline pendaftar, pemeriksaan berkas, dan pesan WhatsApp siap kirim. Calon santri bisa memantau status dan mengunggah ulang berkas. Wali dan santri mendapat portal berisi rekam sholat dan hafalan, rapor, tagihan, dan kuitansi dalam PDF. Guru menjalankan LMS berisi materi, tugas, dan kuis bernilai. Keuangan dan admin mengurus tagihan bernomor, berkas visa, inventaris asrama, impor CSV, dan catatan audit aktivitas petugas.",
+    "technicalBuild": "Node.js 22 dengan satu dependency production (pg), HTML, CSS, dan JavaScript biasa yang disajikan server yang sama (tanpa langkah build, cepat di koneksi lemah), PostgreSQL di Supabase dengan migrasi SQL berurutan, bucket Supabase Storage privat dengan tautan bertanda tangan untuk berkas pendaftar, di-deploy ke Vercel. Test berjalan di PGlite in-process pada CI Node 22 dan 24, termasuk test matriks akses untuk setiap peran.",
+    "challenges": "Mengelola dokumen identitas pendaftar dan data wali berarti keamanan adalah bagian dari produk: audit keamanan, firewall sederhana, penyimpanan berkas privat, dan skrip yang menolak menulis ke production tanpa konfirmasi eksplisit.",
+    "lessons": "Menulis model hak akses sebagai data dan mengujinya lebih penting daripada satu fitur mana pun, karena itulah yang membuat sistem tujuh peran bisa terus berubah dengan aman.",
+    "outcomes": ["Menggantikan pengurusan lewat chat dan spreadsheet dengan satu sistem dari pendaftaran sampai catatan alumni.", "Memberi tujuh peran tampilan masing-masing atas data yang sama, didukung test matriks akses otomatis.", "Menjaga perubahan production tetap disengaja: runbook, migrasi berurutan, dan skrip yang diproteksi dari penulisan tak sengaja."]
+  },
+  "barber-member-system": {
+    "shortDescription": "Sistem membership digital, POS kasir, dan loyalitas 5 tier untuk barbershop, dengan opsi onboarding NFC di meja kasir.",
+    "summary": "Sistem membership berbasis PWA dan QR untuk barbershop: kartu loyalitas digital untuk pelanggan, POS kasir yang cepat, reward bertingkat dari Silver sampai Black, dan dashboard owner lintas cabang.",
+    "type": "Platform Membership & Loyalitas / PWA",
+    "problem": "Kartu stempel kertas mudah hilang, dan pemilik barbershop tidak bisa melihat pelanggan mana yang kembali, capster mana yang jadi pilihan, atau berapa biaya diskon yang sebenarnya.",
+    "productThinking": "Kasir adalah titik sempit, jadi seluruh alurnya dirancang untuk transaksi di bawah satu menit: scan QR member, pilih layanan dan capster, tukar poin. Penawarannya dijual dalam tiga cakupan, dari MVP inti sampai PWA lengkap dengan standee NFC opsional, sehingga toko kecil bisa mulai dari yang kecil.",
+    "solution": "PWA mobile lima tab (beranda dengan kartu member dan progres tier, reward, scan QR, produk, lokasi toko), POS kasir, tutup kas harian dengan hitungan buta, tampilan kinerja capster, dan dashboard owner berisi omzet serta audit mutasi poin. Member naik lima tier secara otomatis seiring poin bertambah.",
+    "technicalBuild": "HTML statis mobile-first dengan klien Supabase yang di-host sendiri, agar kasir tetap jalan bila jaringan luar bermasalah. PostgreSQL 17 dengan row-level security di setiap tabel dan akses anonim ditolak. Antrean offline dengan UUID dari klien untuk idempotensi, nomor nota dibuat server agar tidak bentrok antar perangkat, dan batas hari memakai zona Asia/Jakarta. Di-deploy di Vercel.",
+    "challenges": "Kasir harus tetap berfungsi saat offline tanpa pernah menghitung satu penjualan dua kali, itulah sebabnya antreannya idempoten dan penomoran nota ada di server.",
+    "lessons": "Menulis dokumen serah terima (siapa masuk lewat mana, apa yang dilihat tiap peran, apa yang masih kurang) adalah bagian dari menyerahkan sistem, bukan pekerjaan tambahan.",
+    "subProjects": [
+      {
+        "title": "TapTapin",
+        "description": "Aplikasi loyalitas yang lebih ringan untuk toko kecil: pelanggan tap tag NFC atau scan QR, memasukkan nomor WhatsApp, lalu melihat poinnya; kasir mengonfirmasi tiap transaksi dari dashboard. Dibangun dengan Next.js 16, Drizzle ORM, Better Auth, dan Supabase."
+      }
+    ]
+  },
+  "kpi-ppmi-mesir": {
+    "shortDescription": "Sistem digital untuk organisasi mahasiswa di Mesir, dirancang dari blueprint 113 layar dan dibangun modul demi modul.",
+    "summary": "Sistem tata kelola dan operasional untuk KPI PPMI Mesir, mencakup tugas, rapat, keuangan, evaluasi, pengetahuan, dan serah terima. Dirancang sebagai blueprint penuh lebih dulu, lalu dibangun bertahap di atas backend Supabase terhosting di bawah SOP kerahasiaan yang ketat.",
+    "type": "Sistem Operasional Organisasi / Aplikasi Web",
+    "problem": "Organisasi yang kepengurusannya berganti tiap periode kehilangan pengetahuan kerjanya di setiap serah terima. Keputusan, tugas, dan catatan tersimpan di chat dan berkas pribadi.",
+    "productThinking": "Sebelum menulis kode, cakupannya dipetakan sebagai blueprint: 113 layar, 61 entitas, 11 alur, dan 28 keputusan tercatat, lengkap dengan PRD dan roadmap eksekusi bergerbang penerimaan. Membangun bertahap di atas peta itu menjaga sistem besar tetap jujur soal mana yang sudah selesai dan mana yang belum.",
+    "solution": "Portal dengan papan tugas, rapat dengan voting, keuangan, evaluasi, basis pengetahuan, catatan serah terima, dan publikasi artikel dwibahasa, lengkap dengan jejak audit dan akses berbasis peran.",
+    "technicalBuild": "Next.js dengan TypeScript, Supabase (Auth, PostgreSQL dengan row-level security), di-deploy di Vercel. Pengembangan lokal hanya memakai data sintetis TEST; lingkungan hosted mengikuti SOP kerahasiaan, dan data organisasi tidak pernah dipakai untuk melatih model AI.",
+    "challenges": "Presisi soal status: test lulus dan build berhasil bukan berarti sebuah alur sudah diterima. Aktivasi periode, mandat resmi, dan uji pengguna multi-peran dilacak sebagai gerbang terpisah.",
+    "lessons": "Untuk data organisasi yang sensitif, aturan datanya (apa yang tidak boleh masuk repositori) harus ada di spesifikasi produk sejak hari pertama.",
+    "notes": "Dalam pengembangan. Ditampilkan sebagai studi kasus perencanaan dan pengiriman bertahap; tidak ada data organisasi yang ditampilkan."
   }
 }

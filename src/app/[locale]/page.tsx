@@ -1,8 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/container";
-import { RichProjectCard } from "@/components/rich-project-card";
-import { CompactProjectCard } from "@/components/compact-project-card";
+import { ProjectGridCard } from "@/components/project-grid-card";
 import { CapabilityIcon } from "@/components/capability-icon";
 import { Reveal, StaggerReveal } from "@/components/reveal";
 import { TechStackSection } from "@/components/tech-stack-section";
@@ -20,6 +19,7 @@ const SELECTED_WORK_SLUGS = [
 ] as const;
 
 const SHOWCASE_GRID_SLUGS = [
+  "hamasah-international",
   "nemsyi",
   "kelas-aigypt",
   "talqeeh",
@@ -88,6 +88,8 @@ export default async function Home({
         (GRID_ORDER.indexOf(a.slug) === -1 ? GRID_ORDER.length : GRID_ORDER.indexOf(a.slug)) -
         (GRID_ORDER.indexOf(b.slug) === -1 ? GRID_ORDER.length : GRID_ORDER.indexOf(b.slug))
     );
+  const aina = allProjects.filter((p) => p.slug === "aina");
+  const allWork = [...aina, ...featured, ...showcase, ...rest];
   const stats = getPortfolioStats();
 
   return (
@@ -194,44 +196,18 @@ export default async function Home({
       {/* AINA - Featured Spotlight */}
       <AinaSpotlight />
 
-      {/* Selected Work */}
-      <section id="work" className="border-t border-border">
+      {/* All Work */}
+      <section id="work" className="border-t border-border py-14 sm:py-20 md:py-28">
         <Container>
           <Reveal>
-            <div className="flex items-end justify-between gap-4 pt-12 sm:pt-16 md:pt-24">
+            <div className="flex items-end justify-between gap-4">
               <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
                 <span className="mr-3 font-mono text-xs not-italic text-muted-2">02</span>
-                {t("selectedWork")}
-              </h2>
-              <Link
-                href="/work"
-                className="group inline-flex min-h-11 shrink-0 items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
-              >
-                {t("viewAll")}
-              </Link>
-            </div>
-          </Reveal>
-
-          <StaggerReveal className="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 py-4 pb-12 sm:mt-12 sm:gap-y-14 sm:pb-16 sm:grid-cols-2 md:py-16 lg:grid-cols-3" stagger={0.1}>
-            {[...featured, ...showcase].map((project, i) => (
-              <RichProjectCard key={project.slug} project={project} index={i} />
-            ))}
-          </StaggerReveal>
-        </Container>
-      </section>
-
-      {/* Capabilities */}
-      <section className="border-t border-border py-14 sm:py-20 md:py-28">
-        <Container>
-          <Reveal>
-            <div className="flex items-end justify-between">
-              <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
-                <span className="mr-3 font-mono text-xs not-italic text-muted-2">03</span>
-                {t("allWorkTitle", { count: rest.length })}
+                {t("allWorkTitle", { count: allWork.length })}
               </h2>
               <Link
                 href="/work#archive"
-                className="group hidden text-sm text-muted transition-colors hover:text-accent sm:inline"
+                className="group inline-flex min-h-11 shrink-0 items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
               >
                 {t("fullArchive")}
               </Link>
@@ -239,28 +215,20 @@ export default async function Home({
             <p className="mt-3 max-w-lg text-muted">{t("allWorkSubtitle")}</p>
           </Reveal>
 
-          <StaggerReveal className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5" stagger={0.06}>
-            {rest.map((project) => (
-              <CompactProjectCard key={project.slug} project={project} />
+          <StaggerReveal className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
+            {allWork.map((project) => (
+              <ProjectGridCard key={project.slug} project={project} />
             ))}
           </StaggerReveal>
-
-          <div className="mt-10 text-center sm:hidden">
-            <Link
-              href="/work#archive"
-              className="text-sm text-muted hover:text-foreground"
-            >
-              {t("fullArchive")}
-            </Link>
-          </div>
         </Container>
       </section>
 
+      {/* Capabilities */}
       <section className="border-t border-border py-20 md:py-28">
         <Container>
           <Reveal>
             <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
-              <span className="mr-3 font-mono text-xs not-italic text-muted-2">04</span>
+              <span className="mr-3 font-mono text-xs not-italic text-muted-2">03</span>
               {t("capabilitiesTitle")}
             </h2>
             <p className="mt-3 max-w-lg text-muted">{t("capabilitiesSubtitle")}</p>
@@ -312,7 +280,7 @@ export default async function Home({
         <Container>
           <Reveal>
             <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
-              <span className="mr-3 font-mono text-xs not-italic text-muted-2">06</span>
+              <span className="mr-3 font-mono text-xs not-italic text-muted-2">05</span>
               {t("howIBuild")}
             </h2>
           </Reveal>
