@@ -23,6 +23,8 @@ export interface SubProject {
   title: string;
   description: string;
   url?: string;
+  /** Set on public data, where the url itself is removed and sits behind the PIN. */
+  hasLink?: boolean;
 }
 
 export interface Project {
@@ -45,6 +47,8 @@ export interface Project {
   hideLiveUrl?: boolean;
   secondaryUrl?: string;
   githubUrl?: string;
+  /** Which of the URLs above exist; public data carries this instead of the URLs. */
+  lockedLinks?: { live: boolean; secondary: boolean; github: boolean };
 
   brandColor?: string;
 

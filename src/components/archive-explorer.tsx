@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import type { Project, ProjectCategory } from "@/data/types";
-import { ALL_CATEGORIES } from "@/data/projects";
+import { ALL_CATEGORIES } from "@/data/categories";
 import { CompactProjectCard } from "./compact-project-card";
 import { cn } from "@/lib/utils";
 

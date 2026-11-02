@@ -9,6 +9,7 @@ import { PreviewPlaceholder } from "@/components/preview-placeholder";
 import { CaseStudySection } from "@/components/case-study-section";
 import { ProjectCard } from "@/components/project-card";
 import { LightboxGallery } from "@/components/lightbox-gallery";
+import { PinLink } from "@/components/pin-link";
 import Image from "next/image";
 import {
   getAllProjects,
@@ -66,7 +67,7 @@ export default async function CaseStudyPage({
 
   const t = await getTranslations("caseStudy");
   const tCategory = await getTranslations("categories");
-  const showLiveUrl = Boolean(project.liveUrl && !project.hideLiveUrl);
+  const showLiveUrl = Boolean(project.lockedLinks?.live);
 
   const related = getAllProjects(locale)
     .filter((p) => p.slug !== project.slug)
@@ -135,34 +136,31 @@ export default async function CaseStudyPage({
               </div>
             )}
             {showLiveUrl && (
-              <a
-                href={project.liveUrl!}
-                target="_blank"
-                rel="noopener noreferrer"
+              <PinLink
+                slug={project.slug}
+                linkKey="live"
                 className="inline-flex min-h-11 items-center text-sm text-foreground underline underline-offset-4"
               >
                 {t("visitLiveSite")}
-              </a>
+              </PinLink>
             )}
-            {project.secondaryUrl && (
-              <a
-                href={project.secondaryUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+            {project.lockedLinks?.secondary && (
+              <PinLink
+                slug={project.slug}
+                linkKey="secondary"
                 className="inline-flex min-h-11 items-center text-sm text-foreground underline underline-offset-4"
               >
-                {project.secondaryUrl.replace(/^https?:\/\//, "").replace(/\/$/, "").replace(/^www\./, "")}
-              </a>
+                {t("exploreRelatedSite")}
+              </PinLink>
             )}
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+            {project.lockedLinks?.github && (
+              <PinLink
+                slug={project.slug}
+                linkKey="github"
                 className="inline-flex min-h-11 items-center text-sm text-foreground underline underline-offset-4"
               >
                 GitHub
-              </a>
+              </PinLink>
             )}
           </div>
         </Container>
@@ -282,21 +280,20 @@ export default async function CaseStudyPage({
               {t("ecosystemTitle", { title: project.title })}
             </h2>
             <div className="mt-7 grid grid-cols-1 gap-8 sm:mt-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
-              {project.subProjects.map((sub) => (
+              {project.subProjects.map((sub, i) => (
                 <div key={sub.title}>
                   <h3 className="font-display text-lg tracking-tight text-foreground">
                     {sub.title}
                   </h3>
                   <p className="mt-2 text-sm text-muted">{sub.description}</p>
-                  {sub.url && (
-                    <a
-                      href={sub.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  {sub.hasLink && (
+                    <PinLink
+                      slug={project.slug}
+                      linkKey={`sub-${i}`}
                       className="mt-3 inline-block text-sm text-foreground underline underline-offset-4"
                     >
                       {t("visitLiveSite")}
-                    </a>
+                    </PinLink>
                   )}
                 </div>
               ))}
@@ -305,7 +302,7 @@ export default async function CaseStudyPage({
         </section>
       )}
 
-      {project.secondaryUrl && (
+      {project.lockedLinks?.secondary && (
         <section className="border-t border-border py-12 sm:py-16 md:py-24">
           <Container>
             <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
@@ -330,15 +327,14 @@ export default async function CaseStudyPage({
             <p className="mt-6 max-w-2xl text-pretty text-base text-muted md:text-lg">
               {t("relatedSiteNote")}
             </p>
-            <a
-              href={project.secondaryUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <PinLink
+              slug={project.slug}
+              linkKey="secondary"
               className="mt-8 inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
             >
               {t("exploreRelatedSite")}
               <span className="transition-transform duration-300 group-hover:translate-x-0.5">↗</span>
-            </a>
+            </PinLink>
           </Container>
         </section>
       )}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { PinLink } from "@/components/pin-link";
 import { Reveal, StaggerReveal } from "@/components/reveal";
 
 /**
@@ -61,15 +62,13 @@ export function AinaSpotlight() {
             )}
           </div>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-            <Link
-              href="https://ainalabs.pro"
-              target="_blank"
-              rel="noopener noreferrer"
+            <PinLink
+              slug="aina"
+              linkKey="live"
               className="group inline-flex min-h-11 items-center gap-2 text-sm text-background underline underline-offset-4 transition-colors hover:text-accent dark:text-foreground"
             >
-              ainalabs.pro
-              <span className="transition-transform group-hover:translate-x-0.5">→</span>
-            </Link>
+              {t("visitLiveSite")}
+            </PinLink>
             <Link
               href="/work/aina"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-background px-6 py-2.5 text-sm text-foreground transition-colors hover:bg-accent hover:text-background dark:bg-foreground dark:text-background dark:hover:bg-accent"

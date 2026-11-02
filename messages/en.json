@@ -156,6 +156,17 @@
     "openAinaCaseStudy": "Open AINA case study",
     "ainaTags": ["AI product", "Full-stack", "React", "Supabase", "Production"]
   },
+  "pinLink": {
+    "title": "Enter PIN",
+    "description": "This link is private. Enter the PIN to open the site.",
+    "placeholder": "PIN",
+    "cancel": "Cancel",
+    "submit": "Open",
+    "open": "Open site ↗",
+    "wrong": "Wrong PIN. Try again.",
+    "locked": "Too many attempts. Try again in 15 minutes.",
+    "unavailable": "This link can't be opened right now."
+  },
   "preview": {
     "comingSoon": "Preview coming soon"
   },
@@ -188,7 +199,7 @@
     "statusConcept": "concept stage, planned but not yet built.",
     "statusClientDelivery": "client delivery, built and delivered to the client.",
     "relatedSiteTitle": "Related Site",
-    "relatedSiteNote": "Markazfiqih.com is the brand & content site for Markaz Fiqih , articles, events, and contributors. The main product is the class platform (kelasmarkazfiqih.com).",
+    "relatedSiteNote": "This is the brand & content site for Markaz Fiqih , articles, events, and contributors. The main product is the class platform.",
     "exploreRelatedSite": "Explore Site"
   },
   "aboutPage": {

@@ -168,6 +168,17 @@
     "openAinaCaseStudy": "Buka studi kasus AINA",
     "ainaTags": ["Produk AI", "Full-stack", "React", "Supabase", "Produksi"]
   },
+  "pinLink": {
+    "title": "Masukkan PIN",
+    "description": "Link ini privat. Masukkan PIN untuk membuka situsnya.",
+    "placeholder": "PIN",
+    "cancel": "Batal",
+    "submit": "Buka",
+    "open": "Buka situs ↗",
+    "wrong": "PIN salah. Coba lagi.",
+    "locked": "Terlalu banyak percobaan. Coba lagi 15 menit lagi.",
+    "unavailable": "Link ini belum bisa dibuka sekarang."
+  },
   "preview": {
     "comingSoon": "Preview segera hadir"
   },
@@ -206,7 +217,7 @@
     "statusConcept": "tahap konsep, sudah direncanakan tapi belum dibangun.",
     "statusClientDelivery": "pengiriman klien, dibangun dan diserahkan ke klien.",
     "relatedSiteTitle": "Situs Terkait",
-    "relatedSiteNote": "Markazfiqih.com adalah situs brand & konten Markaz Fiqih , berisi artikel, kegiatan, dan para kontributor. Produk utamanya adalah platform kelas (kelasmarkazfiqih.com).",
+    "relatedSiteNote": "Ini adalah situs brand & konten Markaz Fiqih , berisi artikel, kegiatan, dan para kontributor. Produk utamanya adalah platform kelas.",
     "exploreRelatedSite": "Kunjungi Situs"
   },
   "aboutPage": {

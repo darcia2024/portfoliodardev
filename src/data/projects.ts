@@ -1,9 +1,10 @@
+import "server-only";
 import type { Project, ProjectTranslations } from "./types";
 import translationsId from "./translations.id.json";
 
 const idTranslations = translationsId as ProjectTranslations;
 
-export const projects: Project[] = [
+const projects: Project[] = [
   // ───────────────────────────── AI & AI EDUCATION ─────────────────────────────
   {
     title: "AINA",
@@ -827,8 +828,26 @@ function localize(project: Project, locale: string): Project {
   return overlay ? { ...project, ...overlay } : project;
 }
 
+/** Strips every external URL, so pages and client props only learn which locked links exist. */
+function toPublic(project: Project, locale: string): Project {
+  const { liveUrl, secondaryUrl, githubUrl, ...rest } = localize(project, locale);
+  return {
+    ...rest,
+    lockedLinks: {
+      live: Boolean(liveUrl && !project.hideLiveUrl),
+      secondary: Boolean(secondaryUrl),
+      github: Boolean(githubUrl),
+    },
+    subProjects: rest.subProjects?.map(({ title, description }, i) => ({
+      title,
+      description,
+      hasLink: Boolean(project.subProjects?.[i]?.url),
+    })),
+  };
+}
+
 export function getAllProjects(locale: string = "en") {
-  return projects.map((p) => localize(p, locale));
+  return projects.map((p) => toPublic(p, locale));
 }
 
 export function getFeaturedProjects(locale: string = "en") {
@@ -837,7 +856,7 @@ export function getFeaturedProjects(locale: string = "en") {
 
 export function getProjectBySlug(slug: string, locale: string = "en") {
   const project = projects.find((p) => p.slug === slug);
-  return project ? localize(project, locale) : undefined;
+  return project ? toPublic(project, locale) : undefined;
 }
 
 export function getAllSlugs() {
@@ -854,15 +873,13 @@ export function getPortfolioStats() {
   };
 }
 
-export const ALL_CATEGORIES = [
-  "All",
-  "AI",
-  "Travel",
-  "Education",
-  "Product",
-  "Web Apps",
-  "Internal Tools",
-  "Branding",
-  "Client Work",
-  "Experiments",
-] as const;
+/** The real destination of a locked link. Only the PIN-checking route may call this. */
+export function resolveProjectLink(slug: string, key: string): string | undefined {
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return undefined;
+  if (key === "live") return project.hideLiveUrl ? undefined : project.liveUrl;
+  if (key === "secondary") return project.secondaryUrl;
+  if (key === "github") return project.githubUrl;
+  const sub = key.match(/^sub-(\d+)$/);
+  return sub ? project.subProjects?.[Number(sub[1])]?.url : undefined;
+}
