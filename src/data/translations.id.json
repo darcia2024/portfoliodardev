@@ -164,6 +164,11 @@
         "title": "Itinerary El Massa",
         "description": "Hub itinerary Umrah multi-keberangkatan yang mencantumkan jadwal keberangkatan El Massa, masing-masing tertaut ke itinerary lengkap hari-demi-hari.",
         "url": "https://elmassaitinerary.vercel.app"
+      },
+      {
+        "title": "El Massa Itinerary Portal 1448 H",
+        "description": "Portal itinerary resmi musim 1448 H: setiap paket dengan alur perjalanannya, tabel jadwal keberangkatan, dan halaman hari-demi-hari untuk tiap keberangkatan.",
+        "url": "https://elmassa-itinerarynew.vercel.app"
       }
     ]
   },
@@ -281,5 +286,77 @@
     "challenges": "Presisi soal status: test lulus dan build berhasil bukan berarti sebuah alur sudah diterima. Aktivasi periode, mandat resmi, dan uji pengguna multi-peran dilacak sebagai gerbang terpisah.",
     "lessons": "Untuk data organisasi yang sensitif, aturan datanya (apa yang tidak boleh masuk repositori) harus ada di spesifikasi produk sejak hari pertama.",
     "notes": "Dalam pengembangan. Ditampilkan sebagai studi kasus perencanaan dan pengiriman bertahap; tidak ada data organisasi yang ditampilkan."
+  },
+  "pgs-tour": {
+    "shortDescription": "Website baru untuk travel umrah di Serang, Banten, menggantikan situs WordPress lamanya.",
+    "summary": "Situs baru PGS Tour & Travel (Pesona Global Syiarbaitullah), dibangun dari nol menggantikan situs WordPress: program umrah lengkap dengan harga dan itinerary, layanan visa, galeri jamaah, kemitraan, profil perusahaan, dan formulir konsultasi yang tersambung ke WhatsApp.",
+    "type": "Website Travel Umrah",
+    "problem": "Situs WordPress lamanya sulit diperbarui dan tidak menjawab pertanyaan pertama calon jamaah: program apa, berapa biayanya, apa saja yang termasuk, dan bagaimana cara mendaftar.",
+    "solution": "Halaman program dengan harga, itinerary hari demi hari, dan fasilitas, halaman terpisah untuk layanan visa, kemitraan, dan legalitas perusahaan, serta formulir konsultasi yang membuka chat WhatsApp yang sudah terisi. Semua harga dan teks ada di dua file konten, jadi agen bisa mengubahnya tanpa menyentuh komponen.",
+    "designDirection": "Navy dan cyan diambil dari logo PGS, layout editorial yang dibingkai kartu navy bersudut membulat, hero gelap di setiap halaman, dan satu keluarga huruf grotesk tebal (Hanken Grotesk) untuk judul dan teks.",
+    "technicalBuild": "Next.js 16 (App Router, TypeScript) dan Tailwind CSS v4, tanpa database; formulir konsultasi diteruskan ke WhatsApp. Di-deploy di Vercel."
+  },
+  "perisa-azhariyah": {
+    "shortDescription": "Platform belajar Bahasa Arab berbasis game untuk santri SD sampai SMA, dikelola yayasan Islam.",
+    "summary": "LMS untuk Yayasan Peradaban Islam Azhariyah yang mengajarkan Bahasa Arab dari mufrodat sehari-hari sampai percakapan bebas, dilengkapi mini-game, latihan suara, video materi terproteksi, dan dashboard yayasan untuk progres dan sertifikat.",
+    "type": "Platform Edukasi / PWA",
+    "problem": "Bahasa Arab sering diajarkan sebagai tata bahasa untuk dihafal, sehingga santri menganggapnya sulit dan membosankan dan jarang sampai bisa berbicara.",
+    "productThinking": "Kurikulumnya berupa tangga empat tahap, dari mufrodat sehari-hari sampai muhadatsah bebas, dan setiap game mengikuti tangga yang sama. Login memakai nomor WhatsApp dan PIN dari yayasan, karena penggunanya anak-anak dan orang tuanya memakai WhatsApp, bukan password.",
+    "solution": "Aplikasi santri dengan pelajaran mufrodat bertahap, mini-game berhadiah XP dan lencana, latihan percakapan suara, dan video materi dengan watermark nama santri yang bergerak. Pengurus yayasan mendapat dashboard untuk progres belajar, rekap infaq, dan sertifikat ber-QR Code, ditambah panduan untuk admin, guru, dan wali.",
+    "designDirection": "Tema putih yang bersih dengan warna turquoise dan emas hangat milik yayasan, memakai Plus Jakarta Sans.",
+    "technicalBuild": "Modul ES biasa tanpa langkah build, bisa dipasang sebagai PWA dengan service worker dan halaman offline, didukung Supabase; sertifikat dibuat di browser sebagai PDF."
+  },
+  "kael": {
+    "shortDescription": "Toolkit digital modular untuk UMKM: ulasan, pemesanan, kasir, dan keuangan, dijual dalam paket sederhana.",
+    "summary": "KAEL (Kemudahan Akses, Efisiensi, Layanan) adalah ekosistem digital untuk UMKM Indonesia yang tumbuh dari TapTapin. Pemilik usaha mulai dari satu alat, misalnya standee ulasan NFC atau kasir, lalu menambah modul seiring bisnisnya berkembang.",
+    "type": "Platform UMKM / Website",
+    "problem": "Sebagian besar toko kecil masih berjalan dengan WhatsApp, spreadsheet, dan catatan kertas. Mereka tidak punya waktu mempelajari software rumit dan tidak tahu harus mulai dari mana.",
+    "productThinking": "Alih-alih satu sistem besar, KAEL menjual modul yang bisa dibeli satu per satu. Halaman harga diperlakukan sebagai kontrak: spesifikasi modul mengikuti apa yang sudah dijanjikan di sana kepada pembeli.",
+    "solution": "Situs penjualan dengan katalog modul (ulasan, kasir dan pemesanan, keuangan), kalkulator yang memperkirakan tambahan omzet dan ulasan dari angka toko sendiri, dan tiga paket dari Starter sampai Ultimate, ditambah login portal untuk pelanggan.",
+    "technicalBuild": "Di-deploy di Vercel dengan domain sendiri, dengan spesifikasi produk yang dipecah menjadi modul-modul yang bisa dibangun dan dirilis terpisah."
+  },
+  "elevgro": {
+    "shortDescription": "Konsep SaaS untuk mengelola seluruh bisnis di satu tempat, dari kasir dan pembukuan sampai CRM WhatsApp dan payroll.",
+    "summary": "Landing page dan demo interaktif untuk Elevgro, konsep platform bisnis terpadu dengan tujuh modul: kasir, pembukuan dan pajak, CRM WhatsApp, SDM dan payroll, broadcast promosi, alur persetujuan, dan stok gudang.",
+    "type": "Landing Page SaaS / Konsep Produk",
+    "problem": "Bisnis yang sedang tumbuh memakai alat terpisah untuk kasir, pembukuan, chat pelanggan, dan karyawan, dan semuanya tidak saling terhubung.",
+    "solution": "Situs yang membiarkan pengunjung mencoba modulnya langsung: tab untuk berganti modul, demo antarmuka yang berubah ke layout HP saat dibuka di ponsel, serta empat langkah memulai dan artikel wawasan bisnis.",
+    "designDirection": "Tampilan SaaS terang dengan satu warna biru yang kuat, Plus Jakarta Sans, dan mockup HP dengan efek miring 3D yang halus di hero.",
+    "technicalBuild": "React 19, TypeScript, Vite, Tailwind CSS, dan Framer Motion, di-deploy di Vercel."
+  },
+  "katalis-erp": {
+    "shortDescription": "ERP untuk eksportir olahan ikan: pembelian, cek mutu, produksi per loin, gudang dingin, penjualan, dan laba per siklus.",
+    "summary": "Sistem pencatatan untuk PT Katalis Lintas Global yang mengikuti ikan dari pembelian dan cek mutu, produksi per loin, gudang dingin, sampai penjualan, hingga laporan laba rugi per siklus, di HP maupun desktop.",
+    "type": "ERP / Aplikasi Web",
+    "problem": "Di pengolahan ikan, untung rugi ditentukan oleh rendemen: berapa kilo loin yang dihasilkan dari setiap kilo yang dibeli. Tanpa catatan per batch, pemilik baru tahu untung atau rugi di akhir siklus.",
+    "solution": "Dashboard owner berisi stok, rendemen, kas, dan keputusan yang menunggu persetujuan, serta modul pembelian, mutu, produksi dengan grafik hasil tiap ekor, stok per lot, gudang dingin, penjualan, keuangan, dan laporan. Demo dengan data contoh dibangun lebih dulu agar klien bisa mencoba alurnya di desktop dan HP.",
+    "technicalBuild": "Next.js 16 dengan React 19, Tailwind CSS 4, dan TypeScript strict; Supabase untuk database, auth, dan storage; validasi Zod; draft offline dengan Dexie; tes dengan Vitest, Playwright, dan pgTAP.",
+    "notes": "Dalam pengembangan: demo di sini memakai data contoh; versi produksinya masih di fase fondasi."
+  },
+  "oslo-park": {
+    "shortDescription": "Buku panduan properti digital yang interaktif, dengan efek balik halaman, daftar thumbnail, dan render yang bisa diperbesar.",
+    "summary": "Monograf digital untuk OSLO Park, Cluster Ostbanehallen dari PT. Trisan Esa Cipta, dibangun dari manual layout klien: profil pengembang, konsep arsitektur, master plan, unit Tipe 112, dan lembar konsultasi, disajikan sebagai buku yang bisa dibalik halamannya.",
+    "type": "Katalog Properti Digital",
+    "problem": "Katalog properti biasanya berupa PDF yang dilewati begitu saja oleh pembeli. Pengembang ingin nuansa buku hardcover cetak, tapi tetap bisa dibagikan sebagai link.",
+    "solution": "Tampilan dua halaman dengan animasi balik halaman lewat tombol, sudut halaman, tombol panah, atau geser; penggeser halaman dan laci thumbnail; lightbox untuk render arsitektur; serta suara kertas yang dibuat dengan Web Audio API, tanpa file audio.",
+    "designDirection": "Editorial Skandinavia: judul Book Antiqua dengan teks Poppins, ruang putih yang lapang, kotak catatan bergaris putus-putus ala blueprint, serta garis emas Oslo dan cap halaman di setiap halaman.",
+    "technicalBuild": "Situs statis HTML, CSS, dan JavaScript yang juga bisa dibuka offline, ditambah skrip Python yang menghasilkan PDF siap cetak."
+  },
+  "masisir-life": {
+    "shortDescription": "Game simulasi tentang hari-hari pertama mahasiswa Indonesia di Kairo: belajar, bekerja, dan mengenal lingkungan.",
+    "summary": "Game browser berlatar Hayy Al-Bidayah, distrik yang meniru kehidupan Masisir di Kairo. Pemain mengatur lapar, energi, uang, ilmu, reputasi, dan relasi sambil mengikuti talaqqi dan misi di peta.",
+    "type": "Game Browser",
+    "problem": "Masisir baru datang tanpa banyak tahu soal kehidupan sehari-hari di Kairo; sebagian besar dipelajari dengan cara yang sulit di bulan-bulan pertama.",
+    "solution": "Alur permainan per hari dan jam: pemain memilih tujuan di peta distrik, apa yang dipelajari, dan bagaimana membelanjakan pound Mesir yang terbatas, dengan jurnal misi dan sistem simpan permainan.",
+    "technicalBuild": "TypeScript dan Vite, dengan dokumen desain game, catatan validasi tiap milestone, dan playtest otomatis Playwright untuk memeriksa tempo permainan.",
+    "notes": "Dalam pengembangan; ditampilkan dari build web saat ini."
+  },
+  "jalan-cahaya": {
+    "shortDescription": "Pembaca buku online terproteksi agar penulis bisa menjual buku digital tanpa menyerahkan file PDF-nya.",
+    "summary": "Situs baca untuk buku Jalan Cahaya karya Umi Atiyah: pembeli membuka buku dengan kode akses pribadi, dan penulis punya panel admin untuk mencatat penjualan dan membuat kode.",
+    "type": "Pembaca Buku Digital",
+    "problem": "Menjual buku dalam bentuk PDF berarti pembeli pertama bisa membagikan filenya ke siapa saja.",
+    "solution": "Buku disimpan dalam keadaan terenkripsi, jadi tidak ada PDF yang bisa diunduh, dan hanya terbuka di browser dengan kode akses yang valid. Panel admin membuat kode unik per pembeli dengan nomor WhatsApp-nya, memperingatkan duplikat, mencatat buku kas penjualan, dan menampilkan peringatan merah bila PDF mentah masih bisa diakses publik.",
+    "technicalBuild": "Situs statis yang ringan dengan alat enkripsi berbasis browser untuk file buku dan database kecil untuk kode akses dan penjualan."
   }
 }

@@ -449,6 +449,12 @@ const projects: Project[] = [
           "A multi-departure Umrah itinerary hub listing El Massa's scheduled departures, each linking through to a full day-by-day itinerary.",
         url: "https://elmassaitinerary.vercel.app",
       },
+      {
+        title: "El Massa Itinerary Portal 1448 H",
+        description:
+          "The new official itinerary portal for the 1448 H season: every package with its travel flow, a departure schedule table, and a day-by-day page per departure.",
+        url: "https://elmassa-itinerarynew.vercel.app",
+      },
     ],
   },
 
@@ -818,6 +824,246 @@ const projects: Project[] = [
       "For sensitive organizational data, the data rules (what never enters the repository) belong in the product spec from day one.",
     notes:
       "In development. Shown here as a case study of the planning and staged delivery; no organization data is displayed.",
+  },
+
+  // ───────────────────────────── 2026 ADDITIONS ─────────────────────────────
+  {
+    title: "PGS Tour & Travel",
+    slug: "pgs-tour",
+    shortDescription:
+      "A rebuilt website for an Umrah travel agency in Serang, Banten, replacing its old WordPress site.",
+    summary:
+      "A new site for PGS Tour & Travel (Pesona Global Syiarbaitullah), built from scratch to replace a WordPress site: Umrah programs with prices and itineraries, visa services, a pilgrim gallery, partnership, company profile, and a consultation form that lands in WhatsApp.",
+    category: ["Travel", "Client Work"],
+    type: "Travel Agency Website",
+    status: "pre-launch",
+    confidence: "verified",
+    featured: false,
+    role: ["UI/UX", "Full-Stack Development"],
+    year: "2026",
+    liveUrl: "https://pgstour.vercel.app",
+    brandColor: "#223089",
+    cover: "/pgs-tour-cover-v1.png",
+    gallery: [
+      "/pgs-tour-gallery-1.webp",
+      "/pgs-tour-gallery-2.webp",
+      "/pgs-tour-gallery-3.webp",
+      "/pgs-tour-gallery-4.webp",
+    ],
+    problem:
+      "The agency's WordPress site was hard to update and did not show what pilgrims ask first: which program, what it costs, what is included, and how to book.",
+    solution:
+      "Program pages with prices, day-by-day itineraries and facilities, separate pages for visa services, partnership, and the company's licences, and a consultation form that opens a pre-filled WhatsApp chat. All prices and texts live in two content files, so the agency can edit them without touching components.",
+    designDirection:
+      "Navy and cyan taken from the PGS logo, an editorial layout framed in rounded navy cards, a dark hero on every page, and one bold grotesk family (Hanken Grotesk) for headings and text.",
+    technicalBuild:
+      "Next.js 16 (App Router, TypeScript) and Tailwind CSS v4, no database; the consultation form hands off to WhatsApp. Deployed on Vercel.",
+  },
+  {
+    title: "PERISA Azhariyah",
+    slug: "perisa-azhariyah",
+    shortDescription:
+      "A game-based Arabic learning platform for elementary to high-school students, run by an Islamic foundation.",
+    summary:
+      "An LMS for Yayasan Peradaban Islam Azhariyah that teaches Arabic from everyday vocabulary to free conversation, with mini-games, voice practice, protected lesson videos, and a foundation dashboard for progress and certificates.",
+    category: ["Education", "Product", "Client Work"],
+    type: "Education Platform / PWA",
+    status: "production",
+    confidence: "verified",
+    featured: false,
+    role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
+    year: "2026",
+    liveUrl: "https://presentasiyayasan.vercel.app",
+    brandColor: "#008E82",
+    cover: "/perisa-azhariyah-cover-v1.png",
+    gallery: [
+      "/perisa-azhariyah-gallery-1.webp",
+      "/perisa-azhariyah-gallery-2.webp",
+      "/perisa-azhariyah-gallery-3.webp",
+    ],
+    problem:
+      "Arabic is often taught as grammar to memorise, so students find it hard and boring and rarely get to speaking it.",
+    productThinking:
+      "The curriculum is a ladder of four stages, from everyday vocabulary to free conversation, and every game follows the same ladder. Login is a WhatsApp number and a PIN set by the foundation, because the students are children and their parents use WhatsApp, not passwords.",
+    solution:
+      "A student app with staged vocabulary lessons, mini-games with XP and badges, a voice conversation practice, and lesson videos with a floating watermark of the student's name. Foundation staff get a dashboard for learning progress, donation records, and QR-verified certificates, plus a tutorial for admins, teachers, and parents.",
+    designDirection:
+      "A clean white theme in the foundation's turquoise and warm gold, set in Plus Jakarta Sans.",
+    technicalBuild:
+      "Plain ES modules without a build step, installable as a PWA with a service worker and offline page, backed by Supabase; certificates are generated in the browser as PDF.",
+  },
+  {
+    title: "KAEL",
+    slug: "kael",
+    shortDescription:
+      "A modular digital toolkit for small businesses: reviews, ordering, POS, and finance, sold as simple packages.",
+    summary:
+      "KAEL (Kemudahan Akses, Efisiensi, Layanan) is a digital ecosystem for Indonesian small businesses, grown out of TapTapin. Owners start with one tool, such as an NFC review stand or a POS, and add more as the business grows.",
+    category: ["Product", "Web Apps"],
+    type: "Small Business Platform / Website",
+    status: "production",
+    confidence: "verified",
+    featured: false,
+    role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
+    year: "2026",
+    liveUrl: "https://kaels.site",
+    brandColor: "#5b3fd1",
+    cover: "/kael-cover-v1.png",
+    gallery: [
+      "/kael-gallery-1.webp",
+      "/kael-gallery-2.webp",
+      "/kael-gallery-3.webp",
+      "/kael-gallery-4.webp",
+    ],
+    problem:
+      "Most small shops still run on WhatsApp, spreadsheets, and paper. They do not have time to learn complex software and do not know where to start.",
+    productThinking:
+      "Instead of one big system, KAEL sells modules a shop can buy one at a time. The pricing page is treated as the contract: the module specification follows what is already promised there to buyers.",
+    solution:
+      "A sales site with a catalogue of modules (reviews, POS and ordering, finance), a calculator that estimates extra revenue and reviews from the shop's own numbers, and three packages from Starter to Ultimate, plus a portal login for customers.",
+    technicalBuild:
+      "Deployed on Vercel at its own domain, with the product specification split into modules that can be built and shipped separately.",
+  },
+  {
+    title: "Elevgro",
+    slug: "elevgro",
+    shortDescription:
+      "A SaaS concept for running a whole business in one place, from POS and bookkeeping to WhatsApp CRM and payroll.",
+    summary:
+      "A landing page and interactive demo for Elevgro, a concept for an integrated business platform with seven modules: POS, bookkeeping and tax, WhatsApp CRM, HR and payroll, promotion broadcasts, approval workflows, and warehouse stock.",
+    category: ["Product", "Web Apps"],
+    type: "SaaS Landing Page / Product Concept",
+    status: "concept",
+    confidence: "verified",
+    featured: false,
+    role: ["Product Strategy", "UI/UX", "Full-Stack Development"],
+    year: "2026",
+    liveUrl: "https://elevgro.vercel.app",
+    brandColor: "#0057d9",
+    cover: "/elevgro-cover-v1.png",
+    gallery: [
+      "/elevgro-gallery-1.webp",
+      "/elevgro-gallery-2.webp",
+      "/elevgro-gallery-3.webp",
+      "/elevgro-gallery-4.webp",
+    ],
+    problem:
+      "Growing businesses juggle separate tools for the till, the books, customer chats, and staff, and none of them talk to each other.",
+    solution:
+      "A site that lets visitors try the modules in place: tabs switch between them, a live interface demo changes to a phone layout on mobile, and a four-step onboarding path and business insight articles explain how to start.",
+    designDirection:
+      "A light SaaS look in a single strong blue, Plus Jakarta Sans, and a phone mockup with a gentle 3D tilt in the hero.",
+    technicalBuild: "React 19, TypeScript, Vite, Tailwind CSS, and Framer Motion, deployed on Vercel.",
+  },
+  {
+    title: "Katalis ERP",
+    slug: "katalis-erp",
+    shortDescription:
+      "An ERP for a fish-processing exporter: purchasing, quality checks, production per loin, cold storage, sales, and profit per cycle.",
+    summary:
+      "A record-keeping system for PT Katalis Lintas Global that follows fish from purchase and quality check through production by loin, cold storage, and sales, to a profit and loss report for each cycle, on phone and desktop.",
+    category: ["Internal Tools", "Web Apps", "Client Work"],
+    type: "ERP / Web App",
+    status: "development",
+    confidence: "partial",
+    featured: false,
+    role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
+    year: "2026",
+    brandColor: "#0f2236",
+    cover: "/katalis-erp-cover-v1.png",
+    gallery: [
+      "/katalis-erp-gallery-1.webp",
+      "/katalis-erp-gallery-2.webp",
+      "/katalis-erp-gallery-3.webp",
+      "/katalis-erp-gallery-4.webp",
+      "/katalis-erp-gallery-5.webp",
+    ],
+    problem:
+      "In fish processing, margin is decided by yield: how many kilos of loin come out of each kilo bought. Without per-batch records, the owner only finds out at the end of a cycle whether it made money.",
+    solution:
+      "An owner dashboard with stock, yield, cash, and decisions waiting for approval, and modules for purchasing, quality, production with a yield chart per tail, stock by lot, cold storage, sales, finance, and reports. A demo with sample data was built first so the client could test the flow on desktop and phone.",
+    technicalBuild:
+      "Next.js 16 with React 19, Tailwind CSS 4, and strict TypeScript; Supabase for database, auth, and storage; Zod validation; offline drafts with Dexie; tests in Vitest, Playwright, and pgTAP.",
+    notes:
+      "In development: the demo shown here uses sample data; the production build is at its foundation phase.",
+  },
+  {
+    title: "OSLO Park Property Handbook",
+    slug: "oslo-park",
+    shortDescription:
+      "An interactive digital handbook for a residential cluster, with real page turns, a thumbnail index, and zoomable renders.",
+    summary:
+      "A digital monograph for OSLO Park, Cluster Ostbanehallen by PT. Trisan Esa Cipta, built from the client's layout manual: the developer profile, architecture concept, master plan, the Type 112 unit, and a consultation sheet, presented as a book you can leaf through.",
+    category: ["Branding", "Client Work"],
+    type: "Digital Property Catalogue",
+    status: "client-delivery",
+    confidence: "verified",
+    featured: false,
+    role: ["UI/UX", "Brand Design", "Full-Stack Development"],
+    year: "2026",
+    brandColor: "#cc9933",
+    cover: "/oslo-park-cover-v1.png",
+    gallery: [
+      "/oslo-park-gallery-1.webp",
+      "/oslo-park-gallery-2.webp",
+      "/oslo-park-gallery-3.webp",
+    ],
+    problem:
+      "A property catalogue is usually a PDF that buyers scroll past. The developer wanted the feel of a printed hardcover book, but shareable as a link.",
+    solution:
+      "A two-page spread view with page-turn animation driven by buttons, page corners, arrow keys, or swipe; a page scrubber and thumbnail drawer; a lightbox for architectural renders; and paper sounds generated with the Web Audio API, with no audio files.",
+    designDirection:
+      "Scandinavian editorial: Book Antiqua headings with Poppins text, generous white space, dashed blueprint-style callouts, and the Oslo gold line and page stamp on every page.",
+    technicalBuild:
+      "A static HTML, CSS, and JavaScript site that also opens offline, plus Python scripts that produce a print-ready PDF.",
+  },
+  {
+    title: "Masisir Life",
+    slug: "masisir-life",
+    shortDescription:
+      "A life-simulation game about an Indonesian student's first days in Cairo: study, work, and get to know the district.",
+    summary:
+      "A browser game set in Hayy Al-Bidayah, a district modelled on student life in Cairo. The player manages hunger, energy, money, knowledge, reputation, and relationships while following talaqqi lessons and quests around the map.",
+    category: ["Experiments", "Product"],
+    type: "Browser Game",
+    status: "development",
+    confidence: "partial",
+    featured: false,
+    role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
+    year: "2026",
+    brandColor: "#b9803a",
+    cover: "/masisir-life-cover-v1.png",
+    gallery: ["/masisir-life-gallery-1.webp"],
+    problem:
+      "New Masisir arrive knowing little about daily life in Cairo; most of it is learned the hard way in the first months.",
+    solution:
+      "A game loop of days and hours: the player chooses where to go on the district map, what to study, and how to spend limited Egyptian pounds, with a journal of quests and a save system.",
+    technicalBuild:
+      "TypeScript and Vite, with a game design document, milestone validation notes, and automated Playwright playtests that check pacing.",
+    notes: "In development; shown from the current web build.",
+  },
+  {
+    title: "Jalan Cahaya Digital Reader",
+    slug: "jalan-cahaya",
+    shortDescription:
+      "A protected online reader that lets an author sell a digital book without handing over the PDF.",
+    summary:
+      "A reading site for the book Jalan Cahaya by Umi Atiyah: buyers open the book with a personal access code, and the author has an admin panel to record sales and issue codes.",
+    category: ["Product", "Client Work"],
+    type: "Digital Book Reader",
+    status: "client-delivery",
+    confidence: "verified",
+    featured: false,
+    role: ["Product Strategy", "Full-Stack Development", "UI/UX"],
+    year: "2026",
+    brandColor: "#7c4ddb",
+    cover: "/jalan-cahaya-cover-v1.png",
+    problem:
+      "Selling a book as a PDF means the first buyer can share the file with everyone.",
+    solution:
+      "The book is stored encrypted, so there is no PDF to download, and it opens in the browser only with a valid access code. The admin panel generates a unique code per buyer with their WhatsApp number, warns about duplicates, keeps a sales ledger, and shows a red alert if a raw PDF is still publicly reachable.",
+    technicalBuild:
+      "A lightweight static site with a browser-side encryption tool for the book file and a small database for access codes and sales.",
   },
 ];
 
